@@ -46,11 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAsignacionTrasportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAsignacionTrasportista.Designer.cs">
+      <DependentUpon>FrmAsignacionTrasportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.Designer.cs">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarOrdenPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarOrdenPedido.Designer.cs">
+      <DependentUpon>FrmBuscarOrdenPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarProducto.Designer.cs">
+      <DependentUpon>FrmBuscarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarTransportista.Designer.cs">
+      <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFormasDePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFormasDePago.Designer.cs">
+      <DependentUpon>FrmFormasDePago.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -58,13 +94,67 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProducto.Designer.cs">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroOrdenPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroOrdenPedido.Designer.cs">
+      <DependentUpon>FrmRegistroOrdenPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroVenta.Designer.cs">
+      <DependentUpon>FrmRegistroVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransportista.Designer.cs">
+      <DependentUpon>FrmTransportista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAsignacionTrasportista.resx">
+      <DependentUpon>FrmAsignacionTrasportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarOrdenPedido.resx">
+      <DependentUpon>FrmBuscarOrdenPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarProducto.resx">
+      <DependentUpon>FrmBuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarTransportista.resx">
+      <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFormasDePago.resx">
+      <DependentUpon>FrmFormasDePago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProducto.resx">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistroOrdenPedido.resx">
+      <DependentUpon>FrmRegistroOrdenPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistroVenta.resx">
+      <DependentUpon>FrmRegistroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransportista.resx">
+      <DependentUpon>FrmTransportista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
