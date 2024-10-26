@@ -33,10 +33,8 @@
             this.tbxDireccion = new System.Windows.Forms.TextBox();
             this.Direccion = new System.Windows.Forms.Label();
             this.chbxEstadoCliente = new System.Windows.Forms.CheckBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txbNombres = new System.Windows.Forms.TextBox();
             this.tbxNroDocumento = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -46,6 +44,8 @@
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,13 +62,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbxDireccion);
             this.groupBox1.Controls.Add(this.Direccion);
             this.groupBox1.Controls.Add(this.chbxEstadoCliente);
-            this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.txbNombres);
             this.groupBox1.Controls.Add(this.tbxNroDocumento);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnCancelar);
@@ -77,14 +77,14 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1018, 268);
+            this.groupBox1.Size = new System.Drawing.Size(1018, 282);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Cliente";
+            this.groupBox1.Text = "Datos ";
             // 
             // tbxDireccion
             // 
-            this.tbxDireccion.Location = new System.Drawing.Point(223, 209);
+            this.tbxDireccion.Location = new System.Drawing.Point(223, 188);
             this.tbxDireccion.Name = "tbxDireccion";
             this.tbxDireccion.Size = new System.Drawing.Size(243, 32);
             this.tbxDireccion.TabIndex = 20;
@@ -92,7 +92,7 @@
             // Direccion
             // 
             this.Direccion.AutoSize = true;
-            this.Direccion.Location = new System.Drawing.Point(21, 212);
+            this.Direccion.Location = new System.Drawing.Point(16, 191);
             this.Direccion.Name = "Direccion";
             this.Direccion.Size = new System.Drawing.Size(92, 24);
             this.Direccion.TabIndex = 19;
@@ -103,21 +103,14 @@
             this.chbxEstadoCliente.AutoSize = true;
             this.chbxEstadoCliente.Location = new System.Drawing.Point(626, 52);
             this.chbxEstadoCliente.Name = "chbxEstadoCliente";
-            this.chbxEstadoCliente.Size = new System.Drawing.Size(160, 28);
+            this.chbxEstadoCliente.Size = new System.Drawing.Size(92, 28);
             this.chbxEstadoCliente.TabIndex = 18;
-            this.chbxEstadoCliente.Text = "Estado Cliente";
+            this.chbxEstadoCliente.Text = "Estado";
             this.chbxEstadoCliente.UseVisualStyleBackColor = true;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(223, 156);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(243, 32);
-            this.txtApellidos.TabIndex = 17;
             // 
             // txbNombres
             // 
-            this.txbNombres.Location = new System.Drawing.Point(223, 102);
+            this.txbNombres.Location = new System.Drawing.Point(223, 94);
             this.txbNombres.Name = "txbNombres";
             this.txbNombres.Size = new System.Drawing.Size(243, 32);
             this.txbNombres.TabIndex = 16;
@@ -129,32 +122,23 @@
             this.tbxNroDocumento.Size = new System.Drawing.Size(243, 32);
             this.tbxNroDocumento.TabIndex = 15;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 24);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Apellidos";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 105);
+            this.label2.Location = new System.Drawing.Point(16, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 24);
+            this.label2.Size = new System.Drawing.Size(122, 24);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Nombres";
+            this.label2.Text = "Razon Social";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 24);
+            this.label1.Size = new System.Drawing.Size(47, 24);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Nro de Documento";
+            this.label1.Text = "RUC";
             // 
             // btnCancelar
             // 
@@ -226,6 +210,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(1018, 300);
             this.dataGridView1.TabIndex = 8;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(174, 24);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Nombre Comercial";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(223, 145);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(243, 32);
+            this.textBox1.TabIndex = 22;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -258,14 +258,14 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chbxEstadoCliente;
-        private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txbNombres;
         private System.Windows.Forms.TextBox tbxNroDocumento;
         private System.Windows.Forms.TextBox tbxDireccion;
         private System.Windows.Forms.Label Direccion;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

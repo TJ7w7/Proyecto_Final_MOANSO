@@ -114,7 +114,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(6, 363);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(322, 156);
+            this.groupBox5.Size = new System.Drawing.Size(354, 156);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehiculo";
@@ -122,7 +122,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 101);
+            this.comboBox1.Location = new System.Drawing.Point(130, 96);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(206, 32);
             this.comboBox1.TabIndex = 8;
@@ -132,9 +132,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(17, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 24);
+            this.label6.Size = new System.Drawing.Size(98, 24);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Placa:";
+            this.label6.Text = "Matricula:";
             // 
             // label7
             // 
@@ -147,7 +147,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(103, 42);
+            this.textBox6.Location = new System.Drawing.Point(130, 39);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(206, 32);
             this.textBox6.TabIndex = 6;

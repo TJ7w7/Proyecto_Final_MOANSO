@@ -22,5 +22,20 @@ namespace Proyecto_Final_MOANSO
             FrmBuscarProducto buscarProducto = new FrmBuscarProducto();
             buscarProducto.Show();
         }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
