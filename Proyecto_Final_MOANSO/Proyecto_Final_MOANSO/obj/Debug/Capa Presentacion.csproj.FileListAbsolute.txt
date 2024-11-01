@@ -1,0 +1,21 @@
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\bin\Debug\Proyecto_Final_MOANSO.exe.config
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\bin\Debug\Proyecto_Final_MOANSO.exe
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\bin\Debug\Proyecto_Final_MOANSO.pdb
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Capa Presentacion.csproj.AssemblyReference.cache
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmAsignacionTrasportista.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmBuscarCliente.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmBuscarOrdenPedido.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmBuscarProducto.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmBuscarTransportista.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmCliente.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmFormasDePago.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmPrincipal.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmProducto.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmRegistroOrdenPedido.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmRegistroVenta.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.FrmTransportista.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.Properties.Resources.resources
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Capa Presentacion.csproj.GenerateResource.cache
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Capa Presentacion.csproj.CoreCompileInputs.cache
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.exe
+D:\SEBASTIÁN UPN\CICLO 6\MODELACIÓN Y ANALISIS SOFTWARE\SEMANA 12\Proyecto_Final_MOANSO-master\Proyecto_Final_MOANSO\obj\Debug\Proyecto_Final_MOANSO.pdb
