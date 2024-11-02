@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -16,6 +17,52 @@ namespace CapaDatos
             get { return _instancia; }
         }
         #endregion Singleton
+
+        // Método para obtener las divisiones administrativas
+        public List<EntDivisionesAdministrativas> ObtenerDivisionesAdministrativas()
+        {
+            List<EntDivisionesAdministrativas> lista = new List<EntDivisionesAdministrativas>();
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                string query = "SELECT DivisionesAdministrativasId, Nombre, CodigodeArea, Estado FROM DivisionesAdministrativas";
+                using (SqlCommand cmd = new SqlCommand(query, cn))
+                {
+                    cn.Open();
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            EntDivisionesAdministrativas division = new EntDivisionesAdministrativas
+                            {
+                                DivisionesAdministrativasId = Convert.ToInt32(dr["DivisionesAdministrativasId"]),
+                                Nombre = dr["Nombre"].ToString(),
+                                CodigodeArea = Convert.ToInt32(dr["CodigodeArea"]),
+                                Estado = Convert.ToBoolean(dr["Estado"])
+                            };
+                            lista.Add(division);
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
+
+        public bool CambiarEstadoDivision(int id, bool nuevoEstado)
+        {
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                string query = "UPDATE DivisionesAdministrativas SET Estado = @Estado WHERE DivisionesAdministrativasId = @Id";
+                using (SqlCommand cmd = new SqlCommand(query, cn))
+                {
+                    cmd.Parameters.AddWithValue("@Estado", nuevoEstado);
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    cn.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0; 
+                }
+            }
+        }
 
         public List<string> ObtenerNombres()
         {

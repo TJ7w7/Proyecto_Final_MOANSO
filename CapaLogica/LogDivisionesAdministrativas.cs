@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,16 @@ namespace CapaLogica
         public int ObtenerCodigoDeArea(string nombre)
         {
             return DatDivisionesAdministrativas.Instancia.ObtenerCodigoDeArea(nombre);
+        }
+
+        public List<EntDivisionesAdministrativas> ObtenerDivisionesAdministrativas()
+        {
+            return DatDivisionesAdministrativas.Instancia.ObtenerDivisionesAdministrativas();
+        }
+
+        public bool CambiarEstadoDivision(int id, bool nuevoEstado)
+        {
+            return DatDivisionesAdministrativas.Instancia.CambiarEstadoDivision(id, nuevoEstado);
         }
     }
 }
