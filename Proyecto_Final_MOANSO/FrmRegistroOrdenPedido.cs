@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,72 +19,34 @@ namespace Proyecto_Final_MOANSO
         public FrmRegistroOrdenPedido()
         {
             InitializeComponent();
-            InitializeComboBox();
-
-            txtBRN.Enabled = false;
-            txtNombre.Enabled = false;
-            txtNumTelef.Enabled = false;
-            CbNumReg.Enabled = false;
-            CbNumReg.SelectedIndex = -1;
 
             txtBRN.Text = "de la Empresa";
             txtNombre.Text = "de la Empresa";
             txtNumTelef.Text = "teléfono de la Empresa";
-            CbNumReg.Text = "de la Región";
+            txtRegionCli.Text = "de la Empresa";
+            txtNumTelef.Text = "+82 ";
 
             txtBRN.KeyPress += new KeyPressEventHandler(txtRUC_KeyPress);
             txtNumTelef.KeyPress += new KeyPressEventHandler(txtNúmero_KeyPress);
-            txtBRN.MaxLength = 10; // Limitar la entrada a 10 caracteres
+            txtBRN.MaxLength = 10;
         }
 
-        public class Region
+        private void CargarDatosEnDataGridView()
         {
-            public string Nombre { get; set; }
-            public int Numero { get; set; }
-
-            public override string ToString()
-            {
-                return Numero.ToString();
-            }
+            List<EntPedido> pedidos = ObtenerListaDePedidos(); // Puedes obtenerla de otra fuente si es necesario
+            dgvOrdenPedido.DataSource = pedidos;
         }
 
-        private void InitializeComboBox()
+        private List<EntPedido> ObtenerListaDePedidos()
         {
-            // Crear una lista de regiones y sus números
-            List<Region> regiones = new List<Region>
+            // Aquí puedes obtener datos de prueba o consultar la base de datos más adelante
+            return new List<EntPedido>
             {
-                new Region { Nombre = "Busan", Numero = 1 },
-                new Region { Nombre = "Chungcheong del Norte", Numero = 2 },
-                new Region { Nombre = "Chungcheong del Sur", Numero = 3 },
-                new Region { Nombre = "Daegu", Numero = 4 },
-                new Region { Nombre = "Daejeon", Numero = 5 },
-                new Region { Nombre = "Gangwon", Numero = 6 },
-                new Region { Nombre = "Gwangju", Numero = 7 },
-                new Region { Nombre = "Gyeonggi", Numero = 8 },
-                new Region { Nombre = "Gyeongsang del Norte", Numero = 9 },
-                new Region { Nombre = "Gyeongsang del Sur", Numero = 10 },
-                new Region { Nombre = "Incheon", Numero = 11 },
-                new Region { Nombre = "Jeju", Numero = 12 },
-                new Region { Nombre = "Jeolla del Norte", Numero = 13 },
-                new Region { Nombre = "Jeolla del Sur", Numero = 14 },
-                new Region { Nombre = "Sejong", Numero = 15 },
-                new Region { Nombre = "Seúl", Numero = 16 },
-                new Region { Nombre = "Ulsan", Numero = 17 }
+            new EntPedido { IDPedido = 1, RUC = 123456, Nombre = "Cliente 1", 
+                Region = "Región 1", Celular = 987654321, IDProducto = 101, 
+                Categoria = "Categoría 1", Producto = "Producto 1", Cantidad = 5, 
+                Precio = 100, NumerodeCasa = 12, CalleCorea = "Calle 1", EstadodelPedido = true },
             };
-            CbNumReg.DataSource = regiones;
-            CbNumReg.DisplayMember = "Nombre";
-            CbNumReg.ValueMember = "Numero";
-
-            CbNumReg.SelectedIndexChanged += CbNumReg_SelectedIndexChanged;
-        }
-
-        private void CbNumReg_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CbNumReg.SelectedItem is Region selected)
-            {
-                // Actualizar el ComboBox para mostrar el número de la región
-                CbNumReg.Text = selected.Numero.ToString(); // Mostrar el número
-            }
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
@@ -118,9 +81,10 @@ namespace Proyecto_Final_MOANSO
             txtNombre.Text = string.Empty;
         }
 
-        private void txtNúmero_Click(object sender, EventArgs e)
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            txtNumTelef.Text = string.Empty;
+            FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
+            buscarCliente.Show();
         }
     }
 }
