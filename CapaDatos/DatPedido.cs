@@ -15,10 +15,7 @@ namespace CapaDatos
 
         public static DatPedido Instancia
         {
-            get
-            {
-                return _instancia;
-            }
+            get { return _instancia; }
         }
         #endregion Singleton
 
@@ -40,7 +37,6 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@Producto", pedido.Producto);
                 cmd.Parameters.AddWithValue("@Cantidad", pedido.Cantidad);
                 cmd.Parameters.AddWithValue("@Precio", pedido.Precio);
-                cmd.Parameters.AddWithValue("@NumerodeCasa", pedido.NumerodeCasa);
                 cmd.Parameters.AddWithValue("@CalleCorea", pedido.CalleCorea);
                 cmd.Parameters.AddWithValue("@EstadodelPedido", pedido.EstadodelPedido);
                 cn.Open();

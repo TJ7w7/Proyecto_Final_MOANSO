@@ -18,7 +18,6 @@ namespace CapaEntidad
         public string Producto { get; set; }
         public int Cantidad { get; set; }
         public int Precio { get; set; }
-        public int NumerodeCasa { get; set; }
         public string CalleCorea { get; set; }
         public bool EstadodelPedido { get; set; }
     }

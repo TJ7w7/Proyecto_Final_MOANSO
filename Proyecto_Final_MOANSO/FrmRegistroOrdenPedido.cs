@@ -20,15 +20,13 @@ namespace Proyecto_Final_MOANSO
         {
             InitializeComponent();
 
-            txtBRN.Text = "de la Empresa";
+            txtBRN_RUC.Text = "de la Empresa";
             txtNombre.Text = "de la Empresa";
             txtNumTelef.Text = "teléfono de la Empresa";
-            txtRegionCli.Text = "de la Empresa";
-            txtNumTelef.Text = "+82 ";
 
-            txtBRN.KeyPress += new KeyPressEventHandler(txtRUC_KeyPress);
+            txtBRN_RUC.KeyPress += new KeyPressEventHandler(txtRUC_KeyPress);
             txtNumTelef.KeyPress += new KeyPressEventHandler(txtNúmero_KeyPress);
-            txtBRN.MaxLength = 10;
+            txtBRN_RUC.MaxLength = 10;
         }
 
         private void CargarDatosEnDataGridView()
@@ -45,7 +43,7 @@ namespace Proyecto_Final_MOANSO
             new EntPedido { IDPedido = 1, RUC = 123456, Nombre = "Cliente 1", 
                 Region = "Región 1", Celular = 987654321, IDProducto = 101, 
                 Categoria = "Categoría 1", Producto = "Producto 1", Cantidad = 5, 
-                Precio = 100, NumerodeCasa = 12, CalleCorea = "Calle 1", EstadodelPedido = true },
+                Precio = 100, CalleCorea = "Calle 1", EstadodelPedido = true },
             };
         }
 
@@ -73,7 +71,7 @@ namespace Proyecto_Final_MOANSO
 
         private void txtRUC_Click(object sender, EventArgs e)
         {
-            txtBRN.Text = string.Empty;
+            txtBRN_RUC.Text = string.Empty;
         }
 
         private void txtNombre_Click(object sender, EventArgs e)
@@ -85,6 +83,11 @@ namespace Proyecto_Final_MOANSO
         {
             FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
             buscarCliente.Show();
+        }
+
+        private void FrmRegistroOrdenPedido_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
