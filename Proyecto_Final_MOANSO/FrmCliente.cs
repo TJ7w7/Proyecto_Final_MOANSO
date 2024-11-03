@@ -141,7 +141,9 @@ namespace Proyecto_Final_MOANSO
                 txtBRN_RUC.Text = row.Cells["BRN_RUC"].Value?.ToString() ?? "";
                 txtNombre.Text = row.Cells["Nombre"].Value?.ToString() ?? "";
                 txtDireccion.Text = row.Cells["Direccion"].Value?.ToString() ?? "";
+                cbRegCli.SelectedValue = row.Cells["DivisionesAdministrativasId"].Value;
                 txtNumCli.Text = row.Cells["NumeroContacto"].Value?.ToString() ?? "";
+                
             }
         }
         // Método para modificar un cliente existente

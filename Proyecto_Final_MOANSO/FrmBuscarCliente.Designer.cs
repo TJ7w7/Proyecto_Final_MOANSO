@@ -33,8 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBRN = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
+            this.btnmostrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgridCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,18 +91,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(14, 189);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 26);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Mostrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnsalir
             // 
             this.btnsalir.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,13 +103,25 @@
             this.btnsalir.UseVisualStyleBackColor = true;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
+            // btnmostrar
+            // 
+            this.btnmostrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmostrar.Location = new System.Drawing.Point(14, 173);
+            this.btnmostrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnmostrar.Name = "btnmostrar";
+            this.btnmostrar.Size = new System.Drawing.Size(104, 54);
+            this.btnmostrar.TabIndex = 44;
+            this.btnmostrar.Text = "Mostrar Todos";
+            this.btnmostrar.UseVisualStyleBackColor = true;
+            this.btnmostrar.Click += new System.EventHandler(this.btnmostrar_Click);
+            // 
             // FrmBuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 432);
+            this.Controls.Add(this.btnmostrar);
             this.Controls.Add(this.btnsalir);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBRN);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSeleccionar);
@@ -143,7 +143,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBRN;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.Button btnmostrar;
     }
 }
