@@ -100,6 +100,12 @@
     <Compile Include="FrmProducto.Designer.cs">
       <DependentUpon>FrmProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegiones.Designer.cs">
+      <DependentUpon>FrmRegiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistroOrdenPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{5A212D24-7391-4D41-9226-98335C0E3536}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{4B397D72-1DB6-4F86-AA6C-C40E5A891FC2}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

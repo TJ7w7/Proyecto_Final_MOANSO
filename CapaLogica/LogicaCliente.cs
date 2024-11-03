@@ -11,28 +11,35 @@ namespace CapaLogica
 {
     public class LogicaCliente
     {
-        private DatosCliente datosCliente = new DatosCliente();
-
-        public DataTable ObtenerClientes()
+        private static readonly LogicaCliente _instancia = new LogicaCliente();
+        public static LogicaCliente Instancia
         {
-            return datosCliente.ObtenerTodosLosClientes();
+            get { return _instancia; }
+        }
+        public DataTable ListarClientes()
+        {
+            DatosCliente datCliente = new DatosCliente();
+            return datCliente.ObtenerTodosLosClientes();
+        }
+
+        public bool RegistrarCliente(Cliente cliente)
+        {
+            return DatosCliente.Instancia.insertarCliente(cliente);
         }
 
         public DataTable BuscarClientePorBRN(string brn)
         {
-            return datosCliente.BuscarClienteBRN(brn);
+            return DatosCliente.Instancia.BuscarClienteBRN(brn);
         }
-        public void RegistrarCliente(Cliente cliente)
+        public bool ModificarCliente(Cliente cliente)
         {
-            datosCliente.insertarCliente(cliente);
+            return DatosCliente.Instancia.ModificarCliente(cliente);
         }
-        public void ActualizarCliente(Cliente cliente)
+
+        public bool EliminarCliente(int clienteId)
         {
-            datosCliente.ModificarCliente(cliente);
+            return DatosCliente.Instancia.EliminarCliente(clienteId);
         }
-        public void BorrarCliente(int clienteId)
-        {
-            datosCliente.EliminarCliente(clienteId);
-        }
+
     }
 }

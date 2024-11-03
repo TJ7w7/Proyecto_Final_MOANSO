@@ -12,74 +12,110 @@ namespace CapaDatos
 {
     public class DatosCliente
     {
-        private string connectionString = "Data Source=localhost;Initial Catalog=DB_SistemaVenta;Integrated Security=True;";
+        private static readonly DatosCliente _instancia = new DatosCliente();
+        public static DatosCliente Instancia
+        {
+            get { return _instancia; }
+        }
 
         public DataTable ObtenerTodosLosClientes()
         {
-            string query = "SELECT clienteId, BRN, Nombre, Direccion FROM Cliente";
+
             DataTable tabla = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                adapter.Fill(tabla);
+                string query = "SELECT ClienteId, BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto FROM Cliente";
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
             }
             return tabla;
+
         }
         public DataTable BuscarClienteBRN(string brn)
         {
-            string query = "Select clienteId,BRN, Nombre, Direccion FROM Cliente where BRN = @BRN";
             DataTable tabla = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                command.Parameters.AddWithValue("@BRN", brn);
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-                    adapter.Fill(tabla);
-                }
+                string query = "SELECT ClienteId, BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto FROM Cliente WHERE BRN_RUC = @BRN_RUC";
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.Parameters.AddWithValue("@BRN_RUC", brn);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
             }
             return tabla;
         }
-        public void insertarCliente(Cliente cliente)
+        public bool insertarCliente(Cliente cliente)
         {
-            string query = "INSERT INTO Cliente (BRN, Nombre, Direccion) VALUES (@BRN, @Nombre, @Direccion)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection)) 
+            try
             {
-                command.Parameters.AddWithValue("@BRN", cliente.BRN);
-                command.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                command.Parameters.AddWithValue("@Direccion", cliente.Direccion);
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Cliente (BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto) " +
+                                                    "VALUES (@BRN_RUC, @Nombre, @DivisionesAdministrativasId, @Direccion, @NumeroContacto)", cn);
+                    cmd.Parameters.AddWithValue("@BRN_RUC", cliente.BRN_RUC);
+                    cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
+                    cmd.Parameters.AddWithValue("@DivisionesAdministrativasId", cliente.DivisionesAdministrativasId);
+                    cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
+                    cmd.Parameters.AddWithValue("@NumeroContacto", cliente.NumeroContacto);
 
-                connection.Open();
-                command.ExecuteNonQuery();
+                    cn.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                throw new Exception("Error al registrar el cliente: " + ex.Message);
             }
         }
-        public void ModificarCliente(Cliente cliente)
+        public bool ModificarCliente(Cliente cliente)
         {
-            string query = "UPDATE Cliente SET BRN = @BRN, Nombre = @Nombre, Direccion = @Direccion WHERE clienteId = @clienteId";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@BRN", cliente.BRN);
-                command.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                command.Parameters.AddWithValue("@Direccion", cliente.Direccion);
-                command.Parameters.AddWithValue("@clienteId", cliente.clienteId);
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Cliente SET BRN_RUC = @BRN_RUC, Nombre = @Nombre, DivisionesAdministrativasId = @DivisionesAdministrativasId, Direccion = @Direccion, NumeroContacto = @NumeroContacto WHERE ClienteId = @ClienteId", cn);
+                    cmd.Parameters.AddWithValue("@ClienteId", cliente.ClienteId);
+                    cmd.Parameters.AddWithValue("@BRN_RUC", cliente.BRN_RUC);
+                    cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
+                    cmd.Parameters.AddWithValue("@DivisionesAdministrativasId", cliente.DivisionesAdministrativasId);
+                    cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
+                    cmd.Parameters.AddWithValue("@NumeroContacto", cliente.NumeroContacto);
 
-                connection.Open();
-                command.ExecuteNonQuery();
+                    cn.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
             }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar el cliente: " + ex.Message);
+            }
+
         }
 
-        public void EliminarCliente(int clienteId)
+        public bool EliminarCliente(int clienteId)
         {
-            string query = "DELETE FROM Cliente WHERE ClienteId = @ClienteId";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@clienteId", clienteId);
-                connection.Open();
-                command.ExecuteNonQuery();
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Cliente WHERE ClienteId = @ClienteId", cn);
+                    cmd.Parameters.AddWithValue("@ClienteId", clienteId);
+
+                    cn.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar el cliente: " + ex.Message);
             }
         }
     }

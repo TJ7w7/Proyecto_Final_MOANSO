@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,73 +15,104 @@ namespace Proyecto_Final_MOANSO
 {
     public partial class FrmCliente : Form
     {
+        private LogicaCliente logicacliente = new LogicaCliente();
+        private int clienteIdSeleccionado;
         public FrmCliente()
         {
             InitializeComponent();
             CargarClientes();
+            CargarRegiones();
+
+            cbRegCli.SelectedIndex = -1;
+            txtBRN_RUC.Enabled = false;
+
+            radioRUC.CheckedChanged += radioBRN_CheckedChanged;
+            radioBRN.CheckedChanged += radioBRN_CheckedChanged;
+
         }
 
-        string connectionString = "Data Source=localhost;Initial Catalog=DB_SistemaVenta;Integrated Security=True;";
         private void CargarClientes()
         {
-            string query = "SELECT ClienteId, BRN, Nombre, Direccion FROM Cliente";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            dtgridCliente.DataSource = logicacliente.ListarClientes();
+        }
+        private void CargarRegiones()
+        {
+            try
             {
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                dtgridCliente.DataSource = table;
+                // Obtener la lista de divisiones administrativas
+                List<EntDivisionesAdministrativas> divisiones = LogDivisionesAdministrativas.Instancia.ObtenerDivisionesAdministrativas();
+
+                // Establecer la DataSource del ComboBox
+                cbRegCli.DataSource = divisiones;
+
+                // Establecer las propiedades a mostrar y el valor
+                cbRegCli.DisplayMember = "Nombre";  // La propiedad que se mostrará
+                cbRegCli.ValueMember = "DivisionesAdministrativasId";  // La propiedad que se usará como valor
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos())
+            try
             {
-                return;
+                // Validación para DivisionesAdministrativasId
+                int divisionesAdministrativasId;
+                if (!int.TryParse(txtRegionID.Text, out divisionesAdministrativasId))
+                {
+                    MessageBox.Show("Por favor, selecciona una región válida.");
+                    return;
+                }
+
+                Cliente cliente = new Cliente
+                {
+                    BRN_RUC = txtBRN_RUC.Text,
+                    Nombre = txtNombre.Text,
+                    DivisionesAdministrativasId = divisionesAdministrativasId,
+                    Direccion = txtDireccion.Text,
+                    NumeroContacto = txtNumCli.Text,
+                };
+
+                // Llamar a la capa lógica para registrar el cliente
+                bool registrado = LogicaCliente.Instancia.RegistrarCliente(cliente);
+                CargarClientes();
+                LimpiarCampos();
+
+                if (registrado)
+                {
+                    MessageBox.Show("Cliente registrado con éxito.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el cliente.");
+                }
             }
-
-            string query = "INSERT INTO Cliente (BRN, Nombre, Direccion) VALUES (@BRN, @Nombre, @Direccion)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            catch (Exception ex)
             {
-                command.Parameters.AddWithValue("@BRN", txtBRN.Text);
-                command.Parameters.AddWithValue("@Nombre", txtnombre.Text);
-                command.Parameters.AddWithValue("@Direccion", txtdireccion.Text);
-
-                connection.Open();
-                command.ExecuteNonQuery();
+                MessageBox.Show("Error: " + ex.Message);
             }
-            MessageBox.Show("Cliente registrado correctamente.");
-
-            Limpiar();
-            CargarClientes();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (clienteIdSeleccionado != 0) // Asegurarse de que hay un cliente seleccionado
+            if (clienteIdSeleccionado > 0)
             {
                 ModificarCliente(clienteIdSeleccionado);
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un cliente para modificar.");
+                MessageBox.Show("Seleccione un cliente para modificar.");
             }
-            Limpiar();
-            CargarClientes();
         }
-
-        private int clienteIdSeleccionado;
 
 
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (clienteIdSeleccionado != 0) // Verificar que hay un cliente seleccionado
+            if (clienteIdSeleccionado > 0)
             {
                 var confirmResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este cliente?",
                                                     "Confirmar eliminación",
@@ -92,8 +125,9 @@ namespace Proyecto_Final_MOANSO
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un cliente para eliminar.");
+                MessageBox.Show("Seleccione un cliente para eliminar.");
             }
+
         }
 
         private void dtgridCliente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,96 +136,215 @@ namespace Proyecto_Final_MOANSO
             {
                 DataGridViewRow row = dtgridCliente.Rows[e.RowIndex];
 
-                clienteIdSeleccionado = Convert.ToInt32(row.Cells["ClienteId"].Value);
+                clienteIdSeleccionado = row.Cells["ClienteId"].Value != null ? Convert.ToInt32(row.Cells["ClienteId"].Value) : 0;
 
-                // Mostrar los valores en los textbox
-                txtBRN.Text = row.Cells["BRN"].Value.ToString();
-                txtnombre.Text = row.Cells["Nombre"].Value.ToString();
-                txtdireccion.Text = row.Cells["Direccion"].Value.ToString();
+                txtBRN_RUC.Text = row.Cells["BRN_RUC"].Value?.ToString() ?? "";
+                txtNombre.Text = row.Cells["Nombre"].Value?.ToString() ?? "";
+                txtDireccion.Text = row.Cells["Direccion"].Value?.ToString() ?? "";
+                txtNumCli.Text = row.Cells["NumeroContacto"].Value?.ToString() ?? "";
             }
         }
         // Método para modificar un cliente existente
         private void ModificarCliente(int clienteId)
         {
-            string query = "UPDATE Cliente SET BRN = @BRN, Nombre = @Nombre, Direccion = @Direccion WHERE ClienteId = @ClienteId";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                // Asignación de parámetros
-                command.Parameters.AddWithValue("@BRN", txtBRN.Text);
-                command.Parameters.AddWithValue("@Nombre", txtnombre.Text);
-                command.Parameters.AddWithValue("@Direccion", txtdireccion.Text);
-                command.Parameters.AddWithValue("@ClienteId", clienteId);
+                // Validación para DivisionesAdministrativasId
+                int divisionesAdministrativasId;
+                if (!int.TryParse(txtRegionID.Text, out divisionesAdministrativasId))
+                {
+                    MessageBox.Show("Por favor, selecciona una región válida.");
+                    return;
+                }
 
-                connection.Open();
-                command.ExecuteNonQuery();
+                Cliente cliente = new Cliente
+                {
+                    ClienteId = clienteId,
+                    BRN_RUC = txtBRN_RUC.Text,
+                    Nombre = txtNombre.Text,
+                    DivisionesAdministrativasId = divisionesAdministrativasId,
+                    Direccion = txtDireccion.Text,
+                    NumeroContacto = txtNumCli.Text
+                };
+
+                bool modificado = LogicaCliente.Instancia.ModificarCliente(cliente);
+
+                if (modificado)
+                {
+                    MessageBox.Show("Cliente modificado con éxito.");
+                    CargarClientes();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al modificar el cliente.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
 
-            MessageBox.Show("Cliente modificado correctamente.");
         }
 
         private void EliminarCliente(int clienteId)
         {
-            string deleteQuery = "DELETE FROM Cliente WHERE ClienteId = @ClienteId";
-            string reseedQuery = "DBCC CHECKIDENT ('Cliente', RESEED, 0)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(deleteQuery, connection))
+            try
             {
-                command.Parameters.AddWithValue("@ClienteId", clienteId);
-                connection.Open();
-                command.ExecuteNonQuery();
-            }
+                bool eliminado = LogicaCliente.Instancia.EliminarCliente(clienteId);
 
-            // Verificar si la tabla está vacia
-            int count;
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string countQuery = "SELECT COUNT(*) FROM Cliente";
-                using (SqlCommand command = new SqlCommand(countQuery, connection))
+                if (eliminado)
                 {
-                    connection.Open();
-                    count = (int)command.ExecuteScalar();
+                    MessageBox.Show("Cliente eliminado con éxito.");
+                    CargarClientes();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el cliente.");
                 }
             }
-
-            // Si la tabla está vacia, reiniciar el identity de sql
-            if (count == 0)
+            catch (Exception ex)
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(reseedQuery, connection))
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
+                MessageBox.Show("Error: " + ex.Message);
             }
-
-            MessageBox.Show("Cliente eliminado correctamente.");
-            Limpiar();
-            CargarClientes();
         }
-        private void Limpiar()
+        private void LimpiarCampos()
         {
-            txtBRN.Text = "";
-            txtnombre.Text = "";
-            txtdireccion.Text = "";
-        }
-        private bool ValidarCampos()
-        {
-            if (string.IsNullOrWhiteSpace(txtBRN.Text) ||
-                string.IsNullOrWhiteSpace(txtnombre.Text) ||
-                string.IsNullOrWhiteSpace(txtdireccion.Text))
-            {
-                MessageBox.Show("Por favor, completa todos los campos antes de registrar");
-                return false;
-            }
-            return true;
+            txtBRN_RUC.Clear();
+            txtNombre.Clear();
+            cbRegCli.SelectedIndex = -1;
+            txtDireccion.Clear();
+            txtNumCli.Clear();
+            txtRegionID.Clear();
+            clienteIdSeleccionado = 0;
         }
 
         private void btnsalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnRegiones_Click(object sender, EventArgs e)
+        {
+            FrmRegiones mostrarregiones = new FrmRegiones();
+            mostrarregiones.Show();
+        }
+
+        private void radioBRN_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioRUC.Checked || radioBRN.Checked)
+            {
+                txtBRN_RUC.Clear();
+                txtBRN_RUC.Enabled = true;
+            }
+            else
+            {
+                txtBRN_RUC.Enabled = false;
+            }
+        }
+
+        private void txtNumCli_TextChanged(object sender, EventArgs e)
+        {
+            //formato de número telefónico
+            string telefono = txtNumCli.Text.Replace(" ", "").Replace("+82", "").Trim();
+
+            //Generar espacios
+            if (telefono.Length > 0)
+            {
+                telefono = $"+82 {telefono}";
+                if (telefono.Length > 6)
+                {
+                    telefono = telefono.Insert(6, " ");
+                }
+
+                if (telefono.Length > 11)
+                {
+                    telefono = telefono.Insert(11, " ");
+                }
+            }
+
+            if (telefono.Length > 16)
+            {
+                telefono = telefono.Substring(0, 16);
+            }
+
+            txtNumCli.Text = telefono;
+            txtNumCli.SelectionStart = telefono.Length;
+        }
+
+        private void txtNumCli_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cbRegCli_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRegCli.SelectedItem != null)
+            {
+                var selectedDivision = (EntDivisionesAdministrativas)cbRegCli.SelectedItem;
+                txtRegionID.Text = selectedDivision.DivisionesAdministrativasId.ToString();
+
+                int codigoDeArea = selectedDivision.CodigodeArea;
+                txtNumCli.Text = $"+82 {codigoDeArea} ";
+            }
+            else
+            {
+                txtNumCli.Text = "";
+                txtRegionID.Text = "00";
+            }
+        }
+
+        private void FormatearComoBRN()
+        {
+            // Formato (XXX-XX-XXXXX)
+            string formatoBRN = txtBRN_RUC.Text;
+            formatoBRN = new string(formatoBRN.Where(char.IsDigit).ToArray());
+
+            if (formatoBRN.Length > 10)
+            {
+                formatoBRN = formatoBRN.Substring(0, 10);
+            }
+
+            // Insertar guiones
+            if (formatoBRN.Length > 3)
+            {
+                formatoBRN = formatoBRN.Insert(3, "-");
+            }
+            if (formatoBRN.Length > 6)
+            {
+                formatoBRN = formatoBRN.Insert(6, "-");
+            }
+
+            txtBRN_RUC.Text = formatoBRN;
+            txtBRN_RUC.SelectionStart = formatoBRN.Length;
+        }
+
+        private void FormatearComoRUC()
+        {
+            string formatoRUC = txtBRN_RUC.Text;
+            formatoRUC = new string(formatoRUC.Where(char.IsDigit).ToArray());
+            if (formatoRUC.Length > 10)
+            {
+                formatoRUC = formatoRUC.Substring(0, 10);
+            }
+            txtBRN_RUC.Text = formatoRUC;
+            txtBRN_RUC.SelectionStart = formatoRUC.Length;
+        }
+
+        private void txtBRN_RUC_TextChanged(object sender, EventArgs e)
+        {
+            if (radioRUC.Checked)
+            {
+                FormatearComoRUC();
+            }
+            else if (radioBRN.Checked)
+            {
+                FormatearComoBRN();
+            }
         }
     }
 }

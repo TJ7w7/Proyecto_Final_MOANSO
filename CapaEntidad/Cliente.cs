@@ -8,9 +8,11 @@ namespace CapaEntidad
 {
     public class Cliente
     {
-        public int clienteId { get; set; }
-        public string BRN { get; set; }
+        public int ClienteId { get; set; }
+        public string BRN_RUC { get; set; }
         public string Nombre { get; set; }
+        public int DivisionesAdministrativasId { get; set; }
         public string Direccion { get; set; }
+        public string NumeroContacto { get; set; }
     }
 }
