@@ -5,11 +5,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaEntidad;
 
 namespace CapaDatos
 {
     public class DatCliente
     {
+        private static readonly DatCliente _instancia = new DatCliente();
+        public static DatCliente Instancia
+        {
+            get { return _instancia; }
+        }
+
         public DataTable ObtenerClientes()
         {
             DataTable dtClientes = new DataTable();
@@ -26,21 +33,29 @@ namespace CapaDatos
             return dtClientes;
         }
 
-        public void RegistrarCliente(string brnRuc, string nombre, int divisionesAdministrativasId, string direccion, string numeroContacto)
+        public bool RegistrarCliente(EntCliente cliente)
         {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            try
             {
-                string query = "INSERT INTO Cliente (BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto) " +
-                               "VALUES (@BRN_RUC, @Nombre, @DivisionesAdministrativasId, @Direccion, @NumeroContacto)";
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Cliente (BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto) " +
+                                                    "VALUES (@BRN_RUC, @Nombre, @DivisionesAdministrativasId, @Direccion, @NumeroContacto)", cn);
+                    cmd.Parameters.AddWithValue("@BRN_RUC", cliente.BRN_RUC);
+                    cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
+                    cmd.Parameters.AddWithValue("@DivisionesAdministrativasId", cliente.DivisionesAdministrativasId);
+                    cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
+                    cmd.Parameters.AddWithValue("@NumeroContacto", cliente.NumeroContacto);
 
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.AddWithValue("@BRN_RUC", brnRuc);
-                cmd.Parameters.AddWithValue("@Nombre", nombre);
-                cmd.Parameters.AddWithValue("@DivisionesAdministrativasId", divisionesAdministrativasId);
-                cmd.Parameters.AddWithValue("@Direccion", direccion);
-                cmd.Parameters.AddWithValue("@NumeroContacto", numeroContacto);
-                cn.Open();
-                cmd.ExecuteNonQuery();
+                    cn.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                throw new Exception("Error al registrar el cliente: " + ex.Message);
             }
         }
     }

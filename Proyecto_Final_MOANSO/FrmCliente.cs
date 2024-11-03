@@ -1,4 +1,5 @@
-﻿using CapaLogica;
+﻿using CapaEntidad;
+using CapaLogica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,13 +25,24 @@ namespace Proyecto_Final_MOANSO
             radioRUC.CheckedChanged += radioBRN_CheckedChanged;
             radioBRN.CheckedChanged += radioBRN_CheckedChanged;
         }
-
+        private void CargarClientes()
+        {
+            LogCliente logCliente = new LogCliente();
+            dgvClientesRegistrados.DataSource = logCliente.ListarClientes();
+        }
         private void CargarRegiones()
         {
             try
             {
-                List<string> nombres = LogDivisionesAdministrativas.Instancia.ObtenerNombres();
-                cbRegCli.DataSource = nombres;
+                // Obtener la lista de divisiones administrativas
+                List<EntDivisionesAdministrativas> divisiones = LogDivisionesAdministrativas.Instancia.ObtenerDivisionesAdministrativas();
+
+                // Establecer la DataSource del ComboBox
+                cbRegCli.DataSource = divisiones;
+
+                // Establecer las propiedades a mostrar y el valor
+                cbRegCli.DisplayMember = "Nombre";  // La propiedad que se mostrará
+                cbRegCli.ValueMember = "DivisionesAdministrativasId";  // La propiedad que se usará como valor
             }
             catch (Exception ex)
             {
@@ -128,19 +140,21 @@ namespace Proyecto_Final_MOANSO
             txtNumCli.Text = telefono;
             txtNumCli.SelectionStart = telefono.Length;
         }
+
         private void cbRegCli_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbRegCli.SelectedItem != null)
             {
-                string region = cbRegCli.SelectedItem.ToString();
-                int CodigoDeArea = LogDivisionesAdministrativas.Instancia.ObtenerCodigoDeArea(region);
+                var selectedDivision = (EntDivisionesAdministrativas)cbRegCli.SelectedItem;
+                txtRegionID.Text = selectedDivision.DivisionesAdministrativasId.ToString();
 
-                // Establece el código de área
-                txtNumCli.Text = $"+82 {CodigoDeArea} ";
+                int codigoDeArea = selectedDivision.CodigodeArea;
+                txtNumCli.Text = $"+82 {codigoDeArea} ";
             }
             else
             {
-                txtNumCli.Text = ""; 
+                txtNumCli.Text = "";
+                txtRegionID.Text = "00"; 
             }
         }
 
@@ -152,31 +166,37 @@ namespace Proyecto_Final_MOANSO
             }
         }
 
-        private void CargarClientes()
-        {
-            LogCliente logCliente = new LogCliente();
-            dgvClientesRegistrados.DataSource = logCliente.ListarClientes();
-        }
-
         private void btnAgregarCli_Click(object sender, EventArgs e)
         {
             try
             {
-                string brnRuc = txtBRN_RUC.Text;
-                string nombre = txtNombre.Text;
-                int divisionesAdministrativasId = Convert.ToInt32(cbRegCli.SelectedValue);
-                string direccion = txtDireccion.Text;
-                string numeroContacto = txtNumCli.Text;
+                // Crear objeto EntCliente y llenar con datos del formulario
+                EntCliente cliente = new EntCliente
+                {
+                    BRN_RUC = txtBRN_RUC.Text,
+                    Nombre = txtNombre.Text,
+                    DivisionesAdministrativasId = int.Parse(txtRegionID.Text),
+                    Direccion = txtDireccion.Text,
+                    NumeroContacto = txtBRN_RUC.Text,
+                };
 
-                LogCliente logCliente = new LogCliente();
-                logCliente.AgregarCliente(brnRuc, nombre, divisionesAdministrativasId, direccion, numeroContacto);
-
-                MessageBox.Show("Cliente registrado exitosamente");
+                // Llamar a la capa lógica para registrar el cliente
+                bool registrado = LogCliente.Instancia.RegistrarCliente(cliente);
+                CargarClientes();
                 LimpiarCampos();
+
+                if (registrado)
+                {
+                    MessageBox.Show("Cliente registrado con éxito.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el cliente.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar el cliente: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -187,18 +207,8 @@ namespace Proyecto_Final_MOANSO
             cbRegCli.SelectedIndex = -1; 
             txtDireccion.Clear();
             txtNumCli.Clear();
+            txtRegionID.Clear();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegiones_Click(object sender, EventArgs e)
         {
             FrmRegiones mostrarregiones = new FrmRegiones();

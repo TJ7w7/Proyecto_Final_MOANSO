@@ -37,5 +37,7 @@ namespace CapaLogica
         {
             return DatDivisionesAdministrativas.Instancia.CambiarEstadoDivision(id, nuevoEstado);
         }
+
+
     }
 }

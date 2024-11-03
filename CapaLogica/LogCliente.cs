@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,15 +11,20 @@ namespace CapaLogica
 {
     public class LogCliente
     {
+        private static readonly LogCliente _instancia = new LogCliente();
+        public static LogCliente Instancia
+        {
+            get { return _instancia; }
+        }
         public DataTable ListarClientes()
         {
             DatCliente datCliente = new DatCliente();
             return datCliente.ObtenerClientes();
         }
-        public void AgregarCliente(string brnRuc, string nombre, int divisionesAdministrativasId, string direccion, string numeroContacto)
+
+        public bool RegistrarCliente(EntCliente cliente)
         {
-            DatCliente datCliente = new DatCliente();
-            datCliente.RegistrarCliente(brnRuc, nombre, divisionesAdministrativasId, direccion, numeroContacto);
+            return DatCliente.Instancia.RegistrarCliente(cliente);
         }
     }
 }

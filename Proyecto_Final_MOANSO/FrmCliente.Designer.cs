@@ -50,6 +50,7 @@
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dgvClientesRegistrados = new System.Windows.Forms.DataGridView();
+            this.txtRegionID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesRegistrados)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtRegionID);
             this.groupBox1.Controls.Add(this.btnRegiones);
             this.groupBox1.Controls.Add(this.radioRUC);
             this.groupBox1.Controls.Add(this.radioBRN);
@@ -92,7 +94,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente (Empresa)";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnRegiones
             // 
@@ -132,7 +133,7 @@
             this.cbRegCli.FormattingEnabled = true;
             this.cbRegCli.Location = new System.Drawing.Point(171, 118);
             this.cbRegCli.Name = "cbRegCli";
-            this.cbRegCli.Size = new System.Drawing.Size(207, 27);
+            this.cbRegCli.Size = new System.Drawing.Size(164, 27);
             this.cbRegCli.TabIndex = 25;
             this.cbRegCli.SelectedIndexChanged += new System.EventHandler(this.cbRegCli_SelectedIndexChanged);
             // 
@@ -299,6 +300,13 @@
             this.dgvClientesRegistrados.Size = new System.Drawing.Size(630, 244);
             this.dgvClientesRegistrados.TabIndex = 8;
             // 
+            // txtRegionID
+            // 
+            this.txtRegionID.Location = new System.Drawing.Point(341, 118);
+            this.txtRegionID.Name = "txtRegionID";
+            this.txtRegionID.Size = new System.Drawing.Size(37, 27);
+            this.txtRegionID.TabIndex = 30;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,7 +322,6 @@
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Cliente";
-            this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesRegistrados)).EndInit();
@@ -346,5 +353,6 @@
         private System.Windows.Forms.RadioButton radioRUC;
         private System.Windows.Forms.RadioButton radioBRN;
         private System.Windows.Forms.Button btnRegiones;
+        private System.Windows.Forms.TextBox txtRegionID;
     }
 }
