@@ -23,7 +23,7 @@ namespace CapaLogica
 
         #region metodos
 
-        public List<string> ListarProductos()
+        public List<dtProducto> ListarProductos()
         {
             return dtProducto.Instancia.ListarCliente();
         }
