@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRegionID = new System.Windows.Forms.TextBox();
             this.btnRegiones = new System.Windows.Forms.Button();
             this.radioRUC = new System.Windows.Forms.RadioButton();
             this.radioBRN = new System.Windows.Forms.RadioButton();
@@ -46,25 +46,11 @@
             this.btnEliminarCli = new System.Windows.Forms.Button();
             this.btnModificarCli = new System.Windows.Forms.Button();
             this.btnAgregarCli = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnDeshabilitar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
             this.dgvClientesRegistrados = new System.Windows.Forms.DataGridView();
-            this.txtRegionID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientesRegistrados)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(9, 515);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(66, 32);
-            this.btnNuevo.TabIndex = 0;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -95,9 +81,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente (Empresa)";
             // 
+            // txtRegionID
+            // 
+            this.txtRegionID.Location = new System.Drawing.Point(341, 118);
+            this.txtRegionID.Name = "txtRegionID";
+            this.txtRegionID.Size = new System.Drawing.Size(37, 27);
+            this.txtRegionID.TabIndex = 30;
+            // 
             // btnRegiones
             // 
-            this.btnRegiones.Location = new System.Drawing.Point(453, 114);
+            this.btnRegiones.Location = new System.Drawing.Point(449, 114);
             this.btnRegiones.Name = "btnRegiones";
             this.btnRegiones.Size = new System.Drawing.Size(119, 31);
             this.btnRegiones.TabIndex = 29;
@@ -108,7 +101,7 @@
             // radioRUC
             // 
             this.radioRUC.AutoSize = true;
-            this.radioRUC.Location = new System.Drawing.Point(514, 42);
+            this.radioRUC.Location = new System.Drawing.Point(510, 42);
             this.radioRUC.Name = "radioRUC";
             this.radioRUC.Size = new System.Drawing.Size(58, 23);
             this.radioRUC.TabIndex = 28;
@@ -119,7 +112,7 @@
             // radioBRN
             // 
             this.radioBRN.AutoSize = true;
-            this.radioBRN.Location = new System.Drawing.Point(453, 42);
+            this.radioBRN.Location = new System.Drawing.Point(449, 42);
             this.radioBRN.Name = "radioBRN";
             this.radioBRN.Size = new System.Drawing.Size(57, 23);
             this.radioBRN.TabIndex = 27;
@@ -225,29 +218,31 @@
             // btnEliminarCli
             // 
             this.btnEliminarCli.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCli.Location = new System.Drawing.Point(453, 194);
+            this.btnEliminarCli.Location = new System.Drawing.Point(449, 194);
             this.btnEliminarCli.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarCli.Name = "btnEliminarCli";
             this.btnEliminarCli.Size = new System.Drawing.Size(119, 33);
             this.btnEliminarCli.TabIndex = 10;
             this.btnEliminarCli.Text = "Eliminar";
             this.btnEliminarCli.UseVisualStyleBackColor = true;
+            this.btnEliminarCli.Click += new System.EventHandler(this.btnEliminarCli_Click);
             // 
             // btnModificarCli
             // 
             this.btnModificarCli.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCli.Location = new System.Drawing.Point(453, 154);
+            this.btnModificarCli.Location = new System.Drawing.Point(449, 154);
             this.btnModificarCli.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarCli.Name = "btnModificarCli";
             this.btnModificarCli.Size = new System.Drawing.Size(119, 32);
             this.btnModificarCli.TabIndex = 9;
             this.btnModificarCli.Text = "Modificar";
             this.btnModificarCli.UseVisualStyleBackColor = true;
+            this.btnModificarCli.Click += new System.EventHandler(this.btnModificarCli_Click);
             // 
             // btnAgregarCli
             // 
             this.btnAgregarCli.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCli.Location = new System.Drawing.Point(453, 72);
+            this.btnAgregarCli.Location = new System.Drawing.Point(449, 72);
             this.btnAgregarCli.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarCli.Name = "btnAgregarCli";
             this.btnAgregarCli.Size = new System.Drawing.Size(119, 32);
@@ -256,38 +251,17 @@
             this.btnAgregarCli.UseVisualStyleBackColor = true;
             this.btnAgregarCli.Click += new System.EventHandler(this.btnAgregarCli_Click);
             // 
-            // btnEditar
+            // btn_salir
             // 
-            this.btnEditar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(88, 515);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(66, 32);
-            this.btnEditar.TabIndex = 5;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnDeshabilitar
-            // 
-            this.btnDeshabilitar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(166, 515);
-            this.btnDeshabilitar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeshabilitar.Name = "btnDeshabilitar";
-            this.btnDeshabilitar.Size = new System.Drawing.Size(104, 32);
-            this.btnDeshabilitar.TabIndex = 6;
-            this.btnDeshabilitar.Text = "Deshabilitar";
-            this.btnDeshabilitar.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(573, 514);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(66, 32);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Salir";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_salir.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.Location = new System.Drawing.Point(573, 514);
+            this.btn_salir.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(66, 32);
+            this.btn_salir.TabIndex = 7;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // dgvClientesRegistrados
             // 
@@ -300,24 +274,14 @@
             this.dgvClientesRegistrados.Size = new System.Drawing.Size(630, 244);
             this.dgvClientesRegistrados.TabIndex = 8;
             // 
-            // txtRegionID
-            // 
-            this.txtRegionID.Location = new System.Drawing.Point(341, 118);
-            this.txtRegionID.Name = "txtRegionID";
-            this.txtRegionID.Size = new System.Drawing.Size(37, 27);
-            this.txtRegionID.TabIndex = 30;
-            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 557);
             this.Controls.Add(this.dgvClientesRegistrados);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnDeshabilitar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnNuevo);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -330,12 +294,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnDeshabilitar;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.DataGridView dgvClientesRegistrados;
         private System.Windows.Forms.Button btnEliminarCli;
         private System.Windows.Forms.Button btnModificarCli;

@@ -10,7 +10,7 @@ namespace CapaEntidad
     {
         public int DivisionesAdministrativasId { get; set; }
         public string Nombre { get; set; }
-        public int CodigodeArea { get; set; }
+        public int CodigoArea { get; set; }
         public bool Estado { get; set; }
     }
 }

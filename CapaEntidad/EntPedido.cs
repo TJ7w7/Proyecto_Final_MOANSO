@@ -14,7 +14,6 @@ namespace CapaEntidad
         public string Region { get; set; }
         public int Celular { get; set; }
         public int IDProducto { get; set; }
-        public string Categoria { get; set; }
         public string Producto { get; set; }
         public int Cantidad { get; set; }
         public int Precio { get; set; }

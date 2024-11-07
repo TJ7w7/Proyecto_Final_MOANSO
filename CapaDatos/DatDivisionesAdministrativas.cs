@@ -24,7 +24,7 @@ namespace CapaDatos
             List<EntDivisionesAdministrativas> lista = new List<EntDivisionesAdministrativas>();
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                string query = "SELECT DivisionesAdministrativasId, Nombre, CodigodeArea, Estado FROM DivisionesAdministrativas";
+                string query = "SELECT DivisionesAdministrativasId, Nombre, CodigoArea, Estado FROM DivisionesAdministrativas";
                 using (SqlCommand cmd = new SqlCommand(query, cn))
                 {
                     cn.Open();
@@ -36,7 +36,7 @@ namespace CapaDatos
                             {
                                 DivisionesAdministrativasId = Convert.ToInt32(dr["DivisionesAdministrativasId"]),
                                 Nombre = dr["Nombre"].ToString(),
-                                CodigodeArea = Convert.ToInt32(dr["CodigodeArea"]),
+                                CodigoArea = Convert.ToInt32(dr["CodigoArea"]),
                                 Estado = Convert.ToBoolean(dr["Estado"])
                             };
                             lista.Add(division);
@@ -64,63 +64,24 @@ namespace CapaDatos
             }
         }
 
-        public List<string> ObtenerNombres()
+        public string ObtenerNombreDivisionPorId(int idDivision)
         {
-            List<string> nombres = new List<string>();
-            SqlConnection cn = null;
-            try
+            string nombreDivision = string.Empty;
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                cn = Conexion.Instancia.Conectar();
-                SqlCommand cmd = new SqlCommand("SELECT Nombre FROM DivisionesAdministrativas WHERE Estado = 1", cn);
+                string query = "SELECT Nombre FROM DivisionesAdministrativas WHERE DivisionesAdministrativasId = @id";
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.Parameters.AddWithValue("@id", idDivision);
                 cn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    nombres.Add(dr["Nombre"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al obtener los nombres: " + ex.Message);
-            }
-            finally
-            {
-                if (cn != null && cn.State == System.Data.ConnectionState.Open)
-                {
-                    cn.Close();
-                }
-            }
-            return nombres;
-        }
 
-        public int ObtenerCodigoDeArea(string nombre)
-        {
-            int codigoDeArea = 0;
-            SqlConnection cn = null;
-            try
-            {
-                cn = Conexion.Instancia.Conectar();
-                SqlCommand cmd = new SqlCommand("SELECT CodigodeArea FROM DivisionesAdministrativas WHERE Nombre = @Nombre AND Estado = 1", cn);
-                cmd.Parameters.AddWithValue("@Nombre", nombre);
-                cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    codigoDeArea = Convert.ToInt32(dr["CodigodeArea"]);
+                    nombreDivision = dr["Nombre"].ToString();
                 }
+                dr.Close();
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al obtener el código de área: " + ex.Message);
-            }
-            finally
-            {
-                if (cn != null && cn.State == System.Data.ConnectionState.Open)
-                {
-                    cn.Close();
-                }
-            }
-            return codigoDeArea;
+            return nombreDivision;
         }
     }
 }

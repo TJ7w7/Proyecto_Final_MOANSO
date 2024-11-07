@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNombreCli = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtNumTelef = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtcliid = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBRN_RUC = new System.Windows.Forms.TextBox();
@@ -54,9 +56,14 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbEstadoPed = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtRegionDes = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCalleDes = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtIdRegion = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.cbCalle = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -68,8 +75,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvOrdenPedido = new System.Windows.Forms.DataGridView();
-            this.txtRegionDes = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -80,9 +85,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNombreCli);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.txtNumTelef);
-            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtcliid);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtBRN_RUC);
@@ -96,6 +103,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // txtNombreCli
+            // 
+            this.txtNombreCli.Location = new System.Drawing.Point(86, 63);
+            this.txtNombreCli.Name = "txtNombreCli";
+            this.txtNombreCli.Size = new System.Drawing.Size(224, 27);
+            this.txtNombreCli.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 65);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 19);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Nombre:";
             // 
             // btnBuscarCliente
             // 
@@ -116,18 +140,17 @@
             this.txtNumTelef.TabIndex = 15;
             this.txtNumTelef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNúmero_KeyPress);
             // 
-            // txtNombre
+            // txtcliid
             // 
-            this.txtNombre.Location = new System.Drawing.Point(86, 63);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(224, 27);
-            this.txtNombre.TabIndex = 14;
-            this.txtNombre.Click += new System.EventHandler(this.txtNombre_Click);
+            this.txtcliid.Location = new System.Drawing.Point(86, 105);
+            this.txtcliid.Name = "txtcliid";
+            this.txtcliid.Size = new System.Drawing.Size(224, 27);
+            this.txtcliid.TabIndex = 14;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 151);
+            this.label3.Location = new System.Drawing.Point(19, 151);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 19);
@@ -137,12 +160,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 66);
+            this.label2.Location = new System.Drawing.Point(51, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.Size = new System.Drawing.Size(32, 19);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre:";
+            this.label2.Text = "ID:";
             // 
             // txtBRN_RUC
             // 
@@ -151,7 +174,6 @@
             this.txtBRN_RUC.Name = "txtBRN_RUC";
             this.txtBRN_RUC.Size = new System.Drawing.Size(167, 27);
             this.txtBRN_RUC.TabIndex = 1;
-            this.txtBRN_RUC.Click += new System.EventHandler(this.txtRUC_Click);
             this.txtBRN_RUC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUC_KeyPress);
             // 
             // label1
@@ -297,9 +319,9 @@
             this.label6.Location = new System.Drawing.Point(58, 30);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 19);
+            this.label6.Size = new System.Drawing.Size(32, 19);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Id:";
+            this.label6.Text = "ID:";
             // 
             // label5
             // 
@@ -348,11 +370,14 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.txtRegionDes);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.txtCalleDes);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.txtIdRegion);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.cbCalle);
             this.groupBox5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(678, 24);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
@@ -363,10 +388,61 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Destino";
             // 
+            // txtRegionDes
+            // 
+            this.txtRegionDes.Location = new System.Drawing.Point(73, 64);
+            this.txtRegionDes.Name = "txtRegionDes";
+            this.txtRegionDes.Size = new System.Drawing.Size(165, 27);
+            this.txtRegionDes.TabIndex = 29;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(89, 61);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(0, 19);
+            this.label15.TabIndex = 28;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(10, 31);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(200, 19);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "ID Division Adminsitrativa:";
+            // 
+            // txtCalleDes
+            // 
+            this.txtCalleDes.Location = new System.Drawing.Point(14, 130);
+            this.txtCalleDes.Name = "txtCalleDes";
+            this.txtCalleDes.Size = new System.Drawing.Size(224, 27);
+            this.txtCalleDes.TabIndex = 27;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(10, 66);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 19);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Region:";
+            // 
+            // txtIdRegion
+            // 
+            this.txtIdRegion.Location = new System.Drawing.Point(210, 28);
+            this.txtIdRegion.Name = "txtIdRegion";
+            this.txtIdRegion.Size = new System.Drawing.Size(28, 27);
+            this.txtIdRegion.TabIndex = 25;
+            this.txtIdRegion.TextChanged += new System.EventHandler(this.txtIdRegion_TextChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 95);
+            this.label12.Location = new System.Drawing.Point(10, 103);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 19);
@@ -381,15 +457,6 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(0, 19);
             this.label11.TabIndex = 19;
-            // 
-            // cbCalle
-            // 
-            this.cbCalle.FormattingEnabled = true;
-            this.cbCalle.Location = new System.Drawing.Point(14, 121);
-            this.cbCalle.Margin = new System.Windows.Forms.Padding(2);
-            this.cbCalle.Name = "cbCalle";
-            this.cbCalle.Size = new System.Drawing.Size(224, 27);
-            this.cbCalle.TabIndex = 1;
             // 
             // button6
             // 
@@ -518,23 +585,6 @@
             this.dgvOrdenPedido.Size = new System.Drawing.Size(932, 256);
             this.dgvOrdenPedido.TabIndex = 13;
             // 
-            // txtRegionDes
-            // 
-            this.txtRegionDes.Location = new System.Drawing.Point(14, 58);
-            this.txtRegionDes.Name = "txtRegionDes";
-            this.txtRegionDes.Size = new System.Drawing.Size(224, 27);
-            this.txtRegionDes.TabIndex = 25;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 31);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 19);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Region:";
-            // 
             // FrmRegistroOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,7 +600,6 @@
             this.Name = "FrmRegistroOrdenPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden Pedido";
-            this.Load += new System.EventHandler(this.FrmRegistroOrdenPedido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -596,11 +645,10 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvOrdenPedido;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtcliid;
         private System.Windows.Forms.TextBox txtNumTelef;
         private System.Windows.Forms.TextBox txtIdPedido;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cbCalle;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.TextBox txtCategoria;
@@ -608,6 +656,12 @@
         private System.Windows.Forms.TextBox txtCantidadPro;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtIdRegion;
+        private System.Windows.Forms.TextBox txtCalleDes;
+        private System.Windows.Forms.TextBox txtNombreCli;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtRegionDes;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }

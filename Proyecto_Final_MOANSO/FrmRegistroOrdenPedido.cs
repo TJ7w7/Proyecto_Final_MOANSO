@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaLogica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,32 +20,32 @@ namespace Proyecto_Final_MOANSO
         public FrmRegistroOrdenPedido()
         {
             InitializeComponent();
-
-            txtBRN_RUC.Text = "de la Empresa";
-            txtNombre.Text = "de la Empresa";
-            txtNumTelef.Text = "teléfono de la Empresa";
-
-            txtBRN_RUC.KeyPress += new KeyPressEventHandler(txtRUC_KeyPress);
-            txtNumTelef.KeyPress += new KeyPressEventHandler(txtNúmero_KeyPress);
-            txtBRN_RUC.MaxLength = 10;
         }
 
-        private void CargarDatosEnDataGridView()
+        private void MostrarNombreDivision(int idDivision)
         {
-            List<EntPedido> pedidos = ObtenerListaDePedidos(); // Puedes obtenerla de otra fuente si es necesario
-            dgvOrdenPedido.DataSource = pedidos;
-        }
+            // Llama a la capa lógica para obtener el nombre de la división
+            string nombreDivision = LogDivisionesAdministrativas.Instancia.ObtenerNombreDivisionPorId(idDivision);
 
-        private List<EntPedido> ObtenerListaDePedidos()
-        {
-            // Aquí puedes obtener datos de prueba o consultar la base de datos más adelante
-            return new List<EntPedido>
+            // Muestra el nombre en txtRegionDes o un mensaje si el ID no tiene nombre asociado
+            if (!string.IsNullOrEmpty(nombreDivision))
             {
-            new EntPedido { IDPedido = 1, RUC = 123456, Nombre = "Cliente 1", 
-                Region = "Región 1", Celular = 987654321, IDProducto = 101, 
-                Categoria = "Categoría 1", Producto = "Producto 1", Cantidad = 5, 
-                Precio = 100, CalleCorea = "Calle 1", EstadodelPedido = true },
-            };
+                txtRegionDes.Text = nombreDivision;
+            }
+            else
+            {
+                txtRegionDes.Text = "División no encontrada";
+            }
+        }
+
+        public void LlenarTextBox(EntCliente cliente)
+        {
+            txtcliid.Text = cliente.ClienteId.ToString();
+            txtBRN_RUC.Text = cliente.BRN_RUC;
+            txtNombreCli.Text = cliente.Nombre;
+            txtIdRegion.Text = cliente.DivisionesAdministrativasId.ToString();
+            txtCalleDes.Text = cliente.Direccion;
+            txtNumTelef.Text = cliente.NumeroContacto;
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
@@ -69,25 +70,22 @@ namespace Proyecto_Final_MOANSO
             }
         }
 
-        private void txtRUC_Click(object sender, EventArgs e)
-        {
-            txtBRN_RUC.Text = string.Empty;
-        }
-
-        private void txtNombre_Click(object sender, EventArgs e)
-        {
-            txtNombre.Text = string.Empty;
-        }
-
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
             buscarCliente.Show();
         }
 
-        private void FrmRegistroOrdenPedido_Load(object sender, EventArgs e)
+        private void txtIdRegion_TextChanged(object sender, EventArgs e)
         {
-
+            if (int.TryParse(txtIdRegion.Text, out int idDivision))
+            {
+                MostrarNombreDivision(idDivision);
+            }
+            else
+            {
+                txtRegionDes.Text = "";
+            }
         }
     }
 }

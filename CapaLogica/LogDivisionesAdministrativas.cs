@@ -18,16 +18,6 @@ namespace CapaLogica
         }
         #endregion Singleton
 
-        // Método para obtener los nombres
-        public List<string> ObtenerNombres()
-        {
-            return DatDivisionesAdministrativas.Instancia.ObtenerNombres();
-        }
-        public int ObtenerCodigoDeArea(string nombre)
-        {
-            return DatDivisionesAdministrativas.Instancia.ObtenerCodigoDeArea(nombre);
-        }
-
         public List<EntDivisionesAdministrativas> ObtenerDivisionesAdministrativas()
         {
             return DatDivisionesAdministrativas.Instancia.ObtenerDivisionesAdministrativas();
@@ -38,6 +28,9 @@ namespace CapaLogica
             return DatDivisionesAdministrativas.Instancia.CambiarEstadoDivision(id, nuevoEstado);
         }
 
-
+        public string ObtenerNombreDivisionPorId(int idDivision)
+        {
+            return DatDivisionesAdministrativas.Instancia.ObtenerNombreDivisionPorId(idDivision);
+        }
     }
 }
