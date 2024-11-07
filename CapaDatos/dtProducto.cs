@@ -12,10 +12,7 @@ namespace CapaDatos
     internal class dtProducto
     {
         #region sigleton
-        //Patron Singleton
-        // Variable estática para la instancia
         private static readonly dtProducto _instancia = new dtProducto();
-        //privado para evitar la instanciación directa
         public static dtProducto Instancia
         {
             get
