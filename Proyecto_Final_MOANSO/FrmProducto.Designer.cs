@@ -40,8 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrecioP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbCategoriaP = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbEstadoP = new System.Windows.Forms.CheckBox();
             this.txtNombreP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +54,7 @@
             // 
             this.btnCerrarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarP.Location = new System.Drawing.Point(604, 470);
-            this.btnCerrarP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarP.Name = "btnCerrarP";
             this.btnCerrarP.Size = new System.Drawing.Size(100, 28);
             this.btnCerrarP.TabIndex = 14;
@@ -66,8 +64,8 @@
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(16, 261);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProductos.Location = new System.Drawing.Point(16, 250);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
@@ -78,7 +76,7 @@
             // 
             this.btnDeshabilitarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeshabilitarP.Location = new System.Drawing.Point(200, 470);
-            this.btnDeshabilitarP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeshabilitarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeshabilitarP.Name = "btnDeshabilitarP";
             this.btnDeshabilitarP.Size = new System.Drawing.Size(100, 28);
             this.btnDeshabilitarP.TabIndex = 11;
@@ -89,7 +87,7 @@
             // 
             this.btnEditarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarP.Location = new System.Drawing.Point(113, 470);
-            this.btnEditarP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarP.Name = "btnEditarP";
             this.btnEditarP.Size = new System.Drawing.Size(71, 28);
             this.btnEditarP.TabIndex = 10;
@@ -100,7 +98,7 @@
             // 
             this.btnNuevoP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoP.Location = new System.Drawing.Point(19, 470);
-            this.btnNuevoP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevoP.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevoP.Name = "btnNuevoP";
             this.btnNuevoP.Size = new System.Drawing.Size(71, 28);
             this.btnNuevoP.TabIndex = 9;
@@ -115,8 +113,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtPrecioP);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cmbCategoriaP);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cbEstadoP);
             this.groupBox1.Controls.Add(this.txtNombreP);
             this.groupBox1.Controls.Add(this.label1);
@@ -125,18 +121,18 @@
             this.groupBox1.Controls.Add(this.btnCancelarP);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(17, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(686, 238);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(686, 227);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
             // txtDescripcionP
             // 
-            this.txtDescripcionP.Location = new System.Drawing.Point(111, 191);
-            this.txtDescripcionP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcionP.Location = new System.Drawing.Point(111, 174);
+            this.txtDescripcionP.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionP.Name = "txtDescripcionP";
             this.txtDescripcionP.Size = new System.Drawing.Size(252, 27);
             this.txtDescripcionP.TabIndex = 13;
@@ -144,7 +140,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 193);
+            this.label5.Location = new System.Drawing.Point(13, 174);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 19);
@@ -153,8 +149,8 @@
             // 
             // txtStockP
             // 
-            this.txtStockP.Location = new System.Drawing.Point(111, 111);
-            this.txtStockP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStockP.Location = new System.Drawing.Point(111, 129);
+            this.txtStockP.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockP.Name = "txtStockP";
             this.txtStockP.Size = new System.Drawing.Size(90, 27);
             this.txtStockP.TabIndex = 11;
@@ -162,7 +158,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 74);
+            this.label4.Location = new System.Drawing.Point(13, 84);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 19);
@@ -171,8 +167,8 @@
             // 
             // txtPrecioP
             // 
-            this.txtPrecioP.Location = new System.Drawing.Point(111, 74);
-            this.txtPrecioP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecioP.Location = new System.Drawing.Point(111, 84);
+            this.txtPrecioP.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioP.Name = "txtPrecioP";
             this.txtPrecioP.Size = new System.Drawing.Size(90, 27);
             this.txtPrecioP.TabIndex = 9;
@@ -180,38 +176,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 111);
+            this.label3.Location = new System.Drawing.Point(13, 129);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 19);
             this.label3.TabIndex = 8;
             this.label3.Text = "Precio:";
             // 
-            // cmbCategoriaP
-            // 
-            this.cmbCategoriaP.FormattingEnabled = true;
-            this.cmbCategoriaP.Location = new System.Drawing.Point(111, 147);
-            this.cmbCategoriaP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cmbCategoriaP.Name = "cmbCategoriaP";
-            this.cmbCategoriaP.Size = new System.Drawing.Size(194, 27);
-            this.cmbCategoriaP.TabIndex = 7;
-            this.cmbCategoriaP.SelectedIndexChanged += new System.EventHandler(this.cbxCategoria_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 150);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Categoria:";
-            // 
             // cbEstadoP
             // 
             this.cbEstadoP.AutoSize = true;
             this.cbEstadoP.Location = new System.Drawing.Point(451, 34);
-            this.cbEstadoP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEstadoP.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstadoP.Name = "cbEstadoP";
             this.cbEstadoP.Size = new System.Drawing.Size(75, 23);
             this.cbEstadoP.TabIndex = 5;
@@ -221,7 +197,7 @@
             // txtNombreP
             // 
             this.txtNombreP.Location = new System.Drawing.Point(111, 35);
-            this.txtNombreP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreP.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreP.Name = "txtNombreP";
             this.txtNombreP.Size = new System.Drawing.Size(194, 27);
             this.txtNombreP.TabIndex = 4;
@@ -240,7 +216,7 @@
             // 
             this.btnAgregarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarP.Location = new System.Drawing.Point(586, 53);
-            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarP.Name = "btnAgregarP";
             this.btnAgregarP.Size = new System.Drawing.Size(81, 31);
             this.btnAgregarP.TabIndex = 0;
@@ -251,7 +227,7 @@
             // 
             this.btnModificarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarP.Location = new System.Drawing.Point(586, 103);
-            this.btnModificarP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarP.Name = "btnModificarP";
             this.btnModificarP.Size = new System.Drawing.Size(81, 32);
             this.btnModificarP.TabIndex = 1;
@@ -262,7 +238,7 @@
             // 
             this.btnCancelarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarP.Location = new System.Drawing.Point(586, 156);
-            this.btnCancelarP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarP.Name = "btnCancelarP";
             this.btnCancelarP.Size = new System.Drawing.Size(81, 28);
             this.btnCancelarP.TabIndex = 2;
@@ -280,7 +256,7 @@
             this.Controls.Add(this.btnDeshabilitarP);
             this.Controls.Add(this.btnEditarP);
             this.Controls.Add(this.btnNuevoP);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Productos";
@@ -298,7 +274,6 @@
         private System.Windows.Forms.Button btnEditarP;
         private System.Windows.Forms.Button btnNuevoP;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbEstadoP;
         private System.Windows.Forms.TextBox txtNombreP;
         private System.Windows.Forms.Label label1;
@@ -307,7 +282,6 @@
         private System.Windows.Forms.Button btnCancelarP;
         private System.Windows.Forms.TextBox txtPrecioP;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbCategoriaP;
         private System.Windows.Forms.TextBox txtStockP;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescripcionP;
