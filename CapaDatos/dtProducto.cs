@@ -9,9 +9,10 @@ using CapaEntidad;
 
 namespace CapaDatos
 {
-    internal class dtProducto
+    public class dtProducto
     {
-        #region sigleton
+        Conexion cn = new Conexion();
+
         private static readonly dtProducto _instancia = new dtProducto();
         public static dtProducto Instancia
         {
@@ -20,46 +21,29 @@ namespace CapaDatos
                 return dtProducto._instancia;
             }
         }
-        #endregion singleton
 
-        #region metodos
-
-        public List<EntProducto> ListarCliente()
+        public bool GuardarProductos(EntProducto producto)
         {
-            SqlCommand cmd = null;
-            List<EntProducto> lista = new List<EntProducto>();
-            try
+            using (SqlConnection connection = cn.Conectar())
             {
-                SqlConnection cn = Conexion.Instancia.Conectar(); 
-                cmd = new SqlCommand("spListaCliente", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    EntProducto Pdto = new EntProducto();
-                    Pdto.Productoid = Convert.ToInt32(dr["idProducto"]);
-                    Pdto.Nombre = dr["Nombre"].ToString();
-                    Pdto.Descripcion = dr["Descripcion"].ToString();
-                    Pdto.Precio = Convert.ToInt32(dr["Precio"]);
-                    Pdto.Stock = Convert.ToInt32(dr["Stock"]);
-                    Pdto.Porcentaje = Convert.ToInt32(dr["Procentaje"]);
-                    Pdto.IGV = Convert.ToInt32(dr["IGV"]);
-                    Pdto.Descontinuado = Convert.ToBoolean(dr["Descontinuado"]);
-                    lista.Add(Pdto);
-                }
+                string query = "INSERT INTO Producto (Nombre, Descripcion, Precio, Stock, IGV, Descontinuado, Imagen) " +
+                               "VALUES (@Nombre, @Descripcion, @Precio, @Stock, @IGV, @Descontinuado, @Imagen)";
 
+                SqlCommand gp = new SqlCommand(query, connection);
+                gp.Parameters.AddWithValue("@Nombre", producto.Nombre);
+                gp.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
+                gp.Parameters.AddWithValue("@Precio", producto.Precio);
+                gp.Parameters.AddWithValue("@Stock", producto.Stock);
+                gp.Parameters.AddWithValue("@IGV", producto.IGV);
+                gp.Parameters.AddWithValue("@Descontinuado", producto.Descontinuado);
+                gp.Parameters.AddWithValue("@Imagen", producto.Imagen);
+
+                connection.Open();
+                int rowsAffected = gp.ExecuteNonQuery();
+
+                return rowsAffected > 0;
             }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return lista;
         }
-        #endregion singleton
+
     }
 }

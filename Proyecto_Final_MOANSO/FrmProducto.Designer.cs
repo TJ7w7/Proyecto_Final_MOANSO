@@ -222,6 +222,7 @@
             this.btnAgregarP.TabIndex = 0;
             this.btnAgregarP.Text = "Agregar";
             this.btnAgregarP.UseVisualStyleBackColor = true;
+            this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
             // 
             // btnModificarP
             // 

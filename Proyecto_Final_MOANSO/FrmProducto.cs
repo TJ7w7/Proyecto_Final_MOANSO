@@ -17,7 +17,7 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
         }
 
-        private void cbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAgregarP_Click(object sender, EventArgs e)
         {
 
         }
