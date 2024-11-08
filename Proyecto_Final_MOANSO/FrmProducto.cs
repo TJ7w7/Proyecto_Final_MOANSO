@@ -19,7 +19,7 @@ namespace Proyecto_Final_MOANSO
 
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
-
+            d
         }
     }
 }
