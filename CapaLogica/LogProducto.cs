@@ -19,7 +19,7 @@ namespace CapaLogica
                 return LogProducto._instancia;
             }
         }
-        public void GuardarProductosDesdeFormulario(DataGridView dgv)
+        public void GuardarProductos(DataGridView dgv)
         {
             foreach (DataGridViewRow row in dgv.Rows)
             {
@@ -29,6 +29,8 @@ namespace CapaLogica
                     {
                         Nombre = row.Cells["Nombre"].Value?.ToString() ?? string.Empty,
                         Descripcion = row.Cells["Descripcion"].Value?.ToString() ?? string.Empty,
+                        Peso = row.Cells["Peso"].Value?.ToString() ?? string.Empty,
+                        Color = row.Cells["Color"].Value?.ToString() ?? string.Empty,
                         Precio = Convert.ToDecimal(row.Cells["Precio"].Value ?? 0),
                         Stock = Convert.ToInt32(row.Cells["Stock"].Value ?? 0),
                         IGV = Convert.ToDecimal(row.Cells["IGV"].Value ?? 0),
@@ -36,7 +38,7 @@ namespace CapaLogica
                         Imagen = row.Cells["Imagen"].Value as byte[] ?? new byte[0]
                     };
 
-                    dtProducto.Instancia.GuardarProductos(producto);
+                    dtProducto.Instancia.GuardaProducto(producto);
                 }
             }
         }

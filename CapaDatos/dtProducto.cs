@@ -22,7 +22,7 @@ namespace CapaDatos
             }
         }
 
-        public bool GuardarProductos(EntProducto producto)
+        public bool GuardaProducto(EntProducto producto)
         {
             using (SqlConnection connection = cn.Conectar())
             {
@@ -32,6 +32,8 @@ namespace CapaDatos
                 SqlCommand gp = new SqlCommand(query, connection);
                 gp.Parameters.AddWithValue("@Nombre", producto.Nombre);
                 gp.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
+                gp.Parameters.AddWithValue("@Peso", producto.Peso);
+                gp.Parameters.AddWithValue("@Color", producto.Color);
                 gp.Parameters.AddWithValue("@Precio", producto.Precio);
                 gp.Parameters.AddWithValue("@Stock", producto.Stock);
                 gp.Parameters.AddWithValue("@IGV", producto.IGV);

@@ -20,7 +20,7 @@ namespace CapaDatos
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "Data Source=localhost; Initial Catalog = DB_SistemaVenta;" + "Integrated Security=true";
+                cn.ConnectionString = "Data Source=DESKTOP-KESOU6D; Initial Catalog = DB_SistemaVenta;" + "Integrated Security=true";
             }
             catch (SqlException ex)
             {
