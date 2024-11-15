@@ -17,7 +17,7 @@ namespace CapaDatos
         public SqlConnection Conectar()
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source = Initial Catalog = DB_SistemaVenta Integrated Security=true";
+            cn.ConnectionString = "Data Source=localhost;Initial Catalog=DB_SistemaVenta;Integrated Security=True";
             return cn;
         }
     }

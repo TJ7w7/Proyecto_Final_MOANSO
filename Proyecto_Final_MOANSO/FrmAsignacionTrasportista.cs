@@ -17,16 +17,16 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
         }
 
-        private void btnBuscarOrdenPedido_Click(object sender, EventArgs e)
-        {
-            FrmBuscarOrdenPedido buscarOrdenPedido = new FrmBuscarOrdenPedido();
-            buscarOrdenPedido.Show();
-        }
-
         private void btnBuscarTransportista_Click(object sender, EventArgs e)
         {
             FrmBuscarTransportista buscarTransportista = new FrmBuscarTransportista();
             buscarTransportista.Show();
+        }
+
+        private void btnBuscarOrdenPedido_Click(object sender, EventArgs e)
+        {
+            FrmBuscarOrdenPedido buscarOrdenPedido = new FrmBuscarOrdenPedido();
+            buscarOrdenPedido.Show();
         }
     }
 }
