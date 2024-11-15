@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente Juridico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente Juridico.Designer.cs">
+      <DependentUpon>Cliente Juridico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente Natural.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente Natural.Designer.cs">
+      <DependentUpon>Cliente Natural.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAsignacionTrasportista.cs">
       <SubType>Form</SubType>
     </Compile>
