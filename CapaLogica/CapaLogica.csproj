@@ -42,9 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="LogCategoria.cs" />
     <Compile Include="LogCliente.cs" />
     <Compile Include="LogDivisionesAdministrativas.cs" />
+    <Compile Include="LogMoneda.cs" />
     <Compile Include="LogPedido.cs" />
+    <Compile Include="LogSabores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

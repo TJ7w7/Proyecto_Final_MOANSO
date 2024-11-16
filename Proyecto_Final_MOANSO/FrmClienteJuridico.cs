@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Proyecto_Final_MOANSO
 {
-    public partial class FrmCliente : Form
+    public partial class FrmClienteJuridico : Form
     {
         private int clienteIdSeleccionado;
-        public FrmCliente()
+        public FrmClienteJuridico()
         {
             InitializeComponent();
             CargarRegiones();

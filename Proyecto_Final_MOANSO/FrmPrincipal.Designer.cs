@@ -47,6 +47,8 @@
             this.registroFormasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignacionTrasportistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroAsignacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saboresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,14 +81,14 @@
             // registroPedidoToolStripMenuItem
             // 
             this.registroPedidoToolStripMenuItem.Name = "registroPedidoToolStripMenuItem";
-            this.registroPedidoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.registroPedidoToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.registroPedidoToolStripMenuItem.Text = "Registro Pedido";
             this.registroPedidoToolStripMenuItem.Click += new System.EventHandler(this.registroPedidoToolStripMenuItem_Click);
             // 
             // buscarPedidoToolStripMenuItem
             // 
             this.buscarPedidoToolStripMenuItem.Name = "buscarPedidoToolStripMenuItem";
-            this.buscarPedidoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.buscarPedidoToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.buscarPedidoToolStripMenuItem.Text = "Buscar Pedido";
             this.buscarPedidoToolStripMenuItem.Click += new System.EventHandler(this.buscarPedidoToolStripMenuItem_Click);
             // 
@@ -101,7 +103,7 @@
             // registroVentaToolStripMenuItem
             // 
             this.registroVentaToolStripMenuItem.Name = "registroVentaToolStripMenuItem";
-            this.registroVentaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.registroVentaToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.registroVentaToolStripMenuItem.Text = "Registro Venta";
             this.registroVentaToolStripMenuItem.Click += new System.EventHandler(this.registroVentaToolStripMenuItem_Click);
             // 
@@ -132,7 +134,9 @@
             // 
             this.productoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroProductoToolStripMenuItem,
-            this.buscarProductoToolStripMenuItem});
+            this.buscarProductoToolStripMenuItem,
+            this.categoriasToolStripMenuItem,
+            this.saboresToolStripMenuItem});
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.productoToolStripMenuItem.Text = "Productos";
@@ -140,14 +144,14 @@
             // registroProductoToolStripMenuItem
             // 
             this.registroProductoToolStripMenuItem.Name = "registroProductoToolStripMenuItem";
-            this.registroProductoToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.registroProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.registroProductoToolStripMenuItem.Text = "Registro Producto";
             this.registroProductoToolStripMenuItem.Click += new System.EventHandler(this.registroProductoToolStripMenuItem_Click);
             // 
             // buscarProductoToolStripMenuItem
             // 
             this.buscarProductoToolStripMenuItem.Name = "buscarProductoToolStripMenuItem";
-            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.buscarProductoToolStripMenuItem.Text = "Buscar Producto";
             this.buscarProductoToolStripMenuItem.Click += new System.EventHandler(this.buscarProductoToolStripMenuItem_Click);
             // 
@@ -204,6 +208,20 @@
             this.registroAsignacionToolStripMenuItem.Text = "Registro Asignacion";
             this.registroAsignacionToolStripMenuItem.Click += new System.EventHandler(this.registroAsignacionToolStripMenuItem_Click);
             // 
+            // categoriasToolStripMenuItem
+            // 
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
+            // 
+            // saboresToolStripMenuItem
+            // 
+            this.saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
+            this.saboresToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saboresToolStripMenuItem.Text = "Sabores";
+            this.saboresToolStripMenuItem.Click += new System.EventHandler(this.saboresToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,6 +260,8 @@
         private System.Windows.Forms.ToolStripMenuItem buscarPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignacionTrasportistaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroAsignacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saboresToolStripMenuItem;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Final_MOANSO
 {
-    partial class FrmCliente
+    partial class FrmClienteJuridico
     {
         /// <summary>
         /// Required designer variable.

@@ -19,7 +19,7 @@ namespace Proyecto_Final_MOANSO
 
         private void registroClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCliente c = new FrmCliente();
+            FrmClienteJuridico c = new FrmClienteJuridico();
             c.Show();
         }
 
@@ -81,6 +81,18 @@ namespace Proyecto_Final_MOANSO
         {
             FrmRegistroVenta registroVenta = new FrmRegistroVenta();
             registroVenta.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCategoria categoria = new FrmCategoria();
+            categoria.Show();
+        }
+
+        private void saboresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSabores sabores = new FrmSabores();
+            sabores.Show();
         }
     }
 }
