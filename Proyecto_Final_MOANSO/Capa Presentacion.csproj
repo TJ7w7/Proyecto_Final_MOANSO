@@ -76,6 +76,12 @@
     <Compile Include="FrmBuscarTransportista.Designer.cs">
       <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCategoriaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCategoriaProducto.Designer.cs">
+      <DependentUpon>FrmCategoriaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="FrmRegistroVenta.Designer.cs">
       <DependentUpon>FrmRegistroVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSaborProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaborProducto.Designer.cs">
+      <DependentUpon>FrmSaborProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTransportista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,9 @@
     <EmbeddedResource Include="FrmBuscarTransportista.resx">
       <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCategoriaProducto.resx">
+      <DependentUpon>FrmCategoriaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroVenta.resx">
       <DependentUpon>FrmRegistroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSaborProducto.resx">
+      <DependentUpon>FrmSaborProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTransportista.resx">
       <DependentUpon>FrmTransportista.cs</DependentUpon>

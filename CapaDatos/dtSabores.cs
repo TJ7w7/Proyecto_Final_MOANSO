@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class dtCategoria
+    public class dtSabores
     {
         Conexion cn = new Conexion();
 
-        private static readonly dtCategoria _instancia = new dtCategoria();
-        public static dtCategoria Instancia
+        private static readonly dtSabores _instancia = new dtSabores();
+        public static dtSabores Instancia
         {
             get
             {
-                return dtCategoria._instancia;
+                return dtSabores._instancia;
             }
         }
 
-        public bool GuardaCategoria(EntCategoria categoria)
+        public bool GuardarSabores(EntSabores sabores)
         {
             using (SqlConnection connection = cn.Conectar())
             {
-                string query = "INSERT INTO Categoria (Nombre, Estado) " +
+                string query = "INSERT INTO Sabores (Nombre, Estado) " +
                                "VALUES (@Nombre, @Estado)";
 
                 SqlCommand gp = new SqlCommand(query, connection);
-                gp.Parameters.AddWithValue("@Nombre", categoria.Nombre);
-                gp.Parameters.AddWithValue("@Estado", categoria.Estado);
+                gp.Parameters.AddWithValue("@Nombre", sabores.Nombre);
+                gp.Parameters.AddWithValue("@Estado", sabores.Estado);
 
                 connection.Open();
                 int rowsAffected = gp.ExecuteNonQuery();
@@ -38,16 +38,16 @@ namespace CapaDatos
                 return rowsAffected > 0;
             }
         }
-        public bool ActualizarCategoria(EntCategoria categoria)
+        public bool ModificarSabores(EntSabores sabores)
         {
             using (SqlConnection connection = cn.Conectar())
             {
-                string query = "UPDATE Categoria SET Nombre = @Nombre, Estado = @Estado WHERE CategoriaId = @CategoriaId";
+                string query = "UPDATE Sabores SET Nombre = @Nombre, Estado = @Estado WHERE SaboresId = @SaboresId";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@CategoriaId", categoria.CategoriaId);
-                cmd.Parameters.AddWithValue("@Nombre", categoria.Nombre);
-                cmd.Parameters.AddWithValue("@Estado", categoria.Estado);
+                cmd.Parameters.AddWithValue("@SaboresId", sabores.SaboresId);
+                cmd.Parameters.AddWithValue("@Nombre", sabores.Nombre);
+                cmd.Parameters.AddWithValue("@Estado", sabores.Estado);
 
                 connection.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -55,27 +55,27 @@ namespace CapaDatos
                 return rowsAffected > 0;
             }
         }
-        public bool EliminarCategoria(int categoriaId)
+        public bool EliminarSabores(int saboresid)
         {
             using (SqlConnection connection = cn.Conectar())
             {
-                string query = "DELETE FROM Categoria WHERE CategoriaId = @CategoriaId";
+                string query = "DELETE FROM Sabores WHERE SaboresId = @SaboresId";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@CategoriaId", categoriaId);
+                cmd.Parameters.AddWithValue("@SaboresId", saboresid);
 
                 connection.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
 
-                return rowsAffected > 0; // Retorna true si se eliminó correctamente
+                return rowsAffected > 0; 
             }
         }
-        public List<EntCategoria> ListarCategorias()
+        public List<EntSabores> ListarSabores()
         {
-            List<EntCategoria> lista = new List<EntCategoria>();
+            List<EntSabores> listaS = new List<EntSabores>();
             using (SqlConnection connection = cn.Conectar())
             {
-                string query = "SELECT CategoriaId, Nombre, Estado FROM Categoria";
+                string query = "SELECT SaboresId, Nombre, Estado FROM Sabores";
                 SqlCommand cmd = new SqlCommand(query, connection);
 
                 connection.Open();
@@ -83,15 +83,16 @@ namespace CapaDatos
 
                 while (dr.Read())
                 {
-                    lista.Add(new EntCategoria
+                    listaS.Add(new EntSabores
                     {
-                        CategoriaId = Convert.ToInt32(dr["CategoriaId"]),
+                        SaboresId = Convert.ToInt32(dr["SaboresId"]),
                         Nombre = dr["Nombre"].ToString(),
                         Estado = Convert.ToBoolean(dr["Estado"])
                     });
                 }
             }
-            return lista;
+            return listaS;
         }
     }
 }
+

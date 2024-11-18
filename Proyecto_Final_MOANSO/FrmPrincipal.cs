@@ -40,6 +40,16 @@ namespace Proyecto_Final_MOANSO
             FrmBuscarProducto buscarProducto = new FrmBuscarProducto();
             buscarProducto.Show();
         }
+        private void registroCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCategoriaProducto categoria = new FrmCategoriaProducto();
+            categoria.Show();
+        }
+        private void registroSaborToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSaborProducto sabor = new FrmSaborProducto();   
+            sabor.Show();
+        }
 
         private void registroTransportistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -82,5 +92,6 @@ namespace Proyecto_Final_MOANSO
             FrmRegistroVenta registroVenta = new FrmRegistroVenta();
             registroVenta.Show();
         }
+
     }
 }
