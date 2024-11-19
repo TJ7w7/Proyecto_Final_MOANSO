@@ -30,5 +30,20 @@ namespace CapaLogica
         {
             DatCliente.Instancia.EditarClienteJuridico(cj);
         }
+
+        public List<EntClienteNatural> ListarClienteNatural()
+        {
+            return DatCliente.Instancia.listarClienteNatural();
+        }
+
+        public void InsertarClienteNatural(EntCliente c, EntClienteNatural cn)
+        {
+            DatCliente.Instancia.InsertarClienteNatural(c, cn);
+        }
+
+        public void EditarClienteNatural(EntClienteNatural cn)
+        {
+            DatCliente.Instancia.EditarClienteNatural(cn);
+        }
     }
 }

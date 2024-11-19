@@ -82,6 +82,12 @@
     <Compile Include="FrmBuscarTransportista.Designer.cs">
       <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmClienteNatural.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClienteNatural.Designer.cs">
+      <DependentUpon>FrmClienteNatural.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmFormasDePago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarTransportista.resx">
       <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClienteNatural.resx">
+      <DependentUpon>FrmClienteNatural.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFormasDePago.resx">
       <DependentUpon>FrmFormasDePago.cs</DependentUpon>

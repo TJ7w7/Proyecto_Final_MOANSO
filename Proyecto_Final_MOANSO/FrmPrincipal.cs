@@ -123,5 +123,11 @@ namespace Proyecto_Final_MOANSO
             FrmClienteJuridico clienteJuridico = new FrmClienteJuridico();
             clienteJuridico.Show();
         }
+
+        private void clienteNaturalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClienteNatural clienteNatural = new FrmClienteNatural();
+            clienteNatural.Show();
+        }
     }
 }

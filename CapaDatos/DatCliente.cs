@@ -141,7 +141,7 @@ namespace CapaDatos
         #endregion
 
         #region MetodosClienteNatural
-        public List<EntClienteNatural> listarClienteNaturale()
+        public List<EntClienteNatural> listarClienteNatural()
         {
             SqlCommand cmd = null;
             List<EntClienteNatural> listaClienteNaturale = new List<EntClienteNatural>();
@@ -150,7 +150,7 @@ namespace CapaDatos
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    cmd = new SqlCommand("ListarClientesNaturales", cn); // Procedimiento para obtener solo los clientes naturales
+                    cmd = new SqlCommand("ListarClienteNatural", cn); // Procedimiento para obtener solo los clientes naturales
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cn.Open();
@@ -161,9 +161,12 @@ namespace CapaDatos
                         EntClienteNatural cli = new EntClienteNatural();
                         cli.ClienteId = Convert.ToInt32(dr["ClienteId"]);
                         cli.TipoDocumentoId = Convert.ToInt32(dr["TipoDocumentoId"]);
-                        cli.NumeroDocumento = dr["NroDocumento"].ToString();
+                        cli.TipoDocumento = dr["TipoDocumento"].ToString();
+                        cli.NumeroDocumento = dr["NumeroDocumento"].ToString();
                         cli.PaisId = Convert.ToInt32(dr["PaisId"]);
+                        cli.Pais = dr["Pais"].ToString();
                         cli.RegionId = Convert.ToInt32(dr["RegionId"]);
+                        cli.Region = dr["Region"].ToString();
                         cli.Direccion = dr["Direccion"].ToString();
                         cli.NumeroContacto = dr["NumeroContacto"].ToString();
                         cli.Estado = Convert.ToBoolean(dr["Estado"]);
@@ -224,6 +227,43 @@ namespace CapaDatos
                 throw ex;
             }
             return inserta;
+        }
+
+        public bool EditarClienteNatural(EntClienteNatural cliente)
+        {
+            bool edita = false;
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    using (SqlCommand cmd = new SqlCommand("EditarClienteNatural", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@clienteId", cliente.ClienteId);
+                        cmd.Parameters.AddWithValue("@tipoDocumentoId", cliente.TipoDocumentoId);
+                        cmd.Parameters.AddWithValue("@numeroDocumento", cliente.NumeroDocumento);
+                        cmd.Parameters.AddWithValue("@paisId", cliente.PaisId);
+                        cmd.Parameters.AddWithValue("@regionId", cliente.RegionId);
+                        cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                        cmd.Parameters.AddWithValue("@numeroContacto", cliente.NumeroContacto);
+                        cmd.Parameters.AddWithValue("@estado", cliente.Estado);
+                        cmd.Parameters.AddWithValue("@nombres", cliente.Nombres);
+                        cmd.Parameters.AddWithValue("@apellidos", cliente.Apellidos);
+
+
+                        cn.Open();
+                        int i = cmd.ExecuteNonQuery();
+                        edita = i > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al editar el cliente jurídico.", ex);
+            }
+
+            return edita;
         }
         #endregion
 

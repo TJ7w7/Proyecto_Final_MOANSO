@@ -34,7 +34,7 @@ namespace Proyecto_Final_MOANSO
             dgvClienteJuridico.Columns["TipoDocumentoId"].DisplayIndex = 1;
             dgvClienteJuridico.Columns["TipoDocumento"].DisplayIndex = 2;
             dgvClienteJuridico.Columns["NumeroDocumento"].DisplayIndex = 3;
-            dgvClienteJuridico.Columns["RazonSocial"].DisplayIndex = 4; // no se que pasa xddd
+            dgvClienteJuridico.Columns["RazonSocial"].DisplayIndex = 4;
             dgvClienteJuridico.Columns["PaisId"].DisplayIndex = 5;
             dgvClienteJuridico.Columns["Pais"].DisplayIndex = 6;
             dgvClienteJuridico.Columns["RegionId"].DisplayIndex = 7;
@@ -109,7 +109,7 @@ namespace Proyecto_Final_MOANSO
                 {
                     MessageBox.Show("Error" + ex);
                 }
-                CargarRegion();
+                CargarClienteJuridico();
                 Limpiar();
             }
         }
@@ -144,7 +144,6 @@ namespace Proyecto_Final_MOANSO
                 Limpiar();
             }
         }
-
         private void dgvClienteJuridico_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaActual = dgvClienteJuridico.Rows[e.RowIndex];

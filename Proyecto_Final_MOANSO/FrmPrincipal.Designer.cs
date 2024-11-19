@@ -55,6 +55,7 @@
             this.regionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteJuridicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteNaturalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,7 +237,8 @@
             this.paisToolStripMenuItem,
             this.regionToolStripMenuItem,
             this.tipoDocumentoToolStripMenuItem,
-            this.clienteJuridicoToolStripMenuItem});
+            this.clienteJuridicoToolStripMenuItem,
+            this.clienteNaturalToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -275,6 +277,13 @@
             this.clienteJuridicoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.clienteJuridicoToolStripMenuItem.Text = "ClienteJuridico";
             this.clienteJuridicoToolStripMenuItem.Click += new System.EventHandler(this.clienteJuridicoToolStripMenuItem_Click);
+            // 
+            // clienteNaturalToolStripMenuItem
+            // 
+            this.clienteNaturalToolStripMenuItem.Name = "clienteNaturalToolStripMenuItem";
+            this.clienteNaturalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clienteNaturalToolStripMenuItem.Text = "ClienteNatural";
+            this.clienteNaturalToolStripMenuItem.Click += new System.EventHandler(this.clienteNaturalToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -322,6 +331,7 @@
         private System.Windows.Forms.ToolStripMenuItem regionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDocumentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteJuridicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteNaturalToolStripMenuItem;
     }
 }
 
