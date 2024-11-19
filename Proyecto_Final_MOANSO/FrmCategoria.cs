@@ -19,7 +19,6 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
             CargarCategoria();
         }
-
         public void CargarCategoria()
         {
             dgvCategoria.DataSource = LogCategoria.Instancia.listarCategoria();
@@ -31,16 +30,30 @@ namespace Proyecto_Final_MOANSO
             txtDescripcion.Text = "";
             cbxEstado.Checked = false;
         }
-
         public string id;
-
-        private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow filaActual = dgvCategoria.Rows[e.RowIndex];
-            id = filaActual.Cells[0].Value.ToString();
-            txtNombre.Text = filaActual.Cells[1].Value.ToString();
-            txtDescripcion.Text = filaActual.Cells[2].Value.ToString();
-            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[3].Value);
+            if (txtNombre.Text == "" && txtDescripcion.Text == "")
+            {
+                MessageBox.Show("Porfavor Complete los datos", "Error");
+            }
+            else
+            {
+                try
+                {
+                    EntCategoria cat = new EntCategoria();
+                    cat.Nombre = txtNombre.Text;
+                    cat.Descripcion = txtDescripcion.Text;
+                    cat.Estado = cbxEstado.Checked;
+                    LogCategoria.Instancia.InsertarCategoria(cat);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
+                }
+                CargarCategoria();
+                Limpiar();
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -69,29 +82,13 @@ namespace Proyecto_Final_MOANSO
             }
         }
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (txtNombre.Text == "" && txtDescripcion.Text == "")
-            {
-                MessageBox.Show("Porfavor Complete los datos", "Error");
-            }
-            else
-            {
-                try
-                {
-                    EntCategoria cat = new EntCategoria();
-                    cat.Nombre = txtNombre.Text;
-                    cat.Descripcion = txtDescripcion.Text;
-                    cat.Estado = cbxEstado.Checked;
-                    LogCategoria.Instancia.InsertarCategoria(cat);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error" + ex);
-                }
-                CargarCategoria();
-                Limpiar();
-            }
+            DataGridViewRow filaActual = dgvCategoria.Rows[e.RowIndex];
+            id = filaActual.Cells[0].Value.ToString();
+            txtNombre.Text = filaActual.Cells[1].Value.ToString();
+            txtDescripcion.Text = filaActual.Cells[2].Value.ToString();
+            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[3].Value);
         }
     }
 }

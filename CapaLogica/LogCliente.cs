@@ -16,34 +16,19 @@ namespace CapaLogica
         {
             get { return _instancia; }
         }
-        public DataTable ListarClientes()
+        public List<EntClienteJuridico> ListarClienteJuridico()
         {
-            DatCliente datCliente = new DatCliente();
-            return datCliente.ObtenerClientes();
+            return DatCliente.Instancia.ListarClienteJuridico();
         }
 
-        public bool RegistrarCliente(EntCliente cliente)
+        public void InsertarClienteJuridico(EntCliente c, EntClienteJuridico cj)
         {
-            return DatCliente.Instancia.RegistrarCliente(cliente);
+            DatCliente.Instancia.InsertarClienteJuridico(c, cj);
         }
 
-        public DataTable BuscarClientePorBRN(string brn)
+        public void EditarClienteJuridico(EntClienteJuridico cj)
         {
-            return DatCliente.Instancia.BuscarClienteBRN(brn);
-        }
-        public bool ModificarCliente(EntCliente cliente)
-        {
-            return DatCliente.Instancia.ModificarCliente(cliente);
-        }
-
-        public bool EliminarCliente(int clienteId)
-        {
-            return DatCliente.Instancia.EliminarCliente(clienteId);
-        }
-
-        public EntCliente ObtenerClientePorId(int clienteid)
-        {
-            return DatCliente.Instancia.ObtenerClientePorId(clienteid);
+            DatCliente.Instancia.EditarClienteJuridico(cj);
         }
     }
 }

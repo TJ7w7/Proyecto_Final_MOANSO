@@ -40,6 +40,8 @@
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saboresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transportistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroTransportistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarTransportistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +49,12 @@
             this.registroFormasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignacionTrasportistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroAsignacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saboresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monedaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteJuridicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +68,8 @@
             this.productoToolStripMenuItem,
             this.transportistasToolStripMenuItem,
             this.formasDePagoToolStripMenuItem,
-            this.asignacionTrasportistaToolStripMenuItem});
+            this.asignacionTrasportistaToolStripMenuItem,
+            this.registrosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
@@ -144,16 +151,30 @@
             // registroProductoToolStripMenuItem
             // 
             this.registroProductoToolStripMenuItem.Name = "registroProductoToolStripMenuItem";
-            this.registroProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.registroProductoToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.registroProductoToolStripMenuItem.Text = "Registro Producto";
             this.registroProductoToolStripMenuItem.Click += new System.EventHandler(this.registroProductoToolStripMenuItem_Click);
             // 
             // buscarProductoToolStripMenuItem
             // 
             this.buscarProductoToolStripMenuItem.Name = "buscarProductoToolStripMenuItem";
-            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.buscarProductoToolStripMenuItem.Text = "Buscar Producto";
             this.buscarProductoToolStripMenuItem.Click += new System.EventHandler(this.buscarProductoToolStripMenuItem_Click);
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
+            // 
+            // saboresToolStripMenuItem
+            // 
+            this.saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
+            this.saboresToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.saboresToolStripMenuItem.Text = "Sabores";
+            this.saboresToolStripMenuItem.Click += new System.EventHandler(this.saboresToolStripMenuItem_Click);
             // 
             // transportistasToolStripMenuItem
             // 
@@ -208,19 +229,52 @@
             this.registroAsignacionToolStripMenuItem.Text = "Registro Asignacion";
             this.registroAsignacionToolStripMenuItem.Click += new System.EventHandler(this.registroAsignacionToolStripMenuItem_Click);
             // 
-            // categoriasToolStripMenuItem
+            // registrosToolStripMenuItem
             // 
-            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.categoriasToolStripMenuItem.Text = "Categorias";
-            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
+            this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.monedaToolStripMenuItem,
+            this.paisToolStripMenuItem,
+            this.regionToolStripMenuItem,
+            this.tipoDocumentoToolStripMenuItem,
+            this.clienteJuridicoToolStripMenuItem});
+            this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.registrosToolStripMenuItem.Text = "Registros";
             // 
-            // saboresToolStripMenuItem
+            // monedaToolStripMenuItem
             // 
-            this.saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
-            this.saboresToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saboresToolStripMenuItem.Text = "Sabores";
-            this.saboresToolStripMenuItem.Click += new System.EventHandler(this.saboresToolStripMenuItem_Click);
+            this.monedaToolStripMenuItem.Name = "monedaToolStripMenuItem";
+            this.monedaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.monedaToolStripMenuItem.Text = "Moneda";
+            this.monedaToolStripMenuItem.Click += new System.EventHandler(this.monedaToolStripMenuItem_Click);
+            // 
+            // paisToolStripMenuItem
+            // 
+            this.paisToolStripMenuItem.Name = "paisToolStripMenuItem";
+            this.paisToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.paisToolStripMenuItem.Text = "Pais";
+            this.paisToolStripMenuItem.Click += new System.EventHandler(this.paisToolStripMenuItem_Click);
+            // 
+            // regionToolStripMenuItem
+            // 
+            this.regionToolStripMenuItem.Name = "regionToolStripMenuItem";
+            this.regionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.regionToolStripMenuItem.Text = "Region";
+            this.regionToolStripMenuItem.Click += new System.EventHandler(this.regionToolStripMenuItem_Click);
+            // 
+            // tipoDocumentoToolStripMenuItem
+            // 
+            this.tipoDocumentoToolStripMenuItem.Name = "tipoDocumentoToolStripMenuItem";
+            this.tipoDocumentoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tipoDocumentoToolStripMenuItem.Text = "TipoDocumento";
+            this.tipoDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDocumentoToolStripMenuItem_Click);
+            // 
+            // clienteJuridicoToolStripMenuItem
+            // 
+            this.clienteJuridicoToolStripMenuItem.Name = "clienteJuridicoToolStripMenuItem";
+            this.clienteJuridicoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clienteJuridicoToolStripMenuItem.Text = "ClienteJuridico";
+            this.clienteJuridicoToolStripMenuItem.Click += new System.EventHandler(this.clienteJuridicoToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -262,6 +316,12 @@
         private System.Windows.Forms.ToolStripMenuItem registroAsignacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saboresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monedaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDocumentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteJuridicoToolStripMenuItem;
     }
 }
 

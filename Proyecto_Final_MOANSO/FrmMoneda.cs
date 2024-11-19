@@ -21,7 +21,7 @@ namespace Proyecto_Final_MOANSO
         }
         public void CargarMoneda()
         {
-            dgvMoneda.DataSource = LogSabores.Instancia.listarSabores();
+            dgvMoneda.DataSource = LogMoneda.Instancia.listarMoneda();
         }
         public void Limpiar()
         {
@@ -74,7 +74,7 @@ namespace Proyecto_Final_MOANSO
                     mon.TasaCambio = decimal.Parse(txtTasaCambio.Text);
                     mon.FechaActualizacion = DateTime.Parse(dtpFechaActualizacion.Text);
                     mon.Estado = cbxEstado.Checked;
-                    LogMoneda.Instancia.InsertarMoneda(mon);
+                    LogMoneda.Instancia.EditarMoneda(mon);
                 }
                 catch (Exception ex)
                 {
@@ -88,8 +88,8 @@ namespace Proyecto_Final_MOANSO
         {
             DataGridViewRow filaActual = dgvMoneda.Rows[e.RowIndex];
             id = filaActual.Cells[0].Value.ToString();
-            txtNombre.Text = filaActual.Cells[1].Value.ToString();
-            txtCodigoIso.Text = filaActual.Cells[2].Value.ToString();
+            txtCodigoIso.Text = filaActual.Cells[1].Value.ToString();
+            txtNombre.Text = filaActual.Cells[2].Value.ToString();
             txtTasaCambio.Text = filaActual.Cells[3].Value.ToString();
             cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[5].Value);
         }

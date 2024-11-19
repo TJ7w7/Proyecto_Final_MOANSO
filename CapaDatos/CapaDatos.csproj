@@ -47,8 +47,11 @@
     <Compile Include="DatCliente.cs" />
     <Compile Include="DatDivisionesAdministrativas.cs" />
     <Compile Include="DatMoneda.cs" />
+    <Compile Include="DatPais.cs" />
     <Compile Include="DatPedido.cs" />
+    <Compile Include="DatRegion.cs" />
     <Compile Include="DatSabores.cs" />
+    <Compile Include="DatTipoDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

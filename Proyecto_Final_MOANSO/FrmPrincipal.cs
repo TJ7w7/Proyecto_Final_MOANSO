@@ -25,8 +25,7 @@ namespace Proyecto_Final_MOANSO
 
         private void buscarClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
-            buscarCliente.Show();
+            
         }
 
         private void registroProductoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +92,36 @@ namespace Proyecto_Final_MOANSO
         {
             FrmSabores sabores = new FrmSabores();
             sabores.Show();
+        }
+
+        private void monedaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMoneda moneda = new FrmMoneda();
+            moneda.Show();
+        }
+
+        private void paisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPais pais = new FrmPais();
+            pais.Show();
+        }
+
+        private void regionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRegion region = new FrmRegion();
+            region.Show();
+        }
+
+        private void tipoDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTipoDocumento tipoDocumento = new FrmTipoDocumento();
+            tipoDocumento.Show();
+        }
+
+        private void clienteJuridicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClienteJuridico clienteJuridico = new FrmClienteJuridico();
+            clienteJuridico.Show();
         }
     }
 }

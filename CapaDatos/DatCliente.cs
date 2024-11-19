@@ -16,148 +16,217 @@ namespace CapaDatos
         {
             get { return _instancia; }
         }
-
-        public DataTable ObtenerClientes()
+        #region MetodosClienteJuridico
+        public List<EntClienteJuridico> ListarClienteJuridico()
         {
-            DataTable dtClientes = new DataTable();
+            SqlCommand cmd = null;
+            List<EntClienteJuridico> listaClienteJuridico = new List<EntClienteJuridico>();
 
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                string query = "SELECT ClienteId, BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto FROM Cliente";
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cn.Open();
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dtClientes);
-            }
-            return dtClientes;
-        }
-
-        public DataTable BuscarClienteBRN(string brn)
-        {
-            DataTable tabla = new DataTable();
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                string query = "SELECT ClienteId, BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto FROM Cliente WHERE BRN_RUC = @BRN_RUC";
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.AddWithValue("@BRN_RUC", brn);
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-            }
-            return tabla;
-        }
-
-        public bool RegistrarCliente(EntCliente cliente)
-        {
             try
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Cliente (BRN_RUC, Nombre, DivisionesAdministrativasId, Direccion, NumeroContacto) " +
-                                                    "VALUES (@BRN_RUC, @Nombre, @DivisionesAdministrativasId, @Direccion, @NumeroContacto)", cn);
-                    cmd.Parameters.AddWithValue("@BRN_RUC", cliente.BRN_RUC);
-                    cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                    cmd.Parameters.AddWithValue("@DivisionesAdministrativasId", cliente.DivisionesAdministrativasId);
-                    cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
-                    cmd.Parameters.AddWithValue("@NumeroContacto", cliente.NumeroContacto);
+                    cmd = new SqlCommand("ListarClienteJuridico", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     cn.Open();
-                    int filasAfectadas = cmd.ExecuteNonQuery();
-                    return filasAfectadas > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                // Manejo de errores
-                throw new Exception("Error al registrar el cliente: " + ex.Message);
-            }
-        }
 
-        public bool ModificarCliente(EntCliente cliente)
-        {
-            try
-            {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
-                {
-                    SqlCommand cmd = new SqlCommand("UPDATE Cliente SET BRN_RUC = @BRN_RUC, Nombre = @Nombre, DivisionesAdministrativasId = @DivisionesAdministrativasId, Direccion = @Direccion, NumeroContacto = @NumeroContacto WHERE ClienteId = @ClienteId", cn);
-                    cmd.Parameters.AddWithValue("@ClienteId", cliente.ClienteId);
-                    cmd.Parameters.AddWithValue("@BRN_RUC", cliente.BRN_RUC);
-                    cmd.Parameters.AddWithValue("@Nombre", cliente.Nombre);
-                    cmd.Parameters.AddWithValue("@DivisionesAdministrativasId", cliente.DivisionesAdministrativasId);
-                    cmd.Parameters.AddWithValue("@Direccion", cliente.Direccion);
-                    cmd.Parameters.AddWithValue("@NumeroContacto", cliente.NumeroContacto);
-
-                    cn.Open();
-                    int filasAfectadas = cmd.ExecuteNonQuery();
-                    return filasAfectadas > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al modificar el cliente: " + ex.Message);
-            }
-        }
-
-        public bool EliminarCliente(int clienteId)
-        {
-            try
-            {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
-                {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Cliente WHERE ClienteId = @ClienteId", cn);
-                    cmd.Parameters.AddWithValue("@ClienteId", clienteId);
-
-                    cn.Open();
-                    int filasAfectadas = cmd.ExecuteNonQuery();
-                    return filasAfectadas > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al eliminar el cliente: " + ex.Message);
-            }
-        }
-
-        public EntCliente ObtenerClientePorId(int clienteid)
-        {
-            EntCliente cliente = null;
-            SqlConnection conexion = null;
-
-            try
-            {
-                conexion = Conexion.Instancia.Conectar();
-                string query = "SELECT * FROM Cliente WHERE ClienteId = @ClienteId";
-                SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("@ClienteId", clienteid);
-
-                conexion.Open();
-                SqlDataReader reader = comando.ExecuteReader();
-                if (reader.Read())
-                {
-                    cliente = new EntCliente
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
                     {
-                        ClienteId = Convert.ToInt32(reader["ClienteId"]),
-                        BRN_RUC = reader["BRN_RUC"].ToString(),
-                        Nombre = reader["Nombre"].ToString(),
-                        DivisionesAdministrativasId = Convert.ToInt32(reader["DivisionesAdministrativasId"]),
-                        Direccion = reader["Direccion"].ToString(),
-                        NumeroContacto = reader["NumeroContacto"].ToString()
-                    };
+                        EntClienteJuridico cli = new EntClienteJuridico();
+                        cli.ClienteId = Convert.ToInt32(dr["ClienteId"]);
+                        cli.TipoDocumentoId = Convert.ToInt32(dr["TipoDocumentoId"]);
+                        cli.TipoDocumento = dr["TipoDocumento"].ToString();
+                        cli.NumeroDocumento = dr["NumeroDocumento"].ToString();
+                        cli.PaisId = Convert.ToInt32(dr["PaisId"]);
+                        cli.Pais = dr["Pais"].ToString();
+                        cli.RegionId = Convert.ToInt32(dr["RegionId"]);
+                        cli.Region = dr["Region"].ToString();
+                        cli.Direccion = dr["Direccion"].ToString();
+                        cli.NumeroContacto = dr["NumeroContacto"].ToString();
+                        cli.Estado = Convert.ToBoolean(dr["Estado"]);
+                        cli.RazonSocial = dr["RazonSocial"].ToString();
+                        listaClienteJuridico.Add(cli);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al obtener los datos del cliente", ex);
+                throw new Exception("Error al listar clientes jurídicos", ex);
             }
-            finally
+
+            return listaClienteJuridico;
+        }
+        public bool InsertarClienteJuridico(EntCliente cliente, EntClienteJuridico clienteJuridico)
+        {
+            SqlCommand cmd = null;
+            SqlTransaction transaction = null;
+            bool inserta = false;
+
+            try
             {
-                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    conexion.Close();
+                    cn.Open();
+                    transaction = cn.BeginTransaction();
+
+                    cmd = new SqlCommand("InsertarCliente", cn, transaction);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@tipoDocumentoId", cliente.TipoDocumentoId);
+                    cmd.Parameters.AddWithValue("@numeroDocumento", cliente.NumeroDocumento);
+                    cmd.Parameters.AddWithValue("@paisId", cliente.PaisId);
+                    cmd.Parameters.AddWithValue("@regionId", cliente.RegionId);
+                    cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                    cmd.Parameters.AddWithValue("@numeroContacto", cliente.NumeroContacto);
+                    cmd.Parameters.AddWithValue("@estado", cliente.Estado);
+
+                    int clienteId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    cmd = new SqlCommand("InsertarClienteJuridico", cn, transaction);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@clienteId", clienteId);
+                    cmd.Parameters.AddWithValue("@razonSocial", clienteJuridico.RazonSocial);
+                    cmd.ExecuteNonQuery();
+
+                    // Confirmar transacción
+                    transaction.Commit();
+                    inserta = true;
                 }
             }
-            return cliente;
+            catch (Exception ex)
+            {
+                // Revertir la transacción en caso de error
+                transaction?.Rollback();
+                throw ex;
+            }
+            return inserta;
         }
+        public bool EditarClienteJuridico(EntClienteJuridico cliente)
+        {
+            bool edita = false;
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    using (SqlCommand cmd = new SqlCommand("EditarClienteJuridico", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@clienteId", cliente.ClienteId);
+                        cmd.Parameters.AddWithValue("@tipoDocumentoId", cliente.TipoDocumentoId);
+                        cmd.Parameters.AddWithValue("@numeroDocumento", cliente.NumeroDocumento);
+                        cmd.Parameters.AddWithValue("@paisId", cliente.PaisId);
+                        cmd.Parameters.AddWithValue("@regionId", cliente.RegionId);
+                        cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                        cmd.Parameters.AddWithValue("@numeroContacto", cliente.NumeroContacto);
+                        cmd.Parameters.AddWithValue("@estado", cliente.Estado);
+                        cmd.Parameters.AddWithValue("@razonSocial", cliente.RazonSocial);
+
+
+                        cn.Open();
+                        int i = cmd.ExecuteNonQuery();
+                        edita = i > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al editar el cliente jurídico.", ex);
+            }
+
+            return edita;
+        }
+
+        #endregion
+
+        #region MetodosClienteNatural
+        public List<EntClienteNatural> listarClienteNaturale()
+        {
+            SqlCommand cmd = null;
+            List<EntClienteNatural> listaClienteNaturale = new List<EntClienteNatural>();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    cmd = new SqlCommand("ListarClientesNaturales", cn); // Procedimiento para obtener solo los clientes naturales
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cn.Open();
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        EntClienteNatural cli = new EntClienteNatural();
+                        cli.ClienteId = Convert.ToInt32(dr["ClienteId"]);
+                        cli.TipoDocumentoId = Convert.ToInt32(dr["TipoDocumentoId"]);
+                        cli.NumeroDocumento = dr["NroDocumento"].ToString();
+                        cli.PaisId = Convert.ToInt32(dr["PaisId"]);
+                        cli.RegionId = Convert.ToInt32(dr["RegionId"]);
+                        cli.Direccion = dr["Direccion"].ToString();
+                        cli.NumeroContacto = dr["NumeroContacto"].ToString();
+                        cli.Estado = Convert.ToBoolean(dr["Estado"]);
+                        cli.Nombres = dr["Nombres"].ToString();
+                        cli.Apellidos = dr["Apellidos"].ToString();
+                        listaClienteNaturale.Add(cli);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al listar clientes naturales", ex);
+            }
+
+            return listaClienteNaturale;
+        }
+
+        public bool InsertarClienteNatural(EntCliente cliente, EntClienteNatural clienteNatural)
+        {
+            SqlCommand cmd = null;
+            SqlTransaction transaction = null;
+            bool inserta = false;
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    cn.Open();
+                    transaction = cn.BeginTransaction();
+
+                    cmd = new SqlCommand("InsertarCliente", cn, transaction);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@tipoDocumentoId", cliente.TipoDocumentoId);
+                    cmd.Parameters.AddWithValue("@numeroDocumento", cliente.NumeroDocumento);
+                    cmd.Parameters.AddWithValue("@paisId", cliente.PaisId);
+                    cmd.Parameters.AddWithValue("@regionId", cliente.RegionId);
+                    cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                    cmd.Parameters.AddWithValue("@numeroContacto", cliente.NumeroContacto);
+                    cmd.Parameters.AddWithValue("@estado", cliente.Estado);
+
+                    int clienteId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    cmd = new SqlCommand("InsertarClienteNatural", cn, transaction);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@clienteId", clienteId);
+                    cmd.Parameters.AddWithValue("@nombres", clienteNatural.Nombres);
+                    cmd.Parameters.AddWithValue("@apellidos", clienteNatural.Apellidos);
+                    cmd.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    inserta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Revertir la transacción en caso de error
+                transaction?.Rollback();
+                throw ex;
+            }
+            return inserta;
+        }
+        #endregion
+
+
     }
 }

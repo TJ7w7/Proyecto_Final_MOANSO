@@ -40,12 +40,12 @@ namespace Proyecto_Final_MOANSO
 
         public void LlenarTextBox(EntCliente cliente)
         {
-            txtcliid.Text = cliente.ClienteId.ToString();
-            txtBRN_RUC.Text = cliente.BRN_RUC;
-            txtNombreCli.Text = cliente.Nombre;
-            txtIdRegion.Text = cliente.DivisionesAdministrativasId.ToString();
-            txtCalleDes.Text = cliente.Direccion;
-            txtNumTelef.Text = cliente.NumeroContacto;
+            //txtcliid.Text = cliente.ClienteId.ToString();
+            //txtBRN_RUC.Text = cliente.BRN_RUC;
+            //txtNombreCli.Text = cliente.Nombre;
+            //txtIdRegion.Text = cliente.DivisionesAdministrativasId.ToString();
+            //txtCalleDes.Text = cliente.Direccion;
+            //txtNumTelef.Text = cliente.NumeroContacto;
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
@@ -72,8 +72,8 @@ namespace Proyecto_Final_MOANSO
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
-            buscarCliente.Show();
+            //FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
+            //buscarCliente.Show();
         }
 
         private void txtIdRegion_TextChanged(object sender, EventArgs e)
