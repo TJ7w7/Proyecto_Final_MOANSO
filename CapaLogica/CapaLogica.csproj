@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogDivisionesAdministrativas.cs" />
-    <Compile Include="LogicaCliente.cs" />
+    <Compile Include="LogicaClienteJuridico.cs" />
+    <Compile Include="LogicaClienteNatural.cs" />
+    <Compile Include="LogicaPais.cs" />
+    <Compile Include="LogicaRegion.cs" />
+    <Compile Include="LogicaTipoDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

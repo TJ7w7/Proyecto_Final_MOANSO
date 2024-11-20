@@ -19,14 +19,14 @@ namespace Proyecto_Final_MOANSO
 
         private void registroClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCliente c = new FrmCliente();
+            Cliente_Juridico c = new Cliente_Juridico();
             c.Show();
         }
 
         private void buscarClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarCliente buscarCliente = new FrmBuscarCliente();
-            buscarCliente.Show();
+            Cliente_Natural c_Natural = new Cliente_Natural();
+            c_Natural.Show();
         }
 
         private void registroProductoToolStripMenuItem_Click(object sender, EventArgs e)

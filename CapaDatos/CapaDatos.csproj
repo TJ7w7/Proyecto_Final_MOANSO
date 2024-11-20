@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="DatDivisionesAdministrativas.cs" />
-    <Compile Include="DatosCliente.cs" />
+    <Compile Include="DatosClienteBase.cs" />
+    <Compile Include="DatosClienteJuridico.cs" />
+    <Compile Include="DatosClienteNatural.cs" />
+    <Compile Include="DatosPais.cs" />
+    <Compile Include="DatosRegion.cs" />
+    <Compile Include="DatoTipoDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

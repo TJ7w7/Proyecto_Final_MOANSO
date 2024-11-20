@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class EntDivisionesAdministrativas
+    public class Region
     {
-        public int DivisionesAdministrativasId { get; set; }
+        public int RegionId { get; set; }
+        public int PaisId { get; set; }
+        public int? CodigoArea { get; set; }
         public string Nombre { get; set; }
-        public int CodigodeArea { get; set; }
         public bool Estado { get; set; }
+        public bool Aduana { get; set; }
     }
 }
