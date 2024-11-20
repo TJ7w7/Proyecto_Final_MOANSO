@@ -46,6 +46,7 @@
     <Compile Include="DatCategoria.cs" />
     <Compile Include="DatCliente.cs" />
     <Compile Include="DatDivisionesAdministrativas.cs" />
+    <Compile Include="DatFormasDePago.cs" />
     <Compile Include="DatMoneda.cs" />
     <Compile Include="DatPais.cs" />
     <Compile Include="DatPedido.cs" />

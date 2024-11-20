@@ -45,6 +45,7 @@
     <Compile Include="LogCategoria.cs" />
     <Compile Include="LogCliente.cs" />
     <Compile Include="LogDivisionesAdministrativas.cs" />
+    <Compile Include="LogFormasDePago.cs" />
     <Compile Include="LogMoneda.cs" />
     <Compile Include="LogPais.cs" />
     <Compile Include="LogPedido.cs" />

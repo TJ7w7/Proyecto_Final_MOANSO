@@ -47,6 +47,7 @@
     <Compile Include="EntClienteJuridico.cs" />
     <Compile Include="EntClienteNatural.cs" />
     <Compile Include="EntDivisionesAdministrativas.cs" />
+    <Compile Include="EntFormasDePago.cs" />
     <Compile Include="EntMoneda.cs" />
     <Compile Include="EntPais.cs" />
     <Compile Include="EntPedido.cs" />
