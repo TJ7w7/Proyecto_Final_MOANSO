@@ -62,5 +62,9 @@ namespace CapaLogica
         {
             return dtCategoria.Instancia.ListarCategorias();
         }
+        public List<EntCategoria> ObtenerCategoriasCMB()
+        {
+            return dtCategoria.Instancia.ListarCategoriasEnCMB();
+        }
     }
 }

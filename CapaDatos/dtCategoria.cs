@@ -93,5 +93,26 @@ namespace CapaDatos
             }
             return lista;
         }
+        public List<EntCategoria> ListarCategoriasEnCMB()
+        {
+            List<EntCategoria> lista = new List<EntCategoria>();
+            using (SqlConnection connection = cn.Conectar())
+            {
+                string query = "SELECT CategoriaId, Nombre FROM Categoria";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    lista.Add(new EntCategoria
+                    {
+                        CategoriaId = Convert.ToInt32(dr["CategoriaId"]),
+                        Nombre = dr["Nombre"].ToString()
+                    });
+                }
+            }
+            return lista;
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
             dgvCategoria.Enabled = false;
             CargarCategorias();
-            this.dgvCategoria.RowHeaderMouseClick += dgvCategoria_RowHeaderMouseClick;
+            dgvCategoria.RowHeaderMouseClick += dgvCategoria_RowHeaderMouseClick;
 
             this.CenterToScreen();
         }

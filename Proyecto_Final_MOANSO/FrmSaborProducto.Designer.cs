@@ -56,7 +56,7 @@
             this.txtNombreSabor.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtNombreSabor.Location = new System.Drawing.Point(78, 21);
             this.txtNombreSabor.Name = "txtNombreSabor";
-            this.txtNombreSabor.Size = new System.Drawing.Size(246, 27);
+            this.txtNombreSabor.Size = new System.Drawing.Size(273, 27);
             this.txtNombreSabor.TabIndex = 1;
             // 
             // btnModificaSabor
@@ -86,7 +86,7 @@
             this.dgvSabor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSabor.Location = new System.Drawing.Point(20, 69);
             this.dgvSabor.Name = "dgvSabor";
-            this.dgvSabor.Size = new System.Drawing.Size(304, 340);
+            this.dgvSabor.Size = new System.Drawing.Size(331, 340);
             this.dgvSabor.TabIndex = 4;
             // 
             // cbEstadoSabor

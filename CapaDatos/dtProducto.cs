@@ -22,18 +22,17 @@ namespace CapaDatos
             }
         }
 
-        public bool GuardaProducto(EntProducto producto)
+        public bool GuardarProducto(EntProducto producto)
         {
             using (SqlConnection connection = cn.Conectar())
             {
-                string query = "INSERT INTO Producto (Nombre, CategoriaId, SaboresId, Descripcion, Stock, Descontinuado, Imagen) " +
-                               "VALUES (@Nombre, @CategoriaId, @SaboresId, @Descripcion, @Stock, @Descontinuado, @Imagen)";
+                string query = "INSERT INTO Producto (Nombre, CategoriaId, SaboresId, Stock, Descontinuado, Imagen) " +
+                               "VALUES (@Nombre, @CategoriaId, @SaboresId, @Stock, @Descontinuado, @Imagen)";
 
                 SqlCommand gp = new SqlCommand(query, connection);
                 gp.Parameters.AddWithValue("@Nombre", producto.Nombre);
                 gp.Parameters.AddWithValue("@CategoriaId", producto.CategoriaId);
                 gp.Parameters.AddWithValue("@SaboresId", producto.SaboresId);
-                gp.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
                 gp.Parameters.AddWithValue("@Stock", producto.Stock);
                 gp.Parameters.AddWithValue("@Descontinuado", producto.Descontinuado);
                 gp.Parameters.AddWithValue("@Imagen", producto.Imagen);
@@ -45,6 +44,49 @@ namespace CapaDatos
                 return rowsAffected > 0;
             }
         }
+        public bool ModificarProducto(EntProducto producto)
+        {
+            using (SqlConnection connection = Conexion.Instancia.Conectar())
+            {
+                string query = @"
+            UPDATE Producto
+            SET Nombre = @Nombre,
+                CategoriaId = @CategoriaId,
+                SaboresId = @SaboresId,
+                Stock = @Stock,
+                Descontinuado = @Descontinuado,
+                Imagen = @Imagen
+            WHERE ProductoId = @ProductoId";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+                cmd.Parameters.AddWithValue("@CategoriaId", producto.CategoriaId);
+                cmd.Parameters.AddWithValue("@SaboresId", producto.SaboresId);
+                cmd.Parameters.AddWithValue("@Stock", producto.Stock);
+                cmd.Parameters.AddWithValue("@Descontinuado", producto.Descontinuado);
+                cmd.Parameters.AddWithValue("@Imagen", producto.Imagen);
+                cmd.Parameters.AddWithValue("@ProductoId", producto.Productoid);
+
+                connection.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                return rowsAffected > 0;
+            }
+        }
+        public bool EliminarProducto(int productoId)
+        {
+            using (SqlConnection connection = cn.Conectar())
+            {
+                string query = "DELETE FROM Producto WHERE ProductoId = @ProductoId";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@ProductoId", productoId);
+
+                connection.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected > 0; // Si se eliminó correctamente, retorna true
+            }
+        }
+
 
     }
 }

@@ -28,149 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCerrarP = new System.Windows.Forms.Button();
+            this.btnSalirFrmProducto = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnDeshabilitarP = new System.Windows.Forms.Button();
-            this.btnEditarP = new System.Windows.Forms.Button();
-            this.btnNuevoP = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtStockP = new System.Windows.Forms.TextBox();
+            this.btnDeshabilitarProductos = new System.Windows.Forms.Button();
+            this.btnNuevoProducto = new System.Windows.Forms.Button();
+            this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.cmbSabores = new System.Windows.Forms.ComboBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.txtStockProductos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDescripcionP = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPrecioP = new System.Windows.Forms.TextBox();
-            this.cbEstadoP = new System.Windows.Forms.CheckBox();
-            this.txtNombreP = new System.Windows.Forms.TextBox();
+            this.cbEstadoProducto = new System.Windows.Forms.CheckBox();
+            this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarP = new System.Windows.Forms.Button();
             this.btnModificarP = new System.Windows.Forms.Button();
-            this.btnCancelarP = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminarProductos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCerrarP
+            // btnSalirFrmProducto
             // 
-            this.btnCerrarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarP.Location = new System.Drawing.Point(743, 547);
-            this.btnCerrarP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrarP.Name = "btnCerrarP";
-            this.btnCerrarP.Size = new System.Drawing.Size(100, 28);
-            this.btnCerrarP.TabIndex = 14;
-            this.btnCerrarP.Text = "Cerrar";
-            this.btnCerrarP.UseVisualStyleBackColor = true;
+            this.btnSalirFrmProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirFrmProducto.Location = new System.Drawing.Point(824, 547);
+            this.btnSalirFrmProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalirFrmProducto.Name = "btnSalirFrmProducto";
+            this.btnSalirFrmProducto.Size = new System.Drawing.Size(100, 28);
+            this.btnSalirFrmProducto.TabIndex = 14;
+            this.btnSalirFrmProducto.Text = "Salir";
+            this.btnSalirFrmProducto.UseVisualStyleBackColor = true;
+            this.btnSalirFrmProducto.Click += new System.EventHandler(this.btnSalirFrmProducto_Click);
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(17, 328);
+            this.dgvProductos.Location = new System.Drawing.Point(17, 318);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(826, 205);
+            this.dgvProductos.Size = new System.Drawing.Size(915, 215);
             this.dgvProductos.TabIndex = 13;
             // 
-            // btnDeshabilitarP
+            // btnDeshabilitarProductos
             // 
-            this.btnDeshabilitarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitarP.Location = new System.Drawing.Point(196, 547);
-            this.btnDeshabilitarP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeshabilitarP.Name = "btnDeshabilitarP";
-            this.btnDeshabilitarP.Size = new System.Drawing.Size(100, 28);
-            this.btnDeshabilitarP.TabIndex = 11;
-            this.btnDeshabilitarP.Text = "Deshabilitar";
-            this.btnDeshabilitarP.UseVisualStyleBackColor = true;
+            this.btnDeshabilitarProductos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeshabilitarProductos.Location = new System.Drawing.Point(122, 547);
+            this.btnDeshabilitarProductos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeshabilitarProductos.Name = "btnDeshabilitarProductos";
+            this.btnDeshabilitarProductos.Size = new System.Drawing.Size(100, 28);
+            this.btnDeshabilitarProductos.TabIndex = 11;
+            this.btnDeshabilitarProductos.Text = "Deshabilitar";
+            this.btnDeshabilitarProductos.UseVisualStyleBackColor = true;
+            this.btnDeshabilitarProductos.Click += new System.EventHandler(this.btnDeshabilitarProductos_Click);
             // 
-            // btnEditarP
+            // btnNuevoProducto
             // 
-            this.btnEditarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarP.Location = new System.Drawing.Point(105, 547);
-            this.btnEditarP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditarP.Name = "btnEditarP";
-            this.btnEditarP.Size = new System.Drawing.Size(71, 28);
-            this.btnEditarP.TabIndex = 10;
-            this.btnEditarP.Text = "Editar";
-            this.btnEditarP.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoProducto.Location = new System.Drawing.Point(17, 547);
+            this.btnNuevoProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevoProducto.Name = "btnNuevoProducto";
+            this.btnNuevoProducto.Size = new System.Drawing.Size(71, 28);
+            this.btnNuevoProducto.TabIndex = 9;
+            this.btnNuevoProducto.Text = "Nuevo";
+            this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
-            // btnNuevoP
+            // gbDatos
             // 
-            this.btnNuevoP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoP.Location = new System.Drawing.Point(17, 547);
-            this.btnNuevoP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNuevoP.Name = "btnNuevoP";
-            this.btnNuevoP.Size = new System.Drawing.Size(71, 28);
-            this.btnNuevoP.TabIndex = 9;
-            this.btnNuevoP.Text = "Nuevo";
-            this.btnNuevoP.UseVisualStyleBackColor = true;
+            this.gbDatos.Controls.Add(this.cmbSabores);
+            this.gbDatos.Controls.Add(this.btnAgregarImagen);
+            this.gbDatos.Controls.Add(this.txtStockProductos);
+            this.gbDatos.Controls.Add(this.label3);
+            this.gbDatos.Controls.Add(this.pbxImagen);
+            this.gbDatos.Controls.Add(this.cmbCategoria);
+            this.gbDatos.Controls.Add(this.label2);
+            this.gbDatos.Controls.Add(this.label4);
+            this.gbDatos.Controls.Add(this.cbEstadoProducto);
+            this.gbDatos.Controls.Add(this.txtNombreProducto);
+            this.gbDatos.Controls.Add(this.label1);
+            this.gbDatos.Controls.Add(this.btnAgregarP);
+            this.gbDatos.Controls.Add(this.btnModificarP);
+            this.gbDatos.Controls.Add(this.btnEliminarProductos);
+            this.gbDatos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDatos.Location = new System.Drawing.Point(11, 10);
+            this.gbDatos.Margin = new System.Windows.Forms.Padding(2);
+            this.gbDatos.Name = "gbDatos";
+            this.gbDatos.Padding = new System.Windows.Forms.Padding(2);
+            this.gbDatos.Size = new System.Drawing.Size(921, 292);
+            this.gbDatos.TabIndex = 15;
+            this.gbDatos.TabStop = false;
+            this.gbDatos.Text = "Datos";
             // 
-            // groupBox1
+            // cmbSabores
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtStockP);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtDescripcionP);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtPrecioP);
-            this.groupBox1.Controls.Add(this.cbEstadoP);
-            this.groupBox1.Controls.Add(this.txtNombreP);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnAgregarP);
-            this.groupBox1.Controls.Add(this.btnModificarP);
-            this.groupBox1.Controls.Add(this.btnCancelarP);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(832, 303);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos";
+            this.cmbSabores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSabores.FormattingEnabled = true;
+            this.cmbSabores.Location = new System.Drawing.Point(111, 142);
+            this.cmbSabores.Name = "cmbSabores";
+            this.cmbSabores.Size = new System.Drawing.Size(315, 27);
+            this.cmbSabores.TabIndex = 23;
             // 
-            // txtStockP
+            // btnAgregarImagen
             // 
-            this.txtStockP.Location = new System.Drawing.Point(111, 249);
-            this.txtStockP.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStockP.Name = "txtStockP";
-            this.txtStockP.Size = new System.Drawing.Size(109, 27);
-            this.txtStockP.TabIndex = 22;
+            this.btnAgregarImagen.Location = new System.Drawing.Point(708, 85);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(102, 55);
+            this.btnAgregarImagen.TabIndex = 16;
+            this.btnAgregarImagen.Text = "Agregar Imagen";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
+            // txtStockProductos
+            // 
+            this.txtStockProductos.Location = new System.Drawing.Point(111, 189);
+            this.txtStockProductos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStockProductos.Name = "txtStockProductos";
+            this.txtStockProductos.Size = new System.Drawing.Size(315, 27);
+            this.txtStockProductos.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 252);
+            this.label3.Location = new System.Drawing.Point(11, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 19);
             this.label3.TabIndex = 21;
             this.label3.Text = "Stock:";
             // 
-            // pictureBox1
+            // pbxImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(395, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(198, 242);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.pbxImagen.Location = new System.Drawing.Point(482, 34);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(198, 242);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagen.TabIndex = 20;
+            this.pbxImagen.TabStop = false;
             // 
-            // comboBox1
+            // cmbCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(111, 85);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 27);
-            this.comboBox1.TabIndex = 15;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(111, 85);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(315, 27);
+            this.cmbCategoria.TabIndex = 15;
             // 
             // label2
             // 
@@ -180,24 +188,6 @@
             this.label2.Size = new System.Drawing.Size(82, 19);
             this.label2.TabIndex = 14;
             this.label2.Text = "Categoría:";
-            // 
-            // txtDescripcionP
-            // 
-            this.txtDescripcionP.Location = new System.Drawing.Point(111, 194);
-            this.txtDescripcionP.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescripcionP.Name = "txtDescripcionP";
-            this.txtDescripcionP.Size = new System.Drawing.Size(252, 27);
-            this.txtDescripcionP.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 197);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Descripcion:";
             // 
             // label4
             // 
@@ -209,32 +199,24 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Sabor:";
             // 
-            // txtPrecioP
+            // cbEstadoProducto
             // 
-            this.txtPrecioP.Location = new System.Drawing.Point(111, 139);
-            this.txtPrecioP.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrecioP.Name = "txtPrecioP";
-            this.txtPrecioP.Size = new System.Drawing.Size(90, 27);
-            this.txtPrecioP.TabIndex = 9;
+            this.cbEstadoProducto.AutoSize = true;
+            this.cbEstadoProducto.Location = new System.Drawing.Point(721, 40);
+            this.cbEstadoProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.cbEstadoProducto.Name = "cbEstadoProducto";
+            this.cbEstadoProducto.Size = new System.Drawing.Size(75, 23);
+            this.cbEstadoProducto.TabIndex = 5;
+            this.cbEstadoProducto.Text = "Estado";
+            this.cbEstadoProducto.UseVisualStyleBackColor = true;
             // 
-            // cbEstadoP
+            // txtNombreProducto
             // 
-            this.cbEstadoP.AutoSize = true;
-            this.cbEstadoP.Location = new System.Drawing.Point(621, 43);
-            this.cbEstadoP.Margin = new System.Windows.Forms.Padding(2);
-            this.cbEstadoP.Name = "cbEstadoP";
-            this.cbEstadoP.Size = new System.Drawing.Size(75, 23);
-            this.cbEstadoP.TabIndex = 5;
-            this.cbEstadoP.Text = "Estado";
-            this.cbEstadoP.UseVisualStyleBackColor = true;
-            // 
-            // txtNombreP
-            // 
-            this.txtNombreP.Location = new System.Drawing.Point(111, 34);
-            this.txtNombreP.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombreP.Name = "txtNombreP";
-            this.txtNombreP.Size = new System.Drawing.Size(194, 27);
-            this.txtNombreP.TabIndex = 4;
+            this.txtNombreProducto.Location = new System.Drawing.Point(111, 34);
+            this.txtNombreProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreProducto.Name = "txtNombreProducto";
+            this.txtNombreProducto.Size = new System.Drawing.Size(315, 27);
+            this.txtNombreProducto.TabIndex = 4;
             // 
             // label1
             // 
@@ -249,7 +231,7 @@
             // btnAgregarP
             // 
             this.btnAgregarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarP.Location = new System.Drawing.Point(725, 52);
+            this.btnAgregarP.Location = new System.Drawing.Point(832, 44);
             this.btnAgregarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarP.Name = "btnAgregarP";
             this.btnAgregarP.Size = new System.Drawing.Size(81, 31);
@@ -261,79 +243,68 @@
             // btnModificarP
             // 
             this.btnModificarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarP.Location = new System.Drawing.Point(725, 102);
+            this.btnModificarP.Location = new System.Drawing.Point(832, 93);
             this.btnModificarP.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarP.Name = "btnModificarP";
             this.btnModificarP.Size = new System.Drawing.Size(81, 32);
             this.btnModificarP.TabIndex = 1;
             this.btnModificarP.Text = "Modificar";
             this.btnModificarP.UseVisualStyleBackColor = true;
+            this.btnModificarP.Click += new System.EventHandler(this.btnModificarP_Click);
             // 
-            // btnCancelarP
+            // btnEliminarProductos
             // 
-            this.btnCancelarP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarP.Location = new System.Drawing.Point(725, 155);
-            this.btnCancelarP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelarP.Name = "btnCancelarP";
-            this.btnCancelarP.Size = new System.Drawing.Size(81, 28);
-            this.btnCancelarP.TabIndex = 2;
-            this.btnCancelarP.Text = "Cancelar";
-            this.btnCancelarP.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(716, 197);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 55);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Agregar Imagen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminarProductos.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProductos.Location = new System.Drawing.Point(832, 147);
+            this.btnEliminarProductos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarProductos.Name = "btnEliminarProductos";
+            this.btnEliminarProductos.Size = new System.Drawing.Size(81, 28);
+            this.btnEliminarProductos.TabIndex = 2;
+            this.btnEliminarProductos.Text = "Eliminar";
+            this.btnEliminarProductos.UseVisualStyleBackColor = true;
+            this.btnEliminarProductos.Click += new System.EventHandler(this.btnEliminarProductos_Click);
             // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 586);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnCerrarP);
+            this.ClientSize = new System.Drawing.Size(943, 586);
+            this.Controls.Add(this.gbDatos);
+            this.Controls.Add(this.btnSalirFrmProducto);
             this.Controls.Add(this.dgvProductos);
-            this.Controls.Add(this.btnDeshabilitarP);
-            this.Controls.Add(this.btnEditarP);
-            this.Controls.Add(this.btnNuevoP);
+            this.Controls.Add(this.btnDeshabilitarProductos);
+            this.Controls.Add(this.btnNuevoProducto);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Productos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbDatos.ResumeLayout(false);
+            this.gbDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCerrarP;
+        private System.Windows.Forms.Button btnSalirFrmProducto;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.Button btnDeshabilitarP;
-        private System.Windows.Forms.Button btnEditarP;
-        private System.Windows.Forms.Button btnNuevoP;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cbEstadoP;
-        private System.Windows.Forms.TextBox txtNombreP;
+        private System.Windows.Forms.Button btnDeshabilitarProductos;
+        private System.Windows.Forms.Button btnNuevoProducto;
+        private System.Windows.Forms.GroupBox gbDatos;
+        private System.Windows.Forms.CheckBox cbEstadoProducto;
+        private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregarP;
         private System.Windows.Forms.Button btnModificarP;
-        private System.Windows.Forms.Button btnCancelarP;
-        private System.Windows.Forms.TextBox txtPrecioP;
+        private System.Windows.Forms.Button btnEliminarProductos;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDescripcionP;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtStockP;
+        private System.Windows.Forms.PictureBox pbxImagen;
+        private System.Windows.Forms.TextBox txtStockProductos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.ComboBox cmbSabores;
     }
 }

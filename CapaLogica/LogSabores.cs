@@ -62,6 +62,11 @@ namespace CapaLogica
         {
             return dtSabores.Instancia.ListarSabores();
         }
+        public List<EntSabores> ObtenerSaboresCMB()
+        {
+            return dtSabores.Instancia.ListarSaboresEnCMB();
+        }
+
 
     }
 }

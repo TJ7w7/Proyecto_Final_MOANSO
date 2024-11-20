@@ -93,6 +93,27 @@ namespace CapaDatos
             }
             return listaS;
         }
+        public List<EntSabores> ListarSaboresEnCMB()
+        {
+            List<EntSabores> lista = new List<EntSabores>();
+            using (SqlConnection connection = cn.Conectar())
+            {
+                string query = "SELECT SaboresId, Nombre FROM Sabores";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    lista.Add(new EntSabores
+                    {
+                        SaboresId = Convert.ToInt32(dr["SaboresId"]),
+                        Nombre = dr["Nombre"].ToString()
+                    });
+                }
+            }
+            return lista;
+        }
     }
 }
 
