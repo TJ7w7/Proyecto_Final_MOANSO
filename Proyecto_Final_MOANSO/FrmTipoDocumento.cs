@@ -104,5 +104,27 @@ namespace Proyecto_Final_MOANSO
             cbxClienteJuridico.Checked = Convert.ToBoolean(filaActual.Cells[6].Value);
             cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[7].Value);
         }
+
+        private void txtLongitudMinima_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxLongitudExacta.Checked)
+            {
+                txtLongitudMaxima.Text = txtLongitudMinima.Text;
+            }
+        }
+
+        private void cbxLongitudExacta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxLongitudExacta.Checked)
+            {
+                txtLongitudMaxima.Enabled = false;
+                txtLongitudMaxima.Text = txtLongitudMinima.Text;
+            }
+            else
+            {
+                txtLongitudMaxima.Enabled=true;
+                txtLongitudMaxima.Text = string.Empty;
+            }
+        }
     }
 }

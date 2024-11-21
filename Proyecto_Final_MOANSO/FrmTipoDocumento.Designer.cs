@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxClienteJuridico = new System.Windows.Forms.CheckBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.cbxEstado = new System.Windows.Forms.CheckBox();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTipoDocumento = new System.Windows.Forms.DataGridView();
-            this.cbxClienteJuridico = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDocumento)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TipoDocumento";
+            // 
+            // cbxClienteJuridico
+            // 
+            this.cbxClienteJuridico.AutoSize = true;
+            this.cbxClienteJuridico.Location = new System.Drawing.Point(522, 135);
+            this.cbxClienteJuridico.Name = "cbxClienteJuridico";
+            this.cbxClienteJuridico.Size = new System.Drawing.Size(161, 28);
+            this.cbxClienteJuridico.TabIndex = 11;
+            this.cbxClienteJuridico.Text = "ClienteJuridico";
+            this.cbxClienteJuridico.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
@@ -117,6 +127,7 @@
             this.cbxLongitudExacta.TabIndex = 6;
             this.cbxLongitudExacta.Text = "LongitudExacta";
             this.cbxLongitudExacta.UseVisualStyleBackColor = true;
+            this.cbxLongitudExacta.CheckedChanged += new System.EventHandler(this.cbxLongitudExacta_CheckedChanged);
             // 
             // txtLongitudMaxima
             // 
@@ -131,6 +142,7 @@
             this.txtLongitudMinima.Name = "txtLongitudMinima";
             this.txtLongitudMinima.Size = new System.Drawing.Size(140, 32);
             this.txtLongitudMinima.TabIndex = 4;
+            this.txtLongitudMinima.TextChanged += new System.EventHandler(this.txtLongitudMinima_TextChanged);
             // 
             // txtNombre
             // 
@@ -176,16 +188,6 @@
             this.dgvTipoDocumento.Size = new System.Drawing.Size(905, 314);
             this.dgvTipoDocumento.TabIndex = 1;
             this.dgvTipoDocumento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoDocumento_CellClick);
-            // 
-            // cbxClienteJuridico
-            // 
-            this.cbxClienteJuridico.AutoSize = true;
-            this.cbxClienteJuridico.Location = new System.Drawing.Point(522, 135);
-            this.cbxClienteJuridico.Name = "cbxClienteJuridico";
-            this.cbxClienteJuridico.Size = new System.Drawing.Size(161, 28);
-            this.cbxClienteJuridico.TabIndex = 11;
-            this.cbxClienteJuridico.Text = "ClienteJuridico";
-            this.cbxClienteJuridico.UseVisualStyleBackColor = true;
             // 
             // FrmTipoDocumento
             // 

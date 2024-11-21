@@ -50,6 +50,7 @@
     <Compile Include="DatMoneda.cs" />
     <Compile Include="DatPais.cs" />
     <Compile Include="DatPedido.cs" />
+    <Compile Include="DatProducto.cs" />
     <Compile Include="DatRegion.cs" />
     <Compile Include="DatSabores.cs" />
     <Compile Include="DatTipoDocumento.cs" />

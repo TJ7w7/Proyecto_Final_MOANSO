@@ -51,6 +51,7 @@
     <Compile Include="EntMoneda.cs" />
     <Compile Include="EntPais.cs" />
     <Compile Include="EntPedido.cs" />
+    <Compile Include="EntProducto.cs" />
     <Compile Include="EntRegion.cs" />
     <Compile Include="EntSabores.cs" />
     <Compile Include="EntTipoDocumento.cs" />
