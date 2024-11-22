@@ -130,14 +130,14 @@
             // 
             this.cmbSabores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSabores.FormattingEnabled = true;
-            this.cmbSabores.Location = new System.Drawing.Point(111, 142);
+            this.cmbSabores.Location = new System.Drawing.Point(111, 164);
             this.cmbSabores.Name = "cmbSabores";
-            this.cmbSabores.Size = new System.Drawing.Size(315, 27);
+            this.cmbSabores.Size = new System.Drawing.Size(338, 27);
             this.cmbSabores.TabIndex = 23;
             // 
             // btnAgregarImagen
             // 
-            this.btnAgregarImagen.Location = new System.Drawing.Point(708, 85);
+            this.btnAgregarImagen.Location = new System.Drawing.Point(811, 210);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(102, 55);
             this.btnAgregarImagen.TabIndex = 16;
@@ -147,16 +147,16 @@
             // 
             // txtStockProductos
             // 
-            this.txtStockProductos.Location = new System.Drawing.Point(111, 189);
+            this.txtStockProductos.Location = new System.Drawing.Point(111, 225);
             this.txtStockProductos.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockProductos.Name = "txtStockProductos";
-            this.txtStockProductos.Size = new System.Drawing.Size(315, 27);
+            this.txtStockProductos.Size = new System.Drawing.Size(338, 27);
             this.txtStockProductos.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 197);
+            this.label3.Location = new System.Drawing.Point(11, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 19);
             this.label3.TabIndex = 21;
@@ -164,7 +164,7 @@
             // 
             // pbxImagen
             // 
-            this.pbxImagen.Location = new System.Drawing.Point(482, 34);
+            this.pbxImagen.Location = new System.Drawing.Point(580, 34);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(198, 242);
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,15 +175,15 @@
             // 
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(111, 85);
+            this.cmbCategoria.Location = new System.Drawing.Point(111, 100);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(315, 27);
+            this.cmbCategoria.Size = new System.Drawing.Size(338, 27);
             this.cmbCategoria.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 93);
+            this.label2.Location = new System.Drawing.Point(11, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 19);
             this.label2.TabIndex = 14;
@@ -192,7 +192,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 142);
+            this.label4.Location = new System.Drawing.Point(11, 172);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 19);
@@ -202,7 +202,7 @@
             // cbEstadoProducto
             // 
             this.cbEstadoProducto.AutoSize = true;
-            this.cbEstadoProducto.Location = new System.Drawing.Point(721, 40);
+            this.cbEstadoProducto.Location = new System.Drawing.Point(482, 36);
             this.cbEstadoProducto.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstadoProducto.Name = "cbEstadoProducto";
             this.cbEstadoProducto.Size = new System.Drawing.Size(75, 23);
@@ -215,7 +215,7 @@
             this.txtNombreProducto.Location = new System.Drawing.Point(111, 34);
             this.txtNombreProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreProducto.Name = "txtNombreProducto";
-            this.txtNombreProducto.Size = new System.Drawing.Size(315, 27);
+            this.txtNombreProducto.Size = new System.Drawing.Size(338, 27);
             this.txtNombreProducto.TabIndex = 4;
             // 
             // label1

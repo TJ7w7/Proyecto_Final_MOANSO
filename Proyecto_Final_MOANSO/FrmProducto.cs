@@ -21,7 +21,7 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
             gbDatos.Enabled = false;
             dgvProductos.Enabled = false;
-            // Agregar columnas del DataGridView
+
             dgvProductos.Columns.Clear();
             dgvProductos.Columns.Add("ProductoId", "ID");
             dgvProductos.Columns.Add("Nombre", "Nombre");
@@ -31,19 +31,10 @@ namespace Proyecto_Final_MOANSO
             dgvProductos.Columns.Add("Descontinuado", "Descontinuado");
             dgvProductos.Columns.Add("Imagen", "Imagen");
 
-            // Agregar las opciones predeterminadas a los ComboBox
-            cmbCategoria.Items.Clear();
-            cmbSabores.Items.Clear();
-
-            cmbCategoria.Items.Add("Seleccione una Categoría");
-            cmbSabores.Items.Add("Seleccione Sabor de Producto");
-
-            cmbCategoria.SelectedIndex = 0;
-            cmbSabores.SelectedIndex = 0;
-
             CargarProductos();
             CargarCombos();
             dgvProductos.RowHeaderMouseClick += (dgvProductos_RowHeaderMouseClick);
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             this.CenterToScreen();
         }
@@ -55,6 +46,12 @@ namespace Proyecto_Final_MOANSO
                 if (cmbCategoria.SelectedValue == null || cmbSabores.SelectedValue == null)
                 {
                     MessageBox.Show("Por favor, seleccione una categoría y un sabor.");
+                    return;
+                }
+
+                if (pbxImagen.Image == null)
+                {
+                    MessageBox.Show("Por favor, seleccione una imagen para el producto.");
                     return;
                 }
 
@@ -195,6 +192,9 @@ namespace Proyecto_Final_MOANSO
         {
             this.Close();
         }
+
+
+        //Cargar Productos en el datagridview
         private void CargarProductos()
         {
             try
@@ -240,16 +240,9 @@ namespace Proyecto_Final_MOANSO
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}");
             }
         }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private byte[] ConvertirImagenABytes(Image imagen)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                imagen.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                return ms.ToArray();
-            }
-        }
-
+        //Cargar combobox
         private void CargarCombos()
         {
             try
@@ -271,6 +264,17 @@ namespace Proyecto_Final_MOANSO
                 MessageBox.Show($"Error al cargar los datos en los combobox: {ex.Message}");
             }
         }
+
+
+        //Cargar Imágenes
+        private byte[] ConvertirImagenABytes(Image imagen)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imagen.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
         private Image ConvertirBytesAImagen(byte[] imagenBytes)
         {
             if (imagenBytes == null || imagenBytes.Length == 0)
@@ -281,13 +285,15 @@ namespace Proyecto_Final_MOANSO
                 return Image.FromStream(ms);
             }
         }
+
+
+        //Seleccionar una fila desde el dgv para modificar o eliminar
         private void dgvProductos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex >= 0) // Verifica que no se seleccionen encabezados
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow filaSeleccionada = dgvProductos.Rows[e.RowIndex];
 
-                // Verificar si el valor de la celda es null o DBNull antes de asignar
                 txtNombreProducto.Text = filaSeleccionada.Cells[1].Value != DBNull.Value && filaSeleccionada.Cells[1].Value != null
                     ? filaSeleccionada.Cells[1].Value.ToString() : string.Empty;
 
@@ -311,11 +317,13 @@ namespace Proyecto_Final_MOANSO
                 }
                 else
                 {
-                    pbxImagen.Image = null; // Si no hay imagen, puedes limpiar la imagen
+                    pbxImagen.Image = null; 
                 }
             }
         }
 
+
+        //Funcion para limpiar campos 
         private void LimpiarCampos()
         {
             txtNombreProducto.Clear();

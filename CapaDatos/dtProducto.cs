@@ -86,7 +86,40 @@ namespace CapaDatos
                 return rowsAffected > 0; // Si se eliminó correctamente, retorna true
             }
         }
+        public List<EntProducto> BuscarProductoPorNombre(string nombre)
+        {
+            List<EntProducto> productos = new List<EntProducto>();
 
+            using (SqlConnection connection = cn.Conectar())
+            {
+                string query = "SELECT ProductoId, Nombre, CategoriaId, SaboresId, Stock, Descontinuado, Imagen " +
+                               "FROM Producto " +
+                               "WHERE Nombre LIKE @Nombre";
 
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Nombre", "%" + nombre + "%"); // Usamos el LIKE con comodín
+
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    EntProducto producto = new EntProducto
+                    {
+                        Productoid = Convert.ToInt32(reader["ProductoId"]),
+                        Nombre = reader["Nombre"].ToString(),
+                        CategoriaId = Convert.ToInt32(reader["CategoriaId"]),
+                        SaboresId = Convert.ToInt32(reader["SaboresId"]),
+                        Stock = Convert.ToInt32(reader["Stock"]),
+                        Descontinuado = Convert.ToBoolean(reader["Descontinuado"]),
+                        Imagen = (byte[])reader["Imagen"]
+                    };
+
+                    productos.Add(producto);
+                }
+            }
+
+            return productos;
+        }
     }
 }

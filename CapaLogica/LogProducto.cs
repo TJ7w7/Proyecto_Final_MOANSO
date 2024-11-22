@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace CapaLogica
 {
@@ -22,7 +23,6 @@ namespace CapaLogica
         }
         public bool GuardarProducto(EntProducto producto)
         {
-            // Validaciones básicas
             if (string.IsNullOrWhiteSpace(producto.Nombre))
                 throw new ArgumentException("El nombre del producto no puede estar vacío.");
 
@@ -63,6 +63,13 @@ namespace CapaLogica
             {
                 throw new Exception("Error al eliminar el producto: " + ex.Message);
             }
+        }
+        public List<EntProducto> BuscarProductoPorNombre(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(nombre))
+                throw new ArgumentException("El nombre de producto no puede estar vacío.");
+
+            return dtProducto.Instancia.BuscarProductoPorNombre(nombre);
         }
     }
 }
