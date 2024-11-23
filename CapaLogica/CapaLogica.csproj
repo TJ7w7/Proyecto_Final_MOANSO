@@ -41,14 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="LogEmpresaTransporte.cs" />
+    <Compile Include="LogMarca.cs" />
     <Compile Include="LogCategoria.cs" />
     <Compile Include="LogCliente.cs" />
-    <Compile Include="LogDivisionesAdministrativas.cs" />
     <Compile Include="LogFormasDePago.cs" />
     <Compile Include="LogMoneda.cs" />
     <Compile Include="LogPais.cs" />
     <Compile Include="LogPedido.cs" />
+    <Compile Include="LogPrecioTransporte.cs" />
     <Compile Include="LogProducto.cs" />
     <Compile Include="LogRegion.cs" />
     <Compile Include="LogSabores.cs" />

@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +50,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrmClienteJuridico.cs">
@@ -94,6 +101,12 @@
     <Compile Include="FrmFormasDePago.Designer.cs">
       <DependentUpon>FrmFormasDePago.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMarca.Designer.cs">
+      <DependentUpon>FrmMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMoneda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +118,6 @@
     </Compile>
     <Compile Include="FrmPais.Designer.cs">
       <DependentUpon>FrmPais.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPrecioTerrestre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPrecioTerrestre.Designer.cs">
-      <DependentUpon>FrmPrecioTerrestre.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -124,17 +131,17 @@
     <Compile Include="FrmProducto.Designer.cs">
       <DependentUpon>FrmProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProductoPresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductoPresentacion.Designer.cs">
+      <DependentUpon>FrmProductoPresentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRegion.Designer.cs">
       <DependentUpon>FrmRegion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRegiones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegiones.Designer.cs">
-      <DependentUpon>FrmRegiones.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegistroOrdenPedido.cs">
       <SubType>Form</SubType>
@@ -154,17 +161,23 @@
     <Compile Include="FrmRegistroVenta.Designer.cs">
       <DependentUpon>FrmRegistroVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTransportista.cs">
+    <Compile Include="FrmEmpresaTransporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTransportista.Designer.cs">
-      <DependentUpon>FrmTransportista.cs</DependentUpon>
+    <Compile Include="FrmEmpresaTransporte.Designer.cs">
+      <DependentUpon>FrmEmpresaTransporte.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTipoDocumento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTipoDocumento.Designer.cs">
       <DependentUpon>FrmTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrecioTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrecioTransporte.Designer.cs">
+      <DependentUpon>FrmPrecioTransporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,14 +205,14 @@
     <EmbeddedResource Include="FrmFormasDePago.resx">
       <DependentUpon>FrmFormasDePago.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMarca.resx">
+      <DependentUpon>FrmMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMoneda.resx">
       <DependentUpon>FrmMoneda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPais.resx">
       <DependentUpon>FrmPais.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrecioTerrestre.resx">
-      <DependentUpon>FrmPrecioTerrestre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -207,11 +220,11 @@
     <EmbeddedResource Include="FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductoPresentacion.resx">
+      <DependentUpon>FrmProductoPresentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegion.resx">
       <DependentUpon>FrmRegion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegiones.resx">
-      <DependentUpon>FrmRegiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroOrdenPedido.resx">
       <DependentUpon>FrmRegistroOrdenPedido.cs</DependentUpon>
@@ -222,11 +235,14 @@
     <EmbeddedResource Include="FrmRegistroVenta.resx">
       <DependentUpon>FrmRegistroVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTransportista.resx">
-      <DependentUpon>FrmTransportista.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEmpresaTransporte.resx">
+      <DependentUpon>FrmEmpresaTransporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTipoDocumento.resx">
       <DependentUpon>FrmTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrecioTransporte.resx">
+      <DependentUpon>FrmPrecioTransporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -237,6 +253,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

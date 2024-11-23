@@ -41,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EntEmpresaTransporte.cs" />
+    <Compile Include="EntMarca.cs" />
     <Compile Include="EntCategoria.cs" />
     <Compile Include="EntCliente.cs" />
     <Compile Include="EntClienteJuridico.cs" />
     <Compile Include="EntClienteNatural.cs" />
-    <Compile Include="EntDivisionesAdministrativas.cs" />
     <Compile Include="EntFormasDePago.cs" />
     <Compile Include="EntMoneda.cs" />
     <Compile Include="EntPais.cs" />
     <Compile Include="EntPedido.cs" />
+    <Compile Include="EntPrecioTransporte.cs" />
     <Compile Include="EntProducto.cs" />
     <Compile Include="EntRegion.cs" />
     <Compile Include="EntSabores.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,161 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace Proyecto_Final_MOANSO
 {
     public partial class FrmPrincipal : Form
     {
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
+
+        private Button button;
+        private Panel panel;
+
+        private Form frmhijo;
         public FrmPrincipal()
         {
             InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panelMenu.Controls.Add(leftBorderBtn);
+
+            panel = new Panel();
+            panel.Size = new Size(7,50);
+            panelMenu.Controls.Add(panel);
+            
+            IniciarSubMenu();
+        }
+
+        private void ActivateButton(object sendBtn)
+        {
+            if(sendBtn != null)
+            {
+                DisableButton();
+                currentBtn = (IconButton)sendBtn;
+                currentBtn.BackColor = System.Drawing.Color.FromArgb(212, 160, 23);
+                currentBtn.ForeColor = System.Drawing.Color.DarkOliveGreen;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = System.Drawing.Color.DarkOliveGreen;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+
+                leftBorderBtn.BackColor = System.Drawing.Color.DarkOliveGreen;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+            }
+        }
+
+        private void DisableButton()
+        {
+            if(currentBtn != null)
+            {
+                currentBtn.BackColor = System.Drawing.Color.FromArgb(183, 65, 14);
+                currentBtn.ForeColor = System.Drawing.Color.FromArgb(212, 160, 23);
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = System.Drawing.Color.FromArgb(212, 160, 23);
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+        }
+
+        private void ActivateButtonPanel(object sendBtn)
+        {
+            if (sendBtn != null)
+            {
+                DisableButtonPanel();
+                button = (Button)sendBtn;
+                button.BackColor = System.Drawing.Color.FromArgb(212, 160, 23);
+                button.ForeColor = System.Drawing.Color.DarkOliveGreen;
+                button.TextAlign = ContentAlignment.MiddleCenter;
+                //currentBtn.IconColor = System.Drawing.Color.DarkOliveGreen;
+                //currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                //currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+
+                //panel.BackColor = System.Drawing.Color.DarkOliveGreen;
+                //panel.Location = new Point(0, button.Location.Y);
+                //panel.Visible = true;
+                //panel.BringToFront();
+
+                Point relativeLocation = button.Parent.PointToScreen(button.Location);
+                Point panelParentLocation = panel.Parent.PointToScreen(Point.Empty);
+
+                panel.Location = new Point(0, relativeLocation.Y - panelParentLocation.Y);
+                panel.Height = button.Height; // Ajustar el tamaño al del botón
+                panel.BackColor = System.Drawing.Color.DarkOliveGreen;
+                panel.Visible = true;
+                panel.BringToFront();
+            }
+        }
+
+        private void DisableButtonPanel()
+        {
+            if (button != null)
+            {
+                button.BackColor = System.Drawing.Color.FromArgb(183, 65, 14);
+                button.ForeColor = System.Drawing.Color.FromArgb(212, 160, 23);
+                button.TextAlign = ContentAlignment.MiddleLeft;
+                //currentBtn.IconColor = System.Drawing.Color.FromArgb(212, 160, 23);
+                //currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                //currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+
+        private void ResetPanel()
+        {
+            DisableButtonPanel();
+            panel.Visible = false;
+        }
+
+        private void IniciarSubMenu()
+        {
+            panelProductos.Visible=false;
+            panelCliente.Visible=false;
+        }
+
+        private void OcultarSubMenu()
+        {
+            if(panelProductos.Visible == true)
+                panelProductos.Visible = false;
+            if(panelCliente.Visible == true)
+                panelCliente.Visible = false;
+        }
+
+        public void MostrarSubMenu(Panel submenu)
+        {
+            if(submenu.Visible == false)
+            {
+                OcultarSubMenu();
+                submenu.Visible = true;
+            }
+            else
+            {
+                submenu.Visible = false;
+            }
+        }
+
+        public void AbrirFormularios(Form hijo)
+        {
+            if(frmhijo != null)
+            {
+                frmhijo.Close();
+            }
+            frmhijo= hijo;
+            hijo.TopLevel = false;
+            hijo.FormBorderStyle = FormBorderStyle.None;
+            hijo.Dock = DockStyle.Fill;
+            panelEscritorio.Controls.Add(hijo);
+            panelEscritorio.Tag = hijo;
+            hijo.BringToFront();
+            hijo.Show();
         }
 
         private void registroClientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +190,7 @@ namespace Proyecto_Final_MOANSO
 
         private void registroTransportistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmTransportista transportista = new FrmTransportista();
+            FrmEmpresaTransporte transportista = new FrmEmpresaTransporte();
             transportista.Show();
         }
 
@@ -128,6 +276,59 @@ namespace Proyecto_Final_MOANSO
         {
             FrmClienteNatural clienteNatural = new FrmClienteNatural();
             clienteNatural.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            //OcultarSubMenu();
+            MostrarSubMenu(panelCliente);
+            DisableButtonPanel();
+            panel.Visible = false;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Reset();
+            ResetPanel();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            MostrarSubMenu(panelProductos);
+            DisableButtonPanel();
+            panel.Visible = false;
+        }
+
+        private void btnClienteNatural_Click(object sender, EventArgs e)
+        {
+            ActivateButtonPanel(sender);
+            AbrirFormularios(new FrmClienteNatural());
+        }
+
+        private void btnClienteJuridico_Click(object sender, EventArgs e)
+        {
+            ActivateButtonPanel(sender);
+            AbrirFormularios(new FrmClienteJuridico());
+        }
+
+        private void btnRegistrarProducto_Click(object sender, EventArgs e)
+        {
+            ActivateButtonPanel(sender);
+            AbrirFormularios(new FrmProducto());
+        }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMarca marca = new FrmMarca();
+            marca.Show();
+        }
+
+        private void precioTransporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPrecioTransporte precioTransporte = new FrmPrecioTransporte();
+            precioTransporte.Show();
         }
     }
 }

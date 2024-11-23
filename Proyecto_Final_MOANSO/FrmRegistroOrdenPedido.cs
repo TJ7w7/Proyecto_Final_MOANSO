@@ -24,18 +24,18 @@ namespace Proyecto_Final_MOANSO
 
         private void MostrarNombreDivision(int idDivision)
         {
-            // Llama a la capa lógica para obtener el nombre de la división
-            string nombreDivision = LogDivisionesAdministrativas.Instancia.ObtenerNombreDivisionPorId(idDivision);
+            //// Llama a la capa lógica para obtener el nombre de la división
+            //string nombreDivision = LogDivisionesAdministrativas.Instancia.ObtenerNombreDivisionPorId(idDivision);
 
-            // Muestra el nombre en txtRegionDes o un mensaje si el ID no tiene nombre asociado
-            if (!string.IsNullOrEmpty(nombreDivision))
-            {
-                txtRegionDes.Text = nombreDivision;
-            }
-            else
-            {
-                txtRegionDes.Text = "División no encontrada";
-            }
+            //// Muestra el nombre en txtRegionDes o un mensaje si el ID no tiene nombre asociado
+            //if (!string.IsNullOrEmpty(nombreDivision))
+            //{
+            //    txtRegionDes.Text = nombreDivision;
+            //}
+            //else
+            //{
+            //    txtRegionDes.Text = "División no encontrada";
+            //}
         }
 
         public void LlenarTextBox(EntCliente cliente)

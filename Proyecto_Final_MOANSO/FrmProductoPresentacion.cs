@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_Final_MOANSO
 {
-    public partial class FrmPrecioTerrestre : Form
+    public partial class FrmProductoPresentacion : Form
     {
-        public FrmPrecioTerrestre()
+        public FrmProductoPresentacion()
         {
             InitializeComponent();
         }

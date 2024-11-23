@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class EntDivisionesAdministrativas
+    public class EntMarca
     {
-        public int DivisionesAdministrativasId { get; set; }
+        public int MarcaId { get; set; }
         public string Nombre { get; set; }
-        public int CodigoArea { get; set; }
+        public string Descripcion { get; set; }
         public bool Estado { get; set; }
     }
 }
