@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatAsignacionTransporte.cs" />
     <Compile Include="DatEmpresaTransporte.cs" />
     <Compile Include="DatMarca.cs" />
     <Compile Include="Conexion.cs" />
@@ -50,11 +51,14 @@
     <Compile Include="DatMoneda.cs" />
     <Compile Include="DatPais.cs" />
     <Compile Include="DatPedido.cs" />
+    <Compile Include="DatPedidoDetalle.cs" />
     <Compile Include="DatPrecioTransporte.cs" />
     <Compile Include="DatProducto.cs" />
     <Compile Include="DatRegion.cs" />
     <Compile Include="DatSabores.cs" />
     <Compile Include="DatTipoDocumento.cs" />
+    <Compile Include="DatTipoPresentacion.cs" />
+    <Compile Include="DatVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

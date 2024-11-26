@@ -42,14 +42,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTipoDocumento = new System.Windows.Forms.DataGridView();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoDocumento)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.cbxClienteJuridico);
-            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.cbxEstado);
             this.groupBox1.Controls.Add(this.cbxAlfanumerico);
@@ -71,16 +74,18 @@
             // cbxClienteJuridico
             // 
             this.cbxClienteJuridico.AutoSize = true;
-            this.cbxClienteJuridico.Location = new System.Drawing.Point(522, 135);
+            this.cbxClienteJuridico.Location = new System.Drawing.Point(522, 161);
             this.cbxClienteJuridico.Name = "cbxClienteJuridico";
             this.cbxClienteJuridico.Size = new System.Drawing.Size(161, 28);
             this.cbxClienteJuridico.TabIndex = 11;
             this.cbxClienteJuridico.Text = "ClienteJuridico";
             this.cbxClienteJuridico.UseVisualStyleBackColor = true;
+            this.cbxClienteJuridico.Visible = false;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(774, 109);
+            this.btnEditar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(134, 567);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(97, 33);
             this.btnEditar.TabIndex = 10;
@@ -90,9 +95,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(774, 51);
+            this.btnAgregar.Location = new System.Drawing.Point(767, 51);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(97, 33);
+            this.btnAgregar.Size = new System.Drawing.Size(104, 33);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -101,7 +106,7 @@
             // cbxEstado
             // 
             this.cbxEstado.AutoSize = true;
-            this.cbxEstado.Location = new System.Drawing.Point(522, 173);
+            this.cbxEstado.Location = new System.Drawing.Point(522, 127);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(92, 28);
             this.cbxEstado.TabIndex = 8;
@@ -189,12 +194,48 @@
             this.dgvTipoDocumento.TabIndex = 1;
             this.dgvTipoDocumento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoDocumento_CellClick);
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(13, 567);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(97, 33);
+            this.btnNuevo.TabIndex = 10;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(767, 124);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(104, 33);
+            this.btnModificar.TabIndex = 11;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(821, 567);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(97, 33);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmTipoDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 551);
+            this.ClientSize = new System.Drawing.Size(930, 612);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvTipoDocumento);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmTipoDocumento";
             this.Text = "FrmTipoDocumento";
@@ -221,5 +262,8 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridView dgvTipoDocumento;
         private System.Windows.Forms.CheckBox cbxClienteJuridico;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

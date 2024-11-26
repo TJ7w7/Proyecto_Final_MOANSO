@@ -18,6 +18,8 @@ namespace Proyecto_Final_MOANSO
         {
             InitializeComponent();
             CargarMoneda();
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
         }
         public void CargarMoneda()
         {
@@ -59,6 +61,29 @@ namespace Proyecto_Final_MOANSO
         public string id;
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            btnModificar.Enabled = true;
+            btnAgregar.Enabled = false;
+            activarCellClick = true;
+            Limpiar();
+        }
+        private bool activarCellClick = false;
+
+        private void dgvMoneda_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!activarCellClick)
+            {
+                return;
+            }
+            DataGridViewRow filaActual = dgvMoneda.Rows[e.RowIndex];
+            id = filaActual.Cells[0].Value.ToString();
+            txtCodigoIso.Text = filaActual.Cells[1].Value.ToString();
+            txtNombre.Text = filaActual.Cells[2].Value.ToString();
+            txtTasaCambio.Text = filaActual.Cells[3].Value.ToString();
+            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[5].Value);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
             if (id == "")
             {
                 MessageBox.Show("Porfavor Seleccione un elemento", "Error");
@@ -84,14 +109,13 @@ namespace Proyecto_Final_MOANSO
                 Limpiar();
             }
         }
-        private void dgvMoneda_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-            DataGridViewRow filaActual = dgvMoneda.Rows[e.RowIndex];
-            id = filaActual.Cells[0].Value.ToString();
-            txtCodigoIso.Text = filaActual.Cells[1].Value.ToString();
-            txtNombre.Text = filaActual.Cells[2].Value.ToString();
-            txtTasaCambio.Text = filaActual.Cells[3].Value.ToString();
-            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[5].Value);
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = false;
+            activarCellClick = false;
+            Limpiar();
         }
     }
 }

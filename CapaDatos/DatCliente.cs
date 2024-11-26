@@ -138,6 +138,51 @@ namespace CapaDatos
             return edita;
         }
 
+        public EntClienteJuridico BuscarClienteJuridico(string numeroDocumento)
+        {
+            EntClienteJuridico cliente = null;
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("BuscarClienteJuridico", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Parámetros opcionales
+                        cmd.Parameters.AddWithValue("@numeroDocumento", numeroDocumento);
+
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read()) // Solo lee el primer resultado
+                            {
+                                cliente = new EntClienteJuridico
+                                {
+                                    ClienteId = dr.GetInt32(dr.GetOrdinal("ClienteId")),
+                                    NumeroDocumento = dr.GetString(dr.GetOrdinal("NumeroDocumento")),
+                                    RazonSocial = dr.GetString(dr.GetOrdinal("Nombres")),
+                                    PaisId = dr.GetInt32(dr.GetOrdinal("PaisId")),
+                                    RegionId = dr.GetInt32(dr.GetOrdinal("RegionId")),
+                                    Direccion = dr.GetString(dr.GetOrdinal("Direccion")),
+                                    NumeroContacto = dr.GetString(dr.GetOrdinal("NumeroContacto")),
+                                    Estado = dr.GetBoolean(dr.GetOrdinal("Estado"))
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar el cliente", ex);
+            }
+
+            return cliente;
+        }
+
         #endregion
 
         #region MetodosClienteNatural
@@ -264,6 +309,52 @@ namespace CapaDatos
             }
 
             return edita;
+        }
+
+        public EntClienteNatural BuscarClienteNatural(string numeroDocumento)
+        {
+            EntClienteNatural cliente = null;
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("BuscarClienteNatural", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Parámetros opcionales
+                        cmd.Parameters.AddWithValue("@numeroDocumento",numeroDocumento);
+
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read()) // Solo lee el primer resultado
+                            {
+                                cliente = new EntClienteNatural
+                                {
+                                    ClienteId = dr.GetInt32(dr.GetOrdinal("ClienteId")),
+                                    NumeroDocumento = dr.GetString(dr.GetOrdinal("NumeroDocumento")),
+                                    Nombres = dr.GetString(dr.GetOrdinal("Nombres")),
+                                    Apellidos = dr.GetString(dr.GetOrdinal("Apellidos")),
+                                    PaisId = dr.GetInt32(dr.GetOrdinal("PaisId")),
+                                    RegionId = dr.GetInt32(dr.GetOrdinal("RegionId")),
+                                    Direccion = dr.GetString(dr.GetOrdinal("Direccion")),
+                                    NumeroContacto = dr.GetString(dr.GetOrdinal("NumeroContacto")),
+                                    Estado = dr.GetBoolean(dr.GetOrdinal("Estado"))
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar el cliente", ex);
+            }
+
+            return cliente;
         }
         #endregion
 

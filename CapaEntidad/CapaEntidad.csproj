@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntAsignacionTransporte.cs" />
+    <Compile Include="EntConductor.cs" />
     <Compile Include="EntEmpresaTransporte.cs" />
     <Compile Include="EntMarca.cs" />
     <Compile Include="EntCategoria.cs" />
@@ -49,13 +51,17 @@
     <Compile Include="EntClienteNatural.cs" />
     <Compile Include="EntFormasDePago.cs" />
     <Compile Include="EntMoneda.cs" />
-    <Compile Include="EntPais.cs" />
     <Compile Include="EntPedido.cs" />
+    <Compile Include="EntPedidoDetalle.cs" />
+    <Compile Include="EntPais.cs" />
     <Compile Include="EntPrecioTransporte.cs" />
     <Compile Include="EntProducto.cs" />
     <Compile Include="EntRegion.cs" />
     <Compile Include="EntSabores.cs" />
     <Compile Include="EntTipoDocumento.cs" />
+    <Compile Include="EntTipoPresentacion.cs" />
+    <Compile Include="EntVehiculo.cs" />
+    <Compile Include="EntVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

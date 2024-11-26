@@ -220,14 +220,14 @@ namespace Proyecto_Final_MOANSO
 
         private void registroAsignacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAsignacionTrasportista asignacionTrasportista = new FrmAsignacionTrasportista();
+            FrmAsignacionTransporte asignacionTrasportista = new FrmAsignacionTransporte();
             asignacionTrasportista.Show();
         }
 
         private void registroVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmRegistroVenta registroVenta = new FrmRegistroVenta();
-            registroVenta.Show();
+            FrmVenta Venta = new FrmVenta();
+            Venta.Show();
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)

@@ -22,6 +22,19 @@ namespace CapaLogica
                 return LogPedido._instancia;
             }
         }
+        public List<EntPedido> ListarPedido()
+        {
+            return DatPedido.Instancia.listarPedido();
+        }
+        public string ContarFilas()
+        {
+           return DatPedido.Instancia.ContarFilasOrdenPedido();
+        }
+
+        public List<EntPedido> ListarPedidoConfirmados()
+        {
+            return DatPedido.Instancia.listarPedidoConfirmados();
+        }
         #endregion singleton
     }
 }

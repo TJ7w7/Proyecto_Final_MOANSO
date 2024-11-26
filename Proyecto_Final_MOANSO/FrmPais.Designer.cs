@@ -31,16 +31,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbxEstado = new System.Windows.Forms.CheckBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCodigoIso = new System.Windows.Forms.TextBox();
-            this.txtCodigoTelefono = new System.Windows.Forms.TextBox();
-            this.cbMoneda = new System.Windows.Forms.ComboBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.cbMoneda = new System.Windows.Forms.ComboBox();
+            this.txtCodigoTelefono = new System.Windows.Forms.TextBox();
+            this.txtCodigoIso = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cbxEstado = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.dgvPais = new System.Windows.Forms.DataGridView();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPais)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +70,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.cbMoneda);
             this.groupBox1.Controls.Add(this.txtCodigoTelefono);
@@ -86,64 +89,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pais";
             // 
-            // label3
+            // btnEditar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Codigo Telefono:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 24);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Moneda:";
-            // 
-            // cbxEstado
-            // 
-            this.cbxEstado.AutoSize = true;
-            this.cbxEstado.Location = new System.Drawing.Point(522, 46);
-            this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(92, 28);
-            this.cbxEstado.TabIndex = 4;
-            this.cbxEstado.Text = "Estado";
-            this.cbxEstado.UseVisualStyleBackColor = true;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(239, 44);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(230, 32);
-            this.txtNombre.TabIndex = 5;
-            // 
-            // txtCodigoIso
-            // 
-            this.txtCodigoIso.Location = new System.Drawing.Point(239, 87);
-            this.txtCodigoIso.Name = "txtCodigoIso";
-            this.txtCodigoIso.Size = new System.Drawing.Size(116, 32);
-            this.txtCodigoIso.TabIndex = 6;
-            // 
-            // txtCodigoTelefono
-            // 
-            this.txtCodigoTelefono.Location = new System.Drawing.Point(239, 129);
-            this.txtCodigoTelefono.Name = "txtCodigoTelefono";
-            this.txtCodigoTelefono.Size = new System.Drawing.Size(116, 32);
-            this.txtCodigoTelefono.TabIndex = 7;
-            // 
-            // cbMoneda
-            // 
-            this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(239, 173);
-            this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(162, 32);
-            this.cbMoneda.TabIndex = 8;
+            this.btnEditar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(180, 557);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(105, 38);
+            this.btnEditar.TabIndex = 10;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -155,15 +110,64 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnEditar
+            // cbMoneda
             // 
-            this.btnEditar.Location = new System.Drawing.Point(691, 118);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(105, 38);
-            this.btnEditar.TabIndex = 10;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.cbMoneda.FormattingEnabled = true;
+            this.cbMoneda.Location = new System.Drawing.Point(239, 173);
+            this.cbMoneda.Name = "cbMoneda";
+            this.cbMoneda.Size = new System.Drawing.Size(162, 32);
+            this.cbMoneda.TabIndex = 8;
+            // 
+            // txtCodigoTelefono
+            // 
+            this.txtCodigoTelefono.Location = new System.Drawing.Point(239, 129);
+            this.txtCodigoTelefono.Name = "txtCodigoTelefono";
+            this.txtCodigoTelefono.Size = new System.Drawing.Size(116, 32);
+            this.txtCodigoTelefono.TabIndex = 7;
+            // 
+            // txtCodigoIso
+            // 
+            this.txtCodigoIso.Location = new System.Drawing.Point(239, 87);
+            this.txtCodigoIso.Name = "txtCodigoIso";
+            this.txtCodigoIso.Size = new System.Drawing.Size(116, 32);
+            this.txtCodigoIso.TabIndex = 6;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(239, 44);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(230, 32);
+            this.txtNombre.TabIndex = 5;
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.AutoSize = true;
+            this.cbxEstado.Location = new System.Drawing.Point(522, 46);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(92, 28);
+            this.cbxEstado.TabIndex = 4;
+            this.cbxEstado.Text = "Estado";
+            this.cbxEstado.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(34, 176);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 24);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Moneda:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(34, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 24);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Codigo Telefono:";
             // 
             // dgvPais
             // 
@@ -176,11 +180,46 @@
             this.dgvPais.TabIndex = 3;
             this.dgvPais.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPais_CellClick);
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(40, 557);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(105, 38);
+            this.btnNuevo.TabIndex = 11;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(691, 129);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(105, 38);
+            this.btnModificar.TabIndex = 12;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Location = new System.Drawing.Point(765, 557);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(105, 38);
+            this.btnCerrar.TabIndex = 12;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            // 
             // FrmPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 554);
+            this.ClientSize = new System.Drawing.Size(913, 607);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvPais);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmPais";
@@ -207,5 +246,8 @@
         private System.Windows.Forms.TextBox txtCodigoIso;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DataGridView dgvPais;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

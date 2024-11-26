@@ -19,6 +19,8 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
             CargarRegion();
             CargarPais();
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
         }
         public void CargarPais()
         {
@@ -33,6 +35,7 @@ namespace Proyecto_Final_MOANSO
             dgvRegion.DataSource = LogRegion.Instancia.ListarRegion();
             
             dgvRegion.Columns["PaisId"].Visible = false;
+            dgvRegion.Columns["Aduana"].Visible = false;
 
             dgvRegion.Columns["PaisId"].DisplayIndex = 0;
             dgvRegion.Columns["RegionId"].DisplayIndex = 1;
@@ -78,9 +81,14 @@ namespace Proyecto_Final_MOANSO
             }
         }
         public string id;
-
+        private bool activarCellClick = false;
         private void dgvRegion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!activarCellClick)
+            {
+                return;
+            }
+
             DataGridViewRow filaActual = dgvRegion.Rows[e.RowIndex];
             id = filaActual.Cells[0].Value.ToString();
             int paisId = int.Parse(filaActual.Cells[1].Value.ToString());
@@ -93,6 +101,14 @@ namespace Proyecto_Final_MOANSO
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = true;
+            activarCellClick = true;
+            Limpiar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             if (id == "")
             {
@@ -118,6 +134,14 @@ namespace Proyecto_Final_MOANSO
                 CargarRegion();
                 Limpiar();
             }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = false;
+            activarCellClick = false;
+            Limpiar();
         }
     }
 }

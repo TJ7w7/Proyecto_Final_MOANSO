@@ -45,5 +45,15 @@ namespace CapaLogica
         {
             DatCliente.Instancia.EditarClienteNatural(cn);
         }
+
+        public EntClienteNatural BuscarClienteNatural(string nro)
+        {
+            return DatCliente.Instancia.BuscarClienteNatural(nro);
+        }
+
+        public EntClienteJuridico BuscarClienteJuridico(string nro)
+        {
+            return DatCliente.Instancia.BuscarClienteJuridico(nro);
+        }
     }
 }

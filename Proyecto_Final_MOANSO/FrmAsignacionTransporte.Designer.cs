@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Final_MOANSO
 {
-    partial class FrmAsignacionTrasportista
+    partial class FrmAsignacionTransporte
     {
         /// <summary>
         /// Required designer variable.
@@ -32,37 +32,37 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarTransportista = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtLicencia = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNroDocumento = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnBuscarOrdenPedido = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNroPedido = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAsignacionTransporte = new System.Windows.Forms.DataGridView();
+            this.cbxEstado = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignacionTransporte)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -71,7 +71,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnBuscarOrdenPedido);
             this.groupBox1.Controls.Add(this.btnModificar);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNroPedido);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,9 +94,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxEstado);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 97);
             this.groupBox2.Name = "groupBox2";
@@ -107,30 +107,29 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.txtTipoVehiculo);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.textBox6);
+            this.groupBox5.Controls.Add(this.txtMatricula);
             this.groupBox5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(6, 363);
+            this.groupBox5.Location = new System.Drawing.Point(16, 321);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(354, 156);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehiculo";
             // 
-            // comboBox1
+            // txtTipoVehiculo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(130, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 32);
-            this.comboBox1.TabIndex = 8;
+            this.txtTipoVehiculo.Location = new System.Drawing.Point(130, 44);
+            this.txtTipoVehiculo.Name = "txtTipoVehiculo";
+            this.txtTipoVehiculo.Size = new System.Drawing.Size(206, 32);
+            this.txtTipoVehiculo.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 42);
+            this.label6.Location = new System.Drawing.Point(10, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 24);
             this.label6.TabIndex = 4;
@@ -139,126 +138,123 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 104);
+            this.label7.Location = new System.Drawing.Point(18, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 24);
             this.label7.TabIndex = 7;
             this.label7.Text = "Tipo:";
             // 
-            // textBox6
+            // txtMatricula
             // 
-            this.textBox6.Location = new System.Drawing.Point(130, 39);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(206, 32);
-            this.textBox6.TabIndex = 6;
+            this.txtMatricula.Location = new System.Drawing.Point(130, 98);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(206, 32);
+            this.txtMatricula.TabIndex = 6;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtLicencia);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.cbTipoDocumento);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.txtApellidos);
+            this.groupBox4.Controls.Add(this.txtNombres);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.txtNroDocumento);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(6, 157);
+            this.groupBox4.Location = new System.Drawing.Point(16, 45);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(462, 191);
+            this.groupBox4.Size = new System.Drawing.Size(462, 270);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Conductor";
             // 
+            // txtLicencia
+            // 
+            this.txtLicencia.Location = new System.Drawing.Point(180, 221);
+            this.txtLicencia.Name = "txtLicencia";
+            this.txtLicencia.Size = new System.Drawing.Size(242, 32);
+            this.txtLicencia.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(77, 224);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 24);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Licencia:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 24);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Tipo Documento:";
+            // 
+            // cbTipoDocumento
+            // 
+            this.cbTipoDocumento.FormattingEnabled = true;
+            this.cbTipoDocumento.Location = new System.Drawing.Point(180, 46);
+            this.cbTipoDocumento.Name = "cbTipoDocumento";
+            this.cbTipoDocumento.Size = new System.Drawing.Size(206, 32);
+            this.cbTipoDocumento.TabIndex = 9;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 140);
+            this.label5.Location = new System.Drawing.Point(77, 181);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Apellidos";
+            this.label5.Text = "Apellidos:";
             // 
-            // textBox5
+            // txtApellidos
             // 
-            this.textBox5.Location = new System.Drawing.Point(180, 137);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(242, 32);
-            this.textBox5.TabIndex = 4;
+            this.txtApellidos.Location = new System.Drawing.Point(180, 178);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(242, 32);
+            this.txtApellidos.TabIndex = 4;
             // 
-            // textBox4
+            // txtNombres
             // 
-            this.textBox4.Location = new System.Drawing.Point(180, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(242, 32);
-            this.textBox4.TabIndex = 3;
+            this.txtNombres.Location = new System.Drawing.Point(180, 139);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(242, 32);
+            this.txtNombres.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 96);
+            this.label4.Location = new System.Drawing.Point(78, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "Nombres:";
             // 
-            // textBox2
+            // txtNroDocumento
             // 
-            this.textBox2.Location = new System.Drawing.Point(180, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(242, 32);
-            this.textBox2.TabIndex = 1;
+            this.txtNroDocumento.Location = new System.Drawing.Point(180, 93);
+            this.txtNroDocumento.Name = "txtNroDocumento";
+            this.txtNroDocumento.Size = new System.Drawing.Size(242, 32);
+            this.txtNroDocumento.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 48);
+            this.label2.Location = new System.Drawing.Point(18, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nro Documento:";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnBuscarTransportista);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(6, 31);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(460, 109);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Empresa";
-            // 
-            // btnBuscarTransportista
-            // 
-            this.btnBuscarTransportista.Location = new System.Drawing.Point(360, 45);
-            this.btnBuscarTransportista.Name = "btnBuscarTransportista";
-            this.btnBuscarTransportista.Size = new System.Drawing.Size(75, 32);
-            this.btnBuscarTransportista.TabIndex = 2;
-            this.btnBuscarTransportista.Text = "...";
-            this.btnBuscarTransportista.UseVisualStyleBackColor = true;
-            this.btnBuscarTransportista.Click += new System.EventHandler(this.btnBuscarTransportista_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(111, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 32);
-            this.textBox3.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nombre:";
-            // 
             // btnBuscarOrdenPedido
             // 
-            this.btnBuscarOrdenPedido.Location = new System.Drawing.Point(314, 48);
+            this.btnBuscarOrdenPedido.Location = new System.Drawing.Point(333, 45);
             this.btnBuscarOrdenPedido.Name = "btnBuscarOrdenPedido";
             this.btnBuscarOrdenPedido.Size = new System.Drawing.Size(75, 32);
             this.btnBuscarOrdenPedido.TabIndex = 2;
@@ -276,12 +272,12 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtNroPedido
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 32);
-            this.textBox1.TabIndex = 1;
+            this.txtNroPedido.Location = new System.Drawing.Point(132, 45);
+            this.txtNroPedido.Name = "txtNroPedido";
+            this.txtNroPedido.Size = new System.Drawing.Size(172, 32);
+            this.txtNroPedido.TabIndex = 1;
             // 
             // btnAgregar
             // 
@@ -292,15 +288,16 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 24);
+            this.label1.Size = new System.Drawing.Size(108, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Id:";
+            this.label1.Text = "Nro Orden:";
             // 
             // button4
             // 
@@ -342,40 +339,49 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvAsignacionTransporte
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(567, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(557, 710);
-            this.dataGridView1.TabIndex = 12;
+            this.dgvAsignacionTransporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAsignacionTransporte.Location = new System.Drawing.Point(567, 28);
+            this.dgvAsignacionTransporte.Name = "dgvAsignacionTransporte";
+            this.dgvAsignacionTransporte.RowHeadersWidth = 51;
+            this.dgvAsignacionTransporte.RowTemplate.Height = 24;
+            this.dgvAsignacionTransporte.Size = new System.Drawing.Size(652, 710);
+            this.dgvAsignacionTransporte.TabIndex = 12;
             // 
-            // FrmAsignacionTrasportista
+            // cbxEstado
+            // 
+            this.cbxEstado.AutoSize = true;
+            this.cbxEstado.Location = new System.Drawing.Point(23, 501);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(92, 28);
+            this.cbxEstado.TabIndex = 5;
+            this.cbxEstado.Text = "Estado";
+            this.cbxEstado.UseVisualStyleBackColor = true;
+            // 
+            // FrmAsignacionTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 820);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1231, 820);
+            this.Controls.Add(this.dgvAsignacionTransporte);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmAsignacionTrasportista";
+            this.Name = "FrmAsignacionTransporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignacion Trasportista";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignacionTransporte)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,25 +390,20 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscarOrdenPedido;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNroPedido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNroDocumento;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnBuscarTransportista;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
@@ -410,6 +411,12 @@
         private System.Windows.Forms.Button btnDeshabilitar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAsignacionTransporte;
+        private System.Windows.Forms.TextBox txtLicencia;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbTipoDocumento;
+        private System.Windows.Forms.TextBox txtTipoVehiculo;
+        private System.Windows.Forms.CheckBox cbxEstado;
     }
 }

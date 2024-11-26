@@ -20,7 +20,8 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
             CargarPais();
             CargarMonedas();
-
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
         }
         public void CargarMonedas()
         {
@@ -43,23 +44,6 @@ namespace Proyecto_Final_MOANSO
             dgvPais.Columns["CodigoTelefono"].DisplayIndex = 4;
             dgvPais.Columns["NombreMoneda"].DisplayIndex = 5;
             dgvPais.Columns["Estado"].DisplayIndex = 6;
-
-
-            ////Elimina las columnas y las crea, podiendo asiganar nombre a las columnas y el orden
-            //dgvPais.Columns.Clear();
-
-            //// Crear columnas en el orden deseado
-            //dgvPais.Columns.Add("Nombre", "Nombre");
-            //dgvPais.Columns.Add("CodigoISO", "Código ISO");
-            //dgvPais.Columns.Add("CodigoTelefono", "Código Teléfono");
-            //dgvPais.Columns.Add("NombreMoneda", "Nombre Moneda");
-
-            //// Asignar datos
-            //foreach (var pais in LogPais.Instancia.listarPais())
-            //{
-            //    dgvPais.Rows.Add(pais.Nombre, pais.CodigoISO, pais.CodigoTelefono, pais.NombreMoneda);
-            //}
-
         }
 
         public void Limpiar()
@@ -101,6 +85,39 @@ namespace Proyecto_Final_MOANSO
         public string id;
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = true;
+            activarCellClick = true;
+            Limpiar();
+        }
+        private bool activarCellClick = false;
+        private void dgvPais_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!activarCellClick)
+            {
+                return;
+            }
+            DataGridViewRow filaActual = dgvPais.Rows[e.RowIndex];
+            id = filaActual.Cells[0].Value.ToString();
+            txtNombre.Text = filaActual.Cells[1].Value.ToString();
+            txtCodigoIso.Text = filaActual.Cells[2].Value.ToString();
+            txtCodigoTelefono.Text = filaActual.Cells[3].Value.ToString();
+            int monedaId = int.Parse(filaActual.Cells[4].Value.ToString());
+            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[5].Value);
+
+            cbMoneda.SelectedValue = monedaId;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = false;
+            activarCellClick = false;
+            Limpiar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
             if (id == "")
             {
                 MessageBox.Show("Porfavor Seleccione un elemento", "Error");
@@ -125,19 +142,6 @@ namespace Proyecto_Final_MOANSO
                 CargarPais();
                 Limpiar();
             }
-        }
-
-        private void dgvPais_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow filaActual = dgvPais.Rows[e.RowIndex];
-            id = filaActual.Cells[0].Value.ToString();
-            txtNombre.Text = filaActual.Cells[1].Value.ToString();
-            txtCodigoIso.Text = filaActual.Cells[2].Value.ToString();
-            txtCodigoTelefono.Text = filaActual.Cells[3].Value.ToString();
-            int monedaId = int.Parse(filaActual.Cells[4].Value.ToString());
-            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[5].Value);
-
-            cbMoneda.SelectedValue = monedaId;
         }
     }
 }

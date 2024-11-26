@@ -29,5 +29,10 @@ namespace CapaLogica
         {
             DatProducto.Instancia.EditarProducto(p);
         }
+
+        public List<EntProducto> ListarProductoTipoPresentaciones()
+        {
+            return DatProducto.Instancia.ListarTipoPresentacionProducto();
+        }
     }
 }

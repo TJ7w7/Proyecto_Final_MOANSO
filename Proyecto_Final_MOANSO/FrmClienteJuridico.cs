@@ -21,6 +21,8 @@ namespace Proyecto_Final_MOANSO
             CargarTipoDocumento();
             CargarPais();
             CargarRegion();
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
         }
         public void CargarClienteJuridico()
         {
@@ -116,6 +118,35 @@ namespace Proyecto_Final_MOANSO
         public string id;
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = true;
+            activarCellClick = true;
+        }
+        private bool activarCellClick = false;
+        private void dgvClienteJuridico_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!activarCellClick)
+            {
+                return;
+            }
+            DataGridViewRow filaActual = dgvClienteJuridico.Rows[e.RowIndex];
+            txtRazonSocial.Text = filaActual.Cells[0].Value.ToString();
+            id = filaActual.Cells[1].Value.ToString();
+            int tipoDocumentoId = int.Parse(filaActual.Cells[2].Value.ToString());
+            txtNumeroDocumento.Text = filaActual.Cells[3].Value.ToString();
+            int paisId = int.Parse(filaActual.Cells[4].Value.ToString());
+            int regionId = int.Parse(filaActual.Cells[5].Value.ToString());
+            txtDireccion.Text = filaActual.Cells[6].Value.ToString();
+            txtNumeroContacto.Text = filaActual.Cells[7].Value.ToString();
+            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[8].Value);
+
+            cbTipoDocumento.SelectedValue = tipoDocumentoId;
+            cbPais.SelectedValue = paisId;
+            cbRegion.SelectedValue = regionId;
+            
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
             if (txtNumeroDocumento.Text == "")
             {
                 MessageBox.Show("Porfavor Complete los datos", "Error");
@@ -144,23 +175,12 @@ namespace Proyecto_Final_MOANSO
                 Limpiar();
             }
         }
-        private void dgvClienteJuridico_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow filaActual = dgvClienteJuridico.Rows[e.RowIndex];
-            txtRazonSocial.Text = filaActual.Cells[0].Value.ToString();
-            id = filaActual.Cells[1].Value.ToString();
-            int tipoDocumentoId = int.Parse(filaActual.Cells[2].Value.ToString());
-            txtNumeroDocumento.Text = filaActual.Cells[3].Value.ToString();
-            int paisId = int.Parse(filaActual.Cells[4].Value.ToString());
-            int regionId = int.Parse(filaActual.Cells[5].Value.ToString());
-            txtDireccion.Text = filaActual.Cells[6].Value.ToString();
-            txtNumeroContacto.Text = filaActual.Cells[7].Value.ToString();
-            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[8].Value);
 
-            cbTipoDocumento.SelectedValue = tipoDocumentoId;
-            cbPais.SelectedValue = paisId;
-            cbRegion.SelectedValue = regionId;
-            
-        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = false;
+            activarCellClick = false;
+    }
     }
 }

@@ -18,10 +18,14 @@ namespace Proyecto_Final_MOANSO
         {
             InitializeComponent();
             CargarTipoDocumento();
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
         }
         public void CargarTipoDocumento()
         {
             dgvTipoDocumento.DataSource = LogTipoDocumento.Instancia.listarTipoDocumento();
+
+            dgvTipoDocumento.Columns["ClienteJuridico"].Visible = false;
         }
         public void Limpiar()
         {
@@ -61,8 +65,59 @@ namespace Proyecto_Final_MOANSO
                 Limpiar();
             }
         }
-        public string id;
+        private bool activarCellClick = false;
         private void btnEditar_Click(object sender, EventArgs e)
+        {
+            btnModificar.Enabled = true;
+            btnAgregar.Enabled = false;
+            activarCellClick = true;
+            Limpiar();
+        }
+
+        private void dgvTipoDocumento_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!activarCellClick)
+            {
+                return;
+            }
+
+            if (e.RowIndex >= 0) // Asegúrate de no seleccionar el encabezado
+            {
+                DataGridViewRow filaActual = dgvTipoDocumento.Rows[e.RowIndex];
+                id = filaActual.Cells[0].Value.ToString();
+                txtNombre.Text = filaActual.Cells[1].Value.ToString();
+                cbxLongitudExacta.Checked = Convert.ToBoolean(filaActual.Cells[2].Value);
+                txtLongitudMinima.Text = filaActual.Cells[3].Value.ToString();
+                txtLongitudMaxima.Text = filaActual.Cells[4].Value.ToString();
+                cbxAlfanumerico.Checked = Convert.ToBoolean(filaActual.Cells[5].Value);
+                cbxClienteJuridico.Checked = Convert.ToBoolean(filaActual.Cells[6].Value);
+                cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[7].Value);
+            }
+        }
+
+        private void txtLongitudMinima_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxLongitudExacta.Checked)
+            {
+                txtLongitudMaxima.Text = txtLongitudMinima.Text;
+            }
+        }
+
+        private void cbxLongitudExacta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxLongitudExacta.Checked)
+            {
+                txtLongitudMaxima.Enabled = false;
+                txtLongitudMaxima.Text = txtLongitudMinima.Text;
+            }
+            else
+            {
+                txtLongitudMaxima.Enabled=true;
+                txtLongitudMaxima.Text = string.Empty;
+            }
+        }
+        public string id;
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             if (id == "")
             {
@@ -89,42 +144,21 @@ namespace Proyecto_Final_MOANSO
                 }
                 CargarTipoDocumento();
                 Limpiar();
+                activarCellClick = false;
             }
         }
 
-        private void dgvTipoDocumento_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-            DataGridViewRow filaActual = dgvTipoDocumento.Rows[e.RowIndex];
-            id = filaActual.Cells[0].Value.ToString();
-            txtNombre.Text = filaActual.Cells[1].Value.ToString();
-            cbxLongitudExacta.Checked = Convert.ToBoolean(filaActual.Cells[2].Value);
-            txtLongitudMinima.Text = filaActual.Cells[3].Value.ToString();
-            txtLongitudMaxima.Text = filaActual.Cells[4].Value.ToString();
-            cbxAlfanumerico.Checked = Convert.ToBoolean(filaActual.Cells[5].Value);
-            cbxClienteJuridico.Checked = Convert.ToBoolean(filaActual.Cells[6].Value);
-            cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[7].Value);
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = false;
+            activarCellClick = false;
+            Limpiar();
         }
 
-        private void txtLongitudMinima_TextChanged(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (cbxLongitudExacta.Checked)
-            {
-                txtLongitudMaxima.Text = txtLongitudMinima.Text;
-            }
-        }
-
-        private void cbxLongitudExacta_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbxLongitudExacta.Checked)
-            {
-                txtLongitudMaxima.Enabled = false;
-                txtLongitudMaxima.Text = txtLongitudMinima.Text;
-            }
-            else
-            {
-                txtLongitudMaxima.Enabled=true;
-                txtLongitudMaxima.Text = string.Empty;
-            }
+            this.Close();
         }
     }
 }

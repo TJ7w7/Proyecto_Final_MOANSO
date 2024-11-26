@@ -47,6 +47,7 @@
             this.transportistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroTransportistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarTransportistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.precioTransporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroFormasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignacionTrasportistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,6 @@
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelEscritorio = new System.Windows.Forms.Panel();
-            this.precioTransporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -148,7 +148,7 @@
             // registroVentaToolStripMenuItem
             // 
             this.registroVentaToolStripMenuItem.Name = "registroVentaToolStripMenuItem";
-            this.registroVentaToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.registroVentaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.registroVentaToolStripMenuItem.Text = "Registro Venta";
             this.registroVentaToolStripMenuItem.Click += new System.EventHandler(this.registroVentaToolStripMenuItem_Click);
             // 
@@ -245,6 +245,13 @@
             this.buscarTransportistasToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
             this.buscarTransportistasToolStripMenuItem.Text = "Buscar Transportista";
             this.buscarTransportistasToolStripMenuItem.Click += new System.EventHandler(this.buscarTransportistasToolStripMenuItem_Click);
+            // 
+            // precioTransporteToolStripMenuItem
+            // 
+            this.precioTransporteToolStripMenuItem.Name = "precioTransporteToolStripMenuItem";
+            this.precioTransporteToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.precioTransporteToolStripMenuItem.Text = "PrecioTransporte";
+            this.precioTransporteToolStripMenuItem.Click += new System.EventHandler(this.precioTransporteToolStripMenuItem_Click);
             // 
             // formasDePagoToolStripMenuItem
             // 
@@ -348,7 +355,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 28);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 1135);
+            this.panelMenu.Size = new System.Drawing.Size(220, 1027);
             this.panelMenu.TabIndex = 2;
             // 
             // panel4
@@ -689,22 +696,15 @@
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritorio.Location = new System.Drawing.Point(220, 98);
             this.panelEscritorio.Name = "panelEscritorio";
-            this.panelEscritorio.Size = new System.Drawing.Size(980, 1065);
+            this.panelEscritorio.Size = new System.Drawing.Size(980, 957);
             this.panelEscritorio.TabIndex = 4;
-            // 
-            // precioTransporteToolStripMenuItem
-            // 
-            this.precioTransporteToolStripMenuItem.Name = "precioTransporteToolStripMenuItem";
-            this.precioTransporteToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.precioTransporteToolStripMenuItem.Text = "PrecioTransporte";
-            this.precioTransporteToolStripMenuItem.Click += new System.EventHandler(this.precioTransporteToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1200, 1163);
+            this.ClientSize = new System.Drawing.Size(1200, 1055);
             this.Controls.Add(this.panelEscritorio);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);

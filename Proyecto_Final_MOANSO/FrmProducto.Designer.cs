@@ -34,6 +34,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarImagen = new System.Windows.Forms.Button();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.txtDescripcionProducto = new System.Windows.Forms.TextBox();
@@ -60,22 +64,20 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtDescripcionPresentacion = new System.Windows.Forms.TextBox();
+            this.dgvTipoPresentaciones = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAgregarPresentacion = new System.Windows.Forms.Button();
             this.btnModificarPresentacion = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ofdImagen = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoPresentaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // button7
@@ -131,7 +133,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnBuscarImagen);
+            this.groupBox1.Controls.Add(this.pbImagen);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cbMarca);
             this.groupBox1.Controls.Add(this.cbCategoria);
@@ -153,6 +157,40 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
+            // 
+            // btnBuscarImagen
+            // 
+            this.btnBuscarImagen.Location = new System.Drawing.Point(1272, 55);
+            this.btnBuscarImagen.Name = "btnBuscarImagen";
+            this.btnBuscarImagen.Size = new System.Drawing.Size(132, 72);
+            this.btnBuscarImagen.TabIndex = 21;
+            this.btnBuscarImagen.Text = "Buscar Imagen";
+            this.btnBuscarImagen.UseVisualStyleBackColor = true;
+            this.btnBuscarImagen.Click += new System.EventHandler(this.btnBuscarImagen_Click);
+            // 
+            // pbImagen
+            // 
+            this.pbImagen.Location = new System.Drawing.Point(878, 43);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(357, 374);
+            this.pbImagen.TabIndex = 20;
+            this.pbImagen.TabStop = false;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(580, 40);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(258, 32);
+            this.txtCodigo.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(477, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 24);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Codigo:";
             // 
             // cbMarca
             // 
@@ -234,7 +272,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProducto.Location = new System.Drawing.Point(1275, 239);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(1319, 239);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(108, 38);
             this.btnAgregarProducto.TabIndex = 0;
@@ -245,7 +283,7 @@
             // btnModificarProducto
             // 
             this.btnModificarProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarProducto.Location = new System.Drawing.Point(1275, 302);
+            this.btnModificarProducto.Location = new System.Drawing.Point(1319, 302);
             this.btnModificarProducto.Name = "btnModificarProducto";
             this.btnModificarProducto.Size = new System.Drawing.Size(108, 39);
             this.btnModificarProducto.TabIndex = 1;
@@ -256,7 +294,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1275, 382);
+            this.button3.Location = new System.Drawing.Point(1319, 382);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 35);
             this.button3.TabIndex = 2;
@@ -278,11 +316,9 @@
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Controls.Add(this.txtDescripcionPresentacion);
+            this.groupBox3.Controls.Add(this.dgvTipoPresentaciones);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.btnAgregarPresentacion);
@@ -340,7 +376,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(217, 118);
+            this.txtStock.Location = new System.Drawing.Point(217, 89);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(200, 32);
             this.txtStock.TabIndex = 22;
@@ -397,22 +433,15 @@
             this.label11.TabIndex = 16;
             this.label11.Text = "Precio sin IGV:";
             // 
-            // dataGridView1
+            // dgvTipoPresentaciones
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 219);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1510, 171);
-            this.dataGridView1.TabIndex = 13;
-            // 
-            // txtDescripcionPresentacion
-            // 
-            this.txtDescripcionPresentacion.Location = new System.Drawing.Point(217, 78);
-            this.txtDescripcionPresentacion.Name = "txtDescripcionPresentacion";
-            this.txtDescripcionPresentacion.Size = new System.Drawing.Size(200, 32);
-            this.txtDescripcionPresentacion.TabIndex = 15;
+            this.dgvTipoPresentaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipoPresentaciones.Location = new System.Drawing.Point(6, 202);
+            this.dgvTipoPresentaciones.Name = "dgvTipoPresentaciones";
+            this.dgvTipoPresentaciones.RowHeadersWidth = 51;
+            this.dgvTipoPresentaciones.RowTemplate.Height = 24;
+            this.dgvTipoPresentaciones.Size = new System.Drawing.Size(1510, 171);
+            this.dgvTipoPresentaciones.TabIndex = 13;
             // 
             // label7
             // 
@@ -426,20 +455,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(128, 121);
+            this.label8.Location = new System.Drawing.Point(128, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 24);
             this.label8.TabIndex = 12;
             this.label8.Text = "Stock:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(74, 81);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 24);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Descripcion:";
             // 
             // checkBox2
             // 
@@ -469,6 +489,7 @@
             this.btnAgregarPresentacion.TabIndex = 0;
             this.btnAgregarPresentacion.Text = "Agregar";
             this.btnAgregarPresentacion.UseVisualStyleBackColor = true;
+            this.btnAgregarPresentacion.Click += new System.EventHandler(this.btnAgregarPresentacion_Click);
             // 
             // btnModificarPresentacion
             // 
@@ -490,21 +511,9 @@
             this.button9.Text = "Cancelar";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // ofdImagen
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(477, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 24);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Codigo:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(580, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 32);
-            this.textBox1.TabIndex = 19;
+            this.ofdImagen.FileName = "ofdImagen";
             // 
             // FrmProducto
             // 
@@ -524,9 +533,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoPresentaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -551,11 +561,9 @@
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtDescripcionPresentacion;
+        private System.Windows.Forms.DataGridView dgvTipoPresentaciones;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAgregarPresentacion;
@@ -574,7 +582,10 @@
         private System.Windows.Forms.TextBox txtTipoPresentacion;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnBuscarImagen;
+        private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.OpenFileDialog ofdImagen;
     }
 }

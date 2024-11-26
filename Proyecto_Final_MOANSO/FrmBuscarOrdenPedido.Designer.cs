@@ -30,11 +30,11 @@
         {
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txbNroDocumento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSeleccionar
@@ -46,6 +46,7 @@
             this.btnSeleccionar.TabIndex = 16;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // btnCerrar
             // 
@@ -57,15 +58,16 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPedido
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(841, 298);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedido.Location = new System.Drawing.Point(16, 102);
+            this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.RowHeadersWidth = 51;
+            this.dgvPedido.RowTemplate.Height = 24;
+            this.dgvPedido.Size = new System.Drawing.Size(841, 298);
+            this.dgvPedido.TabIndex = 14;
+            this.dgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellClick);
             // 
             // btnBuscar
             // 
@@ -80,7 +82,7 @@
             // txbNroDocumento
             // 
             this.txbNroDocumento.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNroDocumento.Location = new System.Drawing.Point(16, 52);
+            this.txbNroDocumento.Location = new System.Drawing.Point(75, 36);
             this.txbNroDocumento.Name = "txbNroDocumento";
             this.txbNroDocumento.Size = new System.Drawing.Size(319, 32);
             this.txbNroDocumento.TabIndex = 12;
@@ -89,27 +91,27 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(21, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 24);
             this.label1.TabIndex = 11;
             this.label1.Text = "Id:";
             // 
-            // FrmBuscarPedido
+            // FrmBuscarOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 484);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPedido);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txbNroDocumento);
             this.Controls.Add(this.label1);
-            this.Name = "FrmBuscarPedido";
+            this.Name = "FrmBuscarOrdenPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar Orden Venta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Buscar Orden Pedido";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,7 +121,7 @@
 
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txbNroDocumento;
         private System.Windows.Forms.Label label1;

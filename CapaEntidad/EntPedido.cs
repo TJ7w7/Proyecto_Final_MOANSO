@@ -8,16 +8,15 @@ namespace CapaEntidad
 {
     public class EntPedido
     {
-        public int IDPedido { get; set; }
-        public int RUC { get; set; }
-        public string Nombre { get; set; }
-        public string Region { get; set; }
-        public int Celular { get; set; }
-        public int IDProducto { get; set; }
-        public string Producto { get; set; }
-        public int Cantidad { get; set; }
-        public int Precio { get; set; }
-        public string CalleCorea { get; set; }
-        public bool EstadodelPedido { get; set; }
+        public int OrdenPedidoId { get; set; }
+        public string NumeroPedido { get; set; }
+        public int ClienteId { get; set; }
+        public int FormaDePagoId { get; set; }
+        public int PrecioTransporteId { get; set; }
+        public decimal PrecioProductos { get; set; }
+        public decimal PrecioFletes { get; set; }
+        public decimal PrecioTotal { get; set; }
+        public DateTime Fecha {  get; set; }
+        public string Estado {  get; set; }
     }
 }
