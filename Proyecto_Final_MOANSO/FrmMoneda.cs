@@ -117,5 +117,10 @@ namespace Proyecto_Final_MOANSO
             activarCellClick = false;
             Limpiar();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

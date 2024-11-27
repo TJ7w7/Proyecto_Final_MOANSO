@@ -26,6 +26,7 @@ namespace Proyecto_Final_MOANSO
         public void CargarTipoProducto()
         {
             dgvTipoPresentaciones.DataSource= LogTipoPresentacion.Instancia.ListarTipoPresentacion(int.Parse(id));
+            dgvTipoPresentaciones.Columns["Estado"].Visible=false;
         }
 
         public void CargarProducto()
@@ -35,6 +36,16 @@ namespace Proyecto_Final_MOANSO
             dgvProducto.Columns["CategoriaId"].Visible = false;
             dgvProducto.Columns["SaboresId"].Visible = false;
             dgvProducto.Columns["Imagen"].Visible = false;
+            dgvProducto.Columns["TipoPresentacionId"].Visible=false;
+            dgvProducto.Columns["TipoPresentacionId"].Visible = false;
+            dgvProducto.Columns["TipoPresentacion"].Visible = false;
+            dgvProducto.Columns["PrecioConIGV"].Visible = false;
+            dgvProducto.Columns["PrecioSinIGV"].Visible = false;
+            dgvProducto.Columns["Peso"].Visible = false;
+            dgvProducto.Columns["Largo"].Visible = false;
+            dgvProducto.Columns["Ancho"].Visible = false;
+            dgvProducto.Columns["Alto"].Visible = false;
+
 
             dgvProducto.Columns["ProductoId"].DisplayIndex = 0;
             dgvProducto.Columns["Codigo"].DisplayIndex = 1;
@@ -247,6 +258,21 @@ namespace Proyecto_Final_MOANSO
             p.Estado = cbxEstado.Checked;
             LogTipoPresentacion.Instancia.InsertarTipoPresentacion(p);
             CargarTipoProducto();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

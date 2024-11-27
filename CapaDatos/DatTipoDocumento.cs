@@ -121,5 +121,31 @@ namespace CapaDatos
             }
             return edita;
         }
+        public EntTipoDocumento ObtenerParametros(int tipoDocumentoId)
+        {
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                cn.Open();
+                using (SqlCommand cmd = new SqlCommand("ParametrosTipoDocumento", cn))
+                {
+                    cmd.Parameters.AddWithValue("@tipoDocumentoId", tipoDocumentoId);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            return new EntTipoDocumento
+                            {
+                                LongitudExacta = dr.GetBoolean(0),
+                                LongitudMinima = dr.GetInt32(1),
+                                LongitudMaxima = dr.GetInt32(2),
+                                Alfanumerico = dr.GetBoolean(3)
+                            };
+                        }
+                    }
+                }
+            }
+            return null; // Si no se encuentra el tipo de documento
+        }
     }
 }

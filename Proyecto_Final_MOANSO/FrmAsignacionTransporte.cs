@@ -73,5 +73,9 @@ namespace Proyecto_Final_MOANSO
             LogAsignacionTransporte.Instancia.InsertarAsignacionTransporte(asignacionTransporte);
 
         }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

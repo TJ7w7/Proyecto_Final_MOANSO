@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Final_MOANSO
 {
-    partial class FrmRegistroVenta
+    partial class FrmOrdenSalida
     {
         /// <summary>
         /// Required designer variable.
@@ -28,49 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvOrdenSalida = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtNroVenta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNroPedido = new System.Windows.Forms.TextBox();
+            this.txtNroOrdenSalida = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.btnBuscarPedido = new System.Windows.Forms.Button();
+            this.btnBuscarVentas = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenSalida)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvOrdenSalida
+            // 
+            this.dgvOrdenSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenSalida.Location = new System.Drawing.Point(592, 12);
+            this.dgvOrdenSalida.Name = "dgvOrdenSalida";
+            this.dgvOrdenSalida.RowHeadersWidth = 51;
+            this.dgvOrdenSalida.RowTemplate.Height = 24;
+            this.dgvOrdenSalida.Size = new System.Drawing.Size(968, 743);
+            this.dgvOrdenSalida.TabIndex = 5;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnBuscarPedido);
+            this.groupBox1.Controls.Add(this.btnBuscarVentas);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btnRegistrar);
             this.groupBox1.Controls.Add(this.txtNroVenta);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtNroPedido);
+            this.groupBox1.Controls.Add(this.txtNroOrdenSalida);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 33);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(517, 349);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(523, 323);
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Venta";
+            this.groupBox1.Text = "Orden Salida";
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(387, 271);
+            this.button4.Location = new System.Drawing.Point(391, 254);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(88, 39);
             this.button4.TabIndex = 14;
             this.button4.Text = "Salir";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnRegistrar
             // 
@@ -85,7 +96,7 @@
             // 
             // txtNroVenta
             // 
-            this.txtNroVenta.Location = new System.Drawing.Point(190, 40);
+            this.txtNroVenta.Location = new System.Drawing.Point(190, 96);
             this.txtNroVenta.Name = "txtNroVenta";
             this.txtNroVenta.Size = new System.Drawing.Size(172, 32);
             this.txtNroVenta.TabIndex = 7;
@@ -93,27 +104,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 43);
+            this.label3.Location = new System.Drawing.Point(19, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 24);
+            this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Nro Venta:";
+            this.label3.Text = "Nro Venta";
             // 
-            // txtNroPedido
+            // txtNroOrdenSalida
             // 
-            this.txtNroPedido.Location = new System.Drawing.Point(190, 91);
-            this.txtNroPedido.Name = "txtNroPedido";
-            this.txtNroPedido.Size = new System.Drawing.Size(172, 32);
-            this.txtNroPedido.TabIndex = 4;
+            this.txtNroOrdenSalida.Enabled = false;
+            this.txtNroOrdenSalida.Location = new System.Drawing.Point(190, 45);
+            this.txtNroOrdenSalida.Name = "txtNroOrdenSalida";
+            this.txtNroOrdenSalida.Size = new System.Drawing.Size(172, 32);
+            this.txtNroOrdenSalida.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 94);
+            this.label1.Location = new System.Drawing.Point(19, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 24);
+            this.label1.Size = new System.Drawing.Size(168, 24);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Nro Pedido:";
+            this.label1.Text = "Nro Orden Salida:";
             // 
             // dateTimePicker1
             // 
@@ -132,56 +144,44 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Fecha:";
             // 
-            // dgvVenta
+            // btnBuscarVentas
             // 
-            this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVenta.Location = new System.Drawing.Point(592, 33);
-            this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.RowHeadersWidth = 51;
-            this.dgvVenta.RowTemplate.Height = 24;
-            this.dgvVenta.Size = new System.Drawing.Size(962, 743);
-            this.dgvVenta.TabIndex = 3;
-            this.dgvVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidosConfirmados_CellClick);
+            this.btnBuscarVentas.Location = new System.Drawing.Point(391, 96);
+            this.btnBuscarVentas.Name = "btnBuscarVentas";
+            this.btnBuscarVentas.Size = new System.Drawing.Size(75, 32);
+            this.btnBuscarVentas.TabIndex = 16;
+            this.btnBuscarVentas.Text = "...";
+            this.btnBuscarVentas.UseVisualStyleBackColor = true;
+            this.btnBuscarVentas.Click += new System.EventHandler(this.btnBuscarVentas_Click);
             // 
-            // btnBuscarPedido
-            // 
-            this.btnBuscarPedido.Location = new System.Drawing.Point(387, 91);
-            this.btnBuscarPedido.Name = "btnBuscarPedido";
-            this.btnBuscarPedido.Size = new System.Drawing.Size(75, 32);
-            this.btnBuscarPedido.TabIndex = 16;
-            this.btnBuscarPedido.Text = "...";
-            this.btnBuscarPedido.UseVisualStyleBackColor = true;
-            this.btnBuscarPedido.Click += new System.EventHandler(this.btnBuscarPedido_Click);
-            // 
-            // FrmRegistroVenta
+            // FrmOrdenSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1596, 947);
-            this.Controls.Add(this.dgvVenta);
+            this.ClientSize = new System.Drawing.Size(1703, 947);
+            this.Controls.Add(this.dgvOrdenSalida);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmRegistroVenta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro Venta";
+            this.Name = "FrmOrdenSalida";
+            this.Text = "FrmOrdenSalida";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenSalida)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgvOrdenSalida;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtNroPedido;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtNroVenta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnBuscarPedido;
+        private System.Windows.Forms.TextBox txtNroOrdenSalida;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBuscarVentas;
     }
 }

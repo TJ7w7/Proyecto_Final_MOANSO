@@ -31,16 +31,13 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txbNroDocumento = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionar.Location = new System.Drawing.Point(139, 428);
+            this.btnSeleccionar.Location = new System.Drawing.Point(732, 30);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(125, 32);
             this.btnSeleccionar.TabIndex = 16;
@@ -69,34 +66,6 @@
             this.dgvPedido.TabIndex = 14;
             this.dgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellClick);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(16, 428);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(98, 32);
-            this.btnBuscar.TabIndex = 13;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txbNroDocumento
-            // 
-            this.txbNroDocumento.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNroDocumento.Location = new System.Drawing.Point(75, 36);
-            this.txbNroDocumento.Name = "txbNroDocumento";
-            this.txbNroDocumento.Size = new System.Drawing.Size(319, 32);
-            this.txbNroDocumento.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 24);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Id:";
-            // 
             // FrmBuscarOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -105,15 +74,11 @@
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgvPedido);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txbNroDocumento);
-            this.Controls.Add(this.label1);
             this.Name = "FrmBuscarOrdenPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Orden Pedido";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -122,8 +87,5 @@
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridView dgvPedido;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txbNroDocumento;
-        private System.Windows.Forms.Label label1;
     }
 }

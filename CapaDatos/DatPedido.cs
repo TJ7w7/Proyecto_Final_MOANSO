@@ -87,7 +87,6 @@ namespace CapaDatos
                 }
             }
         }
-
         public string ContarFilasOrdenPedido()
         {
             int totalFilas = 0;
@@ -104,11 +103,9 @@ namespace CapaDatos
                 }
             }
             totalFilas++;
-
             // Devolver el número de filas como un string con 7 dígitos, rellenando con ceros a la izquierda
             return totalFilas.ToString("D7");
         }
-
         public List<EntPedido> listarPedidoConfirmados()
         {
 

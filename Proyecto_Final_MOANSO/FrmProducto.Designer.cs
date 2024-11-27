@@ -30,9 +30,6 @@
         {
             this.button7 = new System.Windows.Forms.Button();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscarImagen = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
@@ -49,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtAlto = new System.Windows.Forms.TextBox();
             this.txtAncho = new System.Windows.Forms.TextBox();
@@ -67,11 +63,8 @@
             this.dgvTipoPresentaciones = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAgregarPresentacion = new System.Windows.Forms.Button();
-            this.btnModificarPresentacion = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.ofdImagen = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,53 +76,24 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(1548, 900);
+            this.button7.Location = new System.Drawing.Point(1308, 900);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(133, 35);
             this.button7.TabIndex = 14;
             this.button7.Text = "Cerrar";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // dgvProducto
             // 
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducto.Location = new System.Drawing.Point(21, 239);
+            this.dgvProducto.Location = new System.Drawing.Point(6, 239);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.RowHeadersWidth = 51;
             this.dgvProducto.RowTemplate.Height = 24;
-            this.dgvProducto.Size = new System.Drawing.Size(817, 178);
+            this.dgvProducto.Size = new System.Drawing.Size(832, 178);
             this.dgvProducto.TabIndex = 13;
             this.dgvProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellClick);
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(296, 897);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 35);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Deshabilitar";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(144, 897);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(95, 35);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Editar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(12, 897);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 35);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Nuevo";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -149,7 +113,6 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAgregarProducto);
             this.groupBox1.Controls.Add(this.btnModificarProducto);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 12);
             this.groupBox1.Name = "groupBox1";
@@ -291,16 +254,6 @@
             this.btnModificarProducto.UseVisualStyleBackColor = true;
             this.btnModificarProducto.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1319, 382);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtAlto);
@@ -319,15 +272,12 @@
             this.groupBox3.Controls.Add(this.dgvTipoPresentaciones);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.btnAgregarPresentacion);
-            this.groupBox3.Controls.Add(this.btnModificarPresentacion);
-            this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(23, 457);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1668, 434);
+            this.groupBox3.Size = new System.Drawing.Size(1457, 434);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Presentacion";
@@ -440,7 +390,7 @@
             this.dgvTipoPresentaciones.Name = "dgvTipoPresentaciones";
             this.dgvTipoPresentaciones.RowHeadersWidth = 51;
             this.dgvTipoPresentaciones.RowTemplate.Height = 24;
-            this.dgvTipoPresentaciones.Size = new System.Drawing.Size(1510, 171);
+            this.dgvTipoPresentaciones.Size = new System.Drawing.Size(1421, 171);
             this.dgvTipoPresentaciones.TabIndex = 13;
             // 
             // label7
@@ -461,16 +411,6 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Stock:";
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(1365, 39);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(92, 28);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Estado";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -483,33 +423,13 @@
             // btnAgregarPresentacion
             // 
             this.btnAgregarPresentacion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPresentacion.Location = new System.Drawing.Point(1550, 29);
+            this.btnAgregarPresentacion.Location = new System.Drawing.Point(1319, 83);
             this.btnAgregarPresentacion.Name = "btnAgregarPresentacion";
             this.btnAgregarPresentacion.Size = new System.Drawing.Size(108, 38);
             this.btnAgregarPresentacion.TabIndex = 0;
             this.btnAgregarPresentacion.Text = "Agregar";
             this.btnAgregarPresentacion.UseVisualStyleBackColor = true;
             this.btnAgregarPresentacion.Click += new System.EventHandler(this.btnAgregarPresentacion_Click);
-            // 
-            // btnModificarPresentacion
-            // 
-            this.btnModificarPresentacion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarPresentacion.Location = new System.Drawing.Point(1550, 92);
-            this.btnModificarPresentacion.Name = "btnModificarPresentacion";
-            this.btnModificarPresentacion.Size = new System.Drawing.Size(108, 39);
-            this.btnModificarPresentacion.TabIndex = 1;
-            this.btnModificarPresentacion.Text = "Modificar";
-            this.btnModificarPresentacion.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(1550, 172);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(108, 35);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "Cancelar";
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // ofdImagen
             // 
@@ -519,13 +439,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1703, 947);
+            this.ClientSize = new System.Drawing.Size(1509, 947);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Name = "FrmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Productos";
@@ -544,16 +461,12 @@
         #endregion
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dgvProducto;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbxEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnModificarProducto;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbSabores;
         private System.Windows.Forms.TextBox txtDescripcionProducto;
@@ -564,11 +477,8 @@
         private System.Windows.Forms.DataGridView dgvTipoPresentaciones;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAgregarPresentacion;
-        private System.Windows.Forms.Button btnModificarPresentacion;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;

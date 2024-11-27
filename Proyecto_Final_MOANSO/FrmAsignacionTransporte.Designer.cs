@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxEstado = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,16 +48,11 @@
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscarOrdenPedido = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.txtNroPedido = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnDeshabilitar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvAsignacionTransporte = new System.Windows.Forms.DataGridView();
-            this.cbxEstado = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -67,10 +62,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btnBuscarOrdenPedido);
-            this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.txtNroPedido);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.label1);
@@ -81,16 +75,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orden Pedido";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(384, 664);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(115, 39);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -104,6 +88,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Transportista";
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.AutoSize = true;
+            this.cbxEstado.Location = new System.Drawing.Point(23, 501);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(92, 28);
+            this.cbxEstado.TabIndex = 5;
+            this.cbxEstado.Text = "Estado";
+            this.cbxEstado.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -262,16 +256,6 @@
             this.btnBuscarOrdenPedido.UseVisualStyleBackColor = true;
             this.btnBuscarOrdenPedido.Click += new System.EventHandler(this.btnBuscarOrdenPedido_Click);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(177, 664);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(115, 39);
-            this.btnModificar.TabIndex = 12;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
             // txtNroPedido
             // 
             this.txtNroPedido.Location = new System.Drawing.Point(132, 45);
@@ -302,42 +286,13 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1036, 760);
+            this.button4.Location = new System.Drawing.Point(411, 664);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(88, 39);
             this.button4.TabIndex = 11;
             this.button4.Text = "Salir";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnDeshabilitar
-            // 
-            this.btnDeshabilitar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(384, 760);
-            this.btnDeshabilitar.Name = "btnDeshabilitar";
-            this.btnDeshabilitar.Size = new System.Drawing.Size(138, 39);
-            this.btnDeshabilitar.TabIndex = 10;
-            this.btnDeshabilitar.Text = "Deshabilitar";
-            this.btnDeshabilitar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(189, 760);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 39);
-            this.btnEditar.TabIndex = 9;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(17, 760);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(88, 39);
-            this.btnNuevo.TabIndex = 8;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dgvAsignacionTransporte
             // 
@@ -349,26 +304,12 @@
             this.dgvAsignacionTransporte.Size = new System.Drawing.Size(652, 710);
             this.dgvAsignacionTransporte.TabIndex = 12;
             // 
-            // cbxEstado
-            // 
-            this.cbxEstado.AutoSize = true;
-            this.cbxEstado.Location = new System.Drawing.Point(23, 501);
-            this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(92, 28);
-            this.cbxEstado.TabIndex = 5;
-            this.cbxEstado.Text = "Estado";
-            this.cbxEstado.UseVisualStyleBackColor = true;
-            // 
             // FrmAsignacionTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 820);
+            this.ClientSize = new System.Drawing.Size(1231, 748);
             this.Controls.Add(this.dgvAsignacionTransporte);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnDeshabilitar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAsignacionTransporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -404,13 +345,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnDeshabilitar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dgvAsignacionTransporte;
         private System.Windows.Forms.TextBox txtLicencia;
         private System.Windows.Forms.Label label8;

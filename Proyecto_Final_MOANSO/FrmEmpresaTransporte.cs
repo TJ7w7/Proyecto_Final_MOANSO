@@ -19,6 +19,8 @@ namespace Proyecto_Final_MOANSO
             InitializeComponent();
             CargarEmpresaTransporte();
             CargarTipoDocumento();
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
         }
 
         public void CargarTipoDocumento()
@@ -125,6 +127,25 @@ namespace Proyecto_Final_MOANSO
             cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[6].Value);
 
             cbTipoDocumento.SelectedValue = tipoDocumentoId;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = false;
+            Limpiar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled=false;
+            btnModificar.Enabled=true;
+            Limpiar();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

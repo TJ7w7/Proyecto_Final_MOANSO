@@ -24,15 +24,15 @@ namespace Proyecto_Final_MOANSO
         public FrmPrincipal()
         {
             InitializeComponent();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
-            panelMenu.Controls.Add(leftBorderBtn);
+            //leftBorderBtn = new Panel();
+            //leftBorderBtn.Size = new Size(7, 60);
+            //panelMenu.Controls.Add(leftBorderBtn);
 
-            panel = new Panel();
-            panel.Size = new Size(7,50);
-            panelMenu.Controls.Add(panel);
-            
-            IniciarSubMenu();
+            //panel = new Panel();
+            //panel.Size = new Size(7, 50);
+            //panelMenu.Controls.Add(panel);
+
+            //IniciarSubMenu();
         }
 
         private void ActivateButton(object sendBtn)
@@ -116,54 +116,54 @@ namespace Proyecto_Final_MOANSO
             }
         }
 
-        private void ResetPanel()
-        {
-            DisableButtonPanel();
-            panel.Visible = false;
-        }
+        //private void ResetPanel()
+        //{
+        //    DisableButtonPanel();
+        //    panel.Visible = false;
+        //}
 
-        private void IniciarSubMenu()
-        {
-            panelProductos.Visible=false;
-            panelCliente.Visible=false;
-        }
+        //private void IniciarSubMenu()
+        //{
+        //    panelProductos.Visible=false;
+        //    panelCliente.Visible=false;
+        //}
 
-        private void OcultarSubMenu()
-        {
-            if(panelProductos.Visible == true)
-                panelProductos.Visible = false;
-            if(panelCliente.Visible == true)
-                panelCliente.Visible = false;
-        }
+        //private void OcultarSubMenu()
+        //{
+        //    if(panelProductos.Visible == true)
+        //        panelProductos.Visible = false;
+        //    if(panelCliente.Visible == true)
+        //        panelCliente.Visible = false;
+        //}
 
-        public void MostrarSubMenu(Panel submenu)
-        {
-            if(submenu.Visible == false)
-            {
-                OcultarSubMenu();
-                submenu.Visible = true;
-            }
-            else
-            {
-                submenu.Visible = false;
-            }
-        }
+        //public void MostrarSubMenu(Panel submenu)
+        //{
+        //    if(submenu.Visible == false)
+        //    {
+        //        OcultarSubMenu();
+        //        submenu.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        submenu.Visible = false;
+        //    }
+        //}
 
-        public void AbrirFormularios(Form hijo)
-        {
-            if(frmhijo != null)
-            {
-                frmhijo.Close();
-            }
-            frmhijo= hijo;
-            hijo.TopLevel = false;
-            hijo.FormBorderStyle = FormBorderStyle.None;
-            hijo.Dock = DockStyle.Fill;
-            panelEscritorio.Controls.Add(hijo);
-            panelEscritorio.Tag = hijo;
-            hijo.BringToFront();
-            hijo.Show();
-        }
+        //public void AbrirFormularios(Form hijo)
+        //{
+        //    if(frmhijo != null)
+        //    {
+        //        frmhijo.Close();
+        //    }
+        //    frmhijo= hijo;
+        //    hijo.TopLevel = false;
+        //    hijo.FormBorderStyle = FormBorderStyle.None;
+        //    hijo.Dock = DockStyle.Fill;
+        //    panelEscritorio.Controls.Add(hijo);
+        //    panelEscritorio.Tag = hijo;
+        //    hijo.BringToFront();
+        //    hijo.Show();
+        //}
 
         private void registroClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -196,8 +196,8 @@ namespace Proyecto_Final_MOANSO
 
         private void buscarTransportistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarTransportista buscarTransportista = new FrmBuscarTransportista();
-            buscarTransportista.Show();
+            //FrmBuscarTransportista buscarTransportista = new FrmBuscarTransportista();
+            //buscarTransportista.Show();
         }
 
         private void registroFormasDePagoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,7 +226,7 @@ namespace Proyecto_Final_MOANSO
 
         private void registroVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmVenta Venta = new FrmVenta();
+            FrmRegistroVenta Venta = new FrmRegistroVenta();
             Venta.Show();
         }
 
@@ -278,46 +278,46 @@ namespace Proyecto_Final_MOANSO
             clienteNatural.Show();
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-            //OcultarSubMenu();
-            MostrarSubMenu(panelCliente);
-            DisableButtonPanel();
-            panel.Visible = false;
-        }
+        //private void btnClientes_Click(object sender, EventArgs e)
+        //{
+        //    ActivateButton(sender);
+        //    //OcultarSubMenu();
+        //    MostrarSubMenu(panelCliente);
+        //    DisableButtonPanel();
+        //    panel.Visible = false;
+        //}
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            Reset();
-            ResetPanel();
-        }
+        //private void btnHome_Click(object sender, EventArgs e)
+        //{
+        //    Reset();
+        //    ResetPanel();
+        //}
 
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-            MostrarSubMenu(panelProductos);
-            DisableButtonPanel();
-            panel.Visible = false;
-        }
+        //private void btnProductos_Click(object sender, EventArgs e)
+        //{
+        //    ActivateButton(sender);
+        //    MostrarSubMenu(panelProductos);
+        //    DisableButtonPanel();
+        //    panel.Visible = false;
+        //}
 
-        private void btnClienteNatural_Click(object sender, EventArgs e)
-        {
-            ActivateButtonPanel(sender);
-            AbrirFormularios(new FrmClienteNatural());
-        }
+        //private void btnClienteNatural_Click(object sender, EventArgs e)
+        //{
+        //    ActivateButtonPanel(sender);
+        //    AbrirFormularios(new FrmClienteNatural());
+        //}
 
-        private void btnClienteJuridico_Click(object sender, EventArgs e)
-        {
-            ActivateButtonPanel(sender);
-            AbrirFormularios(new FrmClienteJuridico());
-        }
+        //private void btnClienteJuridico_Click(object sender, EventArgs e)
+        //{
+        //    ActivateButtonPanel(sender);
+        //    AbrirFormularios(new FrmClienteJuridico());
+        //}
 
-        private void btnRegistrarProducto_Click(object sender, EventArgs e)
-        {
-            ActivateButtonPanel(sender);
-            AbrirFormularios(new FrmProducto());
-        }
+        //private void btnRegistrarProducto_Click(object sender, EventArgs e)
+        //{
+        //    ActivateButtonPanel(sender);
+        //    AbrirFormularios(new FrmProducto());
+        //}
 
         private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -329,6 +329,12 @@ namespace Proyecto_Final_MOANSO
         {
             FrmPrecioTransporte precioTransporte = new FrmPrecioTransporte();
             precioTransporte.Show();
+        }
+
+        private void ordenSalidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrdenSalida frmOrdenSalida = new FrmOrdenSalida();
+            frmOrdenSalida.Show();
         }
     }
 }

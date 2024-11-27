@@ -59,6 +59,12 @@
     <Compile Include="FrmBuscarPrecioTransporte.Designer.cs">
       <DependentUpon>FrmBuscarPrecioTransporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarVenta.Designer.cs">
+      <DependentUpon>FrmBuscarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClienteJuridico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,12 +95,6 @@
     <Compile Include="FrmBuscarProducto.Designer.cs">
       <DependentUpon>FrmBuscarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuscarTransportista.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBuscarTransportista.Designer.cs">
-      <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmClienteNatural.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +119,12 @@
     <Compile Include="FrmMoneda.Designer.cs">
       <DependentUpon>FrmMoneda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOrdenSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrdenSalida.Designer.cs">
+      <DependentUpon>FrmOrdenSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,12 +142,6 @@
     </Compile>
     <Compile Include="FrmProducto.Designer.cs">
       <DependentUpon>FrmProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmProductoPresentacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmProductoPresentacion.Designer.cs">
-      <DependentUpon>FrmProductoPresentacion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegion.cs">
       <SubType>Form</SubType>
@@ -185,16 +185,13 @@
     <Compile Include="FrmPrecioTransporte.Designer.cs">
       <DependentUpon>FrmPrecioTransporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmVenta.Designer.cs">
-      <DependentUpon>FrmVenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmBuscarPrecioTransporte.resx">
       <DependentUpon>FrmBuscarPrecioTransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarVenta.resx">
+      <DependentUpon>FrmBuscarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteJuridico.resx">
       <DependentUpon>FrmClienteJuridico.cs</DependentUpon>
@@ -211,9 +208,6 @@
     <EmbeddedResource Include="FrmBuscarProducto.resx">
       <DependentUpon>FrmBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuscarTransportista.resx">
-      <DependentUpon>FrmBuscarTransportista.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmClienteNatural.resx">
       <DependentUpon>FrmClienteNatural.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +220,9 @@
     <EmbeddedResource Include="FrmMoneda.resx">
       <DependentUpon>FrmMoneda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrdenSalida.resx">
+      <DependentUpon>FrmOrdenSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPais.resx">
       <DependentUpon>FrmPais.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProducto.resx">
       <DependentUpon>FrmProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmProductoPresentacion.resx">
-      <DependentUpon>FrmProductoPresentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegion.resx">
       <DependentUpon>FrmRegion.cs</DependentUpon>
@@ -258,9 +252,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrecioTransporte.resx">
       <DependentUpon>FrmPrecioTransporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmVenta.resx">
-      <DependentUpon>FrmVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

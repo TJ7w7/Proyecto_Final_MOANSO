@@ -38,6 +38,9 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbPais = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbTipoDocumento = new System.Windows.Forms.ComboBox();
@@ -47,8 +50,8 @@
             this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelNumeroDocuemnto = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienteNatural)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -121,10 +124,10 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(827, 179);
+            this.btnEditar.Location = new System.Drawing.Point(174, 809);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(159, 39);
+            this.btnEditar.Size = new System.Drawing.Size(145, 39);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -144,6 +147,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cbxEstado);
@@ -161,7 +165,6 @@
             this.groupBox1.Controls.Add(this.txtNumeroDocumento);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.labelNumeroDocuemnto);
-            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 26);
@@ -171,7 +174,35 @@
             this.groupBox1.Size = new System.Drawing.Size(1086, 439);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ClienteJuridico";
+            this.groupBox1.Text = "ClienteNatural";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(827, 242);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 39);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Modificar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(228, 171);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(275, 32);
+            this.txtApellidos.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(117, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 24);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Apellidos:";
             // 
             // cbPais
             // 
@@ -252,30 +283,39 @@
             this.labelNumeroDocuemnto.TabIndex = 11;
             this.labelNumeroDocuemnto.Text = "Numero Documento:";
             // 
-            // label5
+            // button1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(117, 174);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 24);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Apellidos:";
+            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 809);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 39);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Nuevo";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtApellidos
+            // btnSalir
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(228, 171);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(275, 32);
-            this.txtApellidos.TabIndex = 36;
+            this.btnSalir.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(969, 809);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(129, 39);
+            this.btnSalir.TabIndex = 38;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmClienteNatural
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1159, 795);
+            this.ClientSize = new System.Drawing.Size(1159, 859);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvClienteNatural);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnEditar);
             this.Name = "FrmClienteNatural";
             this.Text = "FrmClienteNatural";
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienteNatural)).EndInit();
@@ -308,5 +348,8 @@
         private System.Windows.Forms.Label labelNumeroDocuemnto;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

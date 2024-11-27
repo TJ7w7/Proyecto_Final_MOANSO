@@ -48,6 +48,7 @@
     <Compile Include="LogCliente.cs" />
     <Compile Include="LogFormasDePago.cs" />
     <Compile Include="LogMoneda.cs" />
+    <Compile Include="LogOrdenSalida.cs" />
     <Compile Include="LogPais.cs" />
     <Compile Include="LogPedido.cs" />
     <Compile Include="LogPedidoDetalle.cs" />

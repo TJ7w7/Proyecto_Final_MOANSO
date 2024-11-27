@@ -51,6 +51,7 @@
     <Compile Include="EntClienteNatural.cs" />
     <Compile Include="EntFormasDePago.cs" />
     <Compile Include="EntMoneda.cs" />
+    <Compile Include="EntOrdenSalida.cs" />
     <Compile Include="EntPedido.cs" />
     <Compile Include="EntPedidoDetalle.cs" />
     <Compile Include="EntPais.cs" />

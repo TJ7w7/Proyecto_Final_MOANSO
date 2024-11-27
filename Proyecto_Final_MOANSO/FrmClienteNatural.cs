@@ -165,5 +165,10 @@ namespace Proyecto_Final_MOANSO
             cbPais.SelectedValue = paisId;
             cbRegion.SelectedValue = regionId;
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

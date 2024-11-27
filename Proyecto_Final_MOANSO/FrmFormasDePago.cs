@@ -18,6 +18,8 @@ namespace Proyecto_Final_MOANSO
         {
             InitializeComponent();
             CargarFormasDePago();
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
         }
 
         public void CargarFormasDePago()
@@ -89,6 +91,18 @@ namespace Proyecto_Final_MOANSO
             txtNombre.Text = filaActual.Cells[1].Value.ToString();
             cbxClienteExtranjero.Checked = Convert.ToBoolean(filaActual.Cells[2].Value);
             cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[3].Value);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled= true;
+            btnModificar.Enabled= false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled= true;
         }
     }
 }

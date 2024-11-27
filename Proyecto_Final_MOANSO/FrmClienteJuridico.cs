@@ -181,6 +181,61 @@ namespace Proyecto_Final_MOANSO
             btnAgregar.Enabled = true;
             btnModificar.Enabled = false;
             activarCellClick = false;
-    }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //private void cbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (cbTipoDocumento.SelectedValue == null)
+        //        return;
+
+        //    int tipoDocumentoId = int.Parse(cbTipoDocumento.SelectedValue.ToString());
+
+        //    // Obtener los parámetros del tipo de documento
+        //    EntTipoDocumento parametros = LogTipoDocumento.Instancia.ObtenerParametros(tipoDocumentoId);
+
+        //    if (parametros != null)
+        //    {
+        //        // Configurar restricciones en el TextBox
+        //        txtNumeroDocumento.MaxLength = parametros.LongitudMaxima;
+
+        //        // Asociar el evento TextChanged para aplicar validaciones dinámicas
+        //        txtNumeroDocumento.TextChanged -= txtNumeroDocumento_TextChanged; // Evitar múltiples suscripciones
+        //        txtNumeroDocumento.TextChanged += txtNumeroDocumento_TextChanged;
+
+        //        // Guardar las restricciones en variables o propiedades para validación dinámica
+        //        txtNumeroDocumento.Tag = parametros; // Guardar los parámetros en el control
+        //    }
+        //}
+
+        //private void txtNumeroDocumento_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (sender is TextBox textBox && textBox.Tag is EntTipoDocumento parametros)
+        //    {
+        //        string texto = textBox.Text;
+
+        //        // Validar longitud mínima
+        //        if (texto.Length < parametros.LongitudMinima)
+        //        {
+        //            lblValidacion.Text = $"La longitud mínima es {parametros.LongitudMinima} caracteres.";
+        //            return;
+        //        }
+
+        //        // Validar si debe ser alfanumérico
+        //        if (parametros.Alfanumerico && !System.Text.RegularExpressions.Regex.IsMatch(texto, @"^[a-zA-Z0-9]+$"))
+        //        {
+        //            lblValidacion.Text = "El número de documento debe ser alfanumérico.";
+        //            return;
+        //        }
+
+        //        // Limpiar mensajes de validación si todo es correcto
+        //        lblValidacion.Text = "";
+        //    }
+
+        //}
     }
 }

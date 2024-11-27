@@ -17,13 +17,13 @@ namespace Proyecto_Final_MOANSO
         public FrmRegistroVenta()
         {
             InitializeComponent();
-            ListarPedidosConfirmados();
+            ListarVentas();
             CargarNumero();
         }
 
-        public void ListarPedidosConfirmados()
+        public void ListarVentas()
         {
-            dgvPedidosConfirmados.DataSource = LogPedido.Instancia.ListarPedidoConfirmados();
+            dgvVenta.DataSource = LogVenta.Instancia.ListarVenta();
         }
 
         public void CargarNumero()
@@ -34,7 +34,7 @@ namespace Proyecto_Final_MOANSO
         string nroPedido;
         private void dgvPedidosConfirmados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow filaActual = dgvPedidosConfirmados.Rows[e.RowIndex];
+            DataGridViewRow filaActual = dgvVenta.Rows[e.RowIndex];
             id = int.Parse(filaActual.Cells[0].Value.ToString());
             nroPedido = filaActual.Cells[1].Value.ToString();
 
@@ -46,10 +46,22 @@ namespace Proyecto_Final_MOANSO
             EntVenta venta = new EntVenta();
             venta.NumeroVenta = txtNroVenta.Text;
             venta.OrdenPedidoId = id;
-            MessageBox.Show("Error" + id);
             venta.Fecha = DateTime.Parse(dateTimePicker1.Value.ToString());
 
             LogVenta.Instancia.InsertarVenta(venta);
+            ListarVentas();
+        }
+
+        private void btnBuscarPedido_Click(object sender, EventArgs e)
+        {
+            FrmBuscarOrdenPedido frmBuscarOrdenPedido = new FrmBuscarOrdenPedido();
+            if(frmBuscarOrdenPedido.ShowDialog() == DialogResult.OK)
+            {
+                id = frmBuscarOrdenPedido.OrdenPedidoId;
+                nroPedido = frmBuscarOrdenPedido.NumeroPedido;
+
+                txtNroPedido.Text = nroPedido;
+            }
         }
     }
 }

@@ -90,5 +90,10 @@ namespace Proyecto_Final_MOANSO
             txtDescripcion.Text = filaActual.Cells[2].Value.ToString();
             cbxEstado.Checked = Convert.ToBoolean(filaActual.Cells[3].Value);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

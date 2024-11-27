@@ -259,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1703, 947);
+            this.ClientSize = new System.Drawing.Size(1215, 947);
             this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);

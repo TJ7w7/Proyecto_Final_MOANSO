@@ -29,5 +29,9 @@ namespace CapaLogica
         {
             DatTipoDocumento.Instancia.EditarTipoDocumento(tp);
         }
+        public EntTipoDocumento ObtenerParametros(int tipoDocumentoId)
+        {
+            return DatTipoDocumento.Instancia.ObtenerParametros(tipoDocumentoId);
+        }
     }
 }
